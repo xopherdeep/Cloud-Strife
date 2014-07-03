@@ -8,4 +8,10 @@ for item in ${array[*]}
 do
     printf "Adding   %s\n" $item
     git submodule add https://github.com/XenGenie/$item x/$item
+    
+    printf "Init Modules   %s\n" $item
+    cd x/
+    cd $item/
+    ./git\ submodules.sh
+    cd ../../
 done
