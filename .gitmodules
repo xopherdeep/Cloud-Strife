@@ -1,0 +1,3 @@
+[submodule "x/Hydrogen"]
+	path = x/Hydrogen
+	url = https://github.com/XenGenie/Hydrogen
