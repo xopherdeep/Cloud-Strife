@@ -1,5 +1,11 @@
 #!/bin/bash
-array=(Hydrogen Carbon Nitrogen Oxygen Copper Quartz Golden-Goose-Egg Emerald)
+
+echo "Please Choose a Suite: Carbon, Nitrogen, Oxygen, Copper, Quartz, Golden-Goose-Egg, Emerald"
+read -p "Enter Suite to download : " answer
+# (2) handle the input we were given
+ 
+# array=(Hydrogen Carbon Nitrogen Oxygen Copper Quartz Golden-Goose-Egg Emerald)
+array=(Hydrogen $answer)
 
 echo "Array size: ${#array[*]}"
 
