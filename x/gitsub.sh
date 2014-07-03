@@ -11,13 +11,15 @@ for item in ${array[*]}
 do
 
     printf "Adding   %s\n" $item
+    git rm x/$item -r
     git submodule add https://github.com/XenGenie/$item x/$item 
-    
+
     printf "Init Modules   %s\n" $item
     cd x/
 
     cd $item/
-    ./git\ submodules.sh
+
     git pull
+    ./gitsub.sh
     cd ../../
 done

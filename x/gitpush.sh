@@ -1,31 +1,11 @@
 #!/bin/bash
-array=(Hydrogen Carbon Nitrogen Oxygen Copper Quartz Golden-Goose-Egg Emerald)
-
-echo "Array size: ${#array[*]}"
-
-echo "Array items:"
-
-cd ../
-
-for item in ${array[*]}
-do
-
-	 
-
-    printf "Adding   %s\n" $item
-    git submodule add https://github.com/XenGenie/$item x/$item 
-    
-    printf "Init Modules   %s\n" $item
-    
-    cd x/
-
-    cd $item/
-    
-
-
+for x in $(ls -d */)
+do 
+    echo "Nightly Push of $x"
+    cd $x
     git add .
-    git commit -m "Nightly Push"
-    git push -u origin +HEAD:refs/heads/nightly
-
-    cd ../../
-done
+    git commit -a -m "$x Automated Nightly Push"
+    git push origin +HEAD:refs/heads/nightly
+    ./gitpush.sh
+    cd ..
+done 
