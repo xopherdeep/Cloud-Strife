@@ -4,6 +4,9 @@ array=(Hydrogen Carbon Nitrogen Oxygen Copper Quartz Golden-Goose-Egg Emerald)
 echo "Array size: ${#array[*]}"
 
 echo "Array items:"
+
+cd ../
+
 for item in ${array[*]}
 do
 
