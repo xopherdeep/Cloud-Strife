@@ -9,5 +9,6 @@ Cloud-Strife is a Skeleton Repo for SuperDomX. It's Basically the shell & script
 
 > SDX Dual-License
 > ===
-> The SDX-Kit aka Cloud-Strife is now licensed under the Artistic License 2.0.
+> The SDX-Kit a.k.a. Cloud-Strife is Licensed under the Artistic License 2.0.
+>
 > There is a $197 Per Domain fee for the Commercial License.
