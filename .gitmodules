@@ -1,0 +1,12 @@
+[submodule "x/Hydrogen"]
+	path = x/Hydrogen
+	url = https://github.com/XenGenie/Hydrogen
+[submodule "x/Carbon"]
+	path = x/Carbon
+	url = https://github.com/XenGenie/Carbon
+[submodule "x/Nitrogen"]
+	path = x/Nitrogen
+	url = https://github.com/XenGenie/Nitrogen
+[submodule "x/Oxygen"]
+	path = x/Oxygen
+	url = https://github.com/XenGenie/Oxygen
