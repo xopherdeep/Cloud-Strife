@@ -19,8 +19,8 @@
 
 	// Ready
 	// @todo: Keep Being Awesome.
-	require("__cfg/lang.cfg");
-	require("__cfg/x.cfg");
+	require("_cfg/lang.cfg");
+	require("_cfg/x.cfg");
 	require('Hydrogen/x4deep/xengine.php');
 
 	// Set
