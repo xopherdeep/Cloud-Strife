@@ -7,5 +7,5 @@ echo "Array items:"
 for item in ${array[*]}
 do
     printf "Adding   %s\n" $item
-    git submodule add https://github.com/XenGenie/$item $item
+    git submodule add https://github.com/XenGenie/$item x/$item
 done
