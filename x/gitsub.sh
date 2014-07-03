@@ -17,7 +17,6 @@ do
     cd x/
 
     cd $item/
-    ./git\ submodules.sh
-    git pull
+    ./gitsub.sh
     cd ../../
 done
