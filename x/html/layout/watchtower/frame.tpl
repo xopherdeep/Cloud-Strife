@@ -487,7 +487,8 @@
     <div class="content container" id="container" data-pjax-container>
        
         {assign var="WT" value="/x/html/layout/watchtower/"}
-        
+            
+        {$TPL_EXISTS}
         {if $TPL_EXISTS && $Xtra != '' AND $method  != '' AND ($Xtra != 'index')}
        
             {if $Xtra != 'login'}     
@@ -543,9 +544,11 @@
                 </div>
             {/if}
 
-            {include file="$Door/$Xtra/$method.tpl" assign=XTRA_METHOD}    
+            {include file="../../../Oxygen/x{$Xtra|ucfirst}/$method.tpl" assign=XTRA_METHOD}    
             {$HTML.BODY.HTML = $XTRA_METHOD}
+
         {else if $HTML.BODY.HTML == ''}
+
             {include file="../../$Door/portal.tpl" assign=PORTAL}
             {$HTML.BODY.HTML = $PORTAL}
         {/if}
