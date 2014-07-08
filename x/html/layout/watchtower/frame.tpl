@@ -38,7 +38,7 @@
 			}
 			{/FOREACH}*/
 
-			html, body{
+			 body{
 				background : rgb(109,179,242); /* Old browsers */
 				/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 				background : url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzZkYjNmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjE5JSIgc3RvcC1jb2xvcj0iIzU0YTNlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjYwJSIgc3RvcC1jb2xvcj0iIzM2OTBmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTY5ZGUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -50,6 +50,10 @@
 				background : linear-gradient(to right,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 19%,rgba(54,144,240,1) 60%,rgba(30,105,222,1) 100%); /* W3C */
 				filter     : progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=1 ); /* IE6-8 */ 
 			}
+
+            body{
+                background: url(/bin/images/bgs/full/{$suite}.png) center center;
+            }
 
 			.transparent-black-25{
 				background-color: rgba(0,0,0,0.25);
@@ -82,12 +86,13 @@
             <strong>Super</strong><span>Dom</span>
            
         </a>  <br/>
-        <span class="label    ">  
-           powered by </span>
-           <span class="label label-success">  
-        &alpha; </span> 
-        <span class="label    ">  
-            {$suite} </span>
+        
+          
+        <span class="label  label-success   ">  
+            {$suite} </span> <span class="label label-danger">  
+        &beta; </span>
+      <!--   <span class="label   label-info ">  
+           infused </span>  -->
             
       
     </h4>  
@@ -178,6 +183,9 @@
                             <i class="fa fa-search"></i>
                         </a>
                     </li>
+
+                    
+
                     <li class="dropdown">
                         <a href="#" title="Messages" id="messages"
                            class="dropdown-toggle"

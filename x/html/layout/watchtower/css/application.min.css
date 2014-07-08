@@ -2104,7 +2104,7 @@ input.parsley-error {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     position: absolute;
-    left: 40px;
+    left: 60px;
     /*width : 140px;*/
     top: 0px;
     z-index: 1;
