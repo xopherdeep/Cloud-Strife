@@ -69,17 +69,32 @@
 </head>
 <body class="background-dark">
 <div class="logo text-center">
-    <h4><a href="/" class=""><i class="fa fa-globe"></i></a><br/><a href="/{$toBackDoor}"><strong>Super</strong> Dom</a></h4>  
-
+    <h4>
+        <a href="/" class="">
+            <i class="fa fa-globe"></i>
+        </a>
+        <br/>
+        <a href="/{$toBackDoor}">
+            <strong>Super</strong> Dom X
+        </a><br/>
+        <span class="label label-danger">&beta;</span>
+    </h4>  
 </div>
 <nav id="sidebar" class="sidebar nav-collapse collapse">
     <ul id="side-nav" class="side-nav">
         <li class="active">
-            <a href="/{$toBackDoor}"><i class="fa fa-eye"></i> <span class="name">Watchtower <span class="label label-primary">v&beta;</span></span>  </a>
+            <a href="/{$toBackDoor}"><i class="fa fa-eye"></i> <span class="name">Watchtower</span>  </a>
         </li>
 
         {foreach $admin_menu as $key => $item}
-            {if $key} 
+            {assign var=children value=0}
+            {foreach $xtras as $x => $xtra}
+                {if $xtra.icon && $key == $xtra.see && ($xtra.alpha == true || $xtra.beta == true || $xtra.delta == true || $xtra.omega == true)}
+                    {assign var=children value=1}
+                {/if}
+            {/foreach}
+
+            {if $key && $children} 
 
                  <li class="panel">
                     <a class="accordion-toggle collapsed" data-toggle="collapse"
@@ -318,6 +333,7 @@
                     <input type="search" class="search-query" placeholder="Search...">
                 </form>
                 <div class="notifications pull-right">
+
                     <div class="alert-info alert pull-right">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
                         <i class="fa fa-info-circle"></i> Adjust the Layout using the <a id="notification-link" href="#">settings</a> on the right!
@@ -485,10 +501,7 @@
     <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.nestable.js"> </script>
 
     <div class="content container" id="container" data-pjax-container>
-       
         {assign var="WT" value="/x/html/layout/watchtower/"}
-            
-        {$TPL_EXISTS}
         {if $TPL_EXISTS && $Xtra != '' AND $method  != '' AND ($Xtra != 'index')}
        
             {if $Xtra != 'login'}     

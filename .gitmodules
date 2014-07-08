@@ -1,6 +1,6 @@
 [submodule "x/Hydrogen"]
 	path = x/Hydrogen
-	url = https://github.com/XenGenie/Hydrogen
+	url = http://github.com/XenGenie/Hydrogen
 [submodule "x/Carbon"]
 	path = x/Carbon
 	url = https://github.com/XenGenie/Carbon
