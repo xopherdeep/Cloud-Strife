@@ -461,18 +461,14 @@
 
   
     {include file="$Door/scripts.html" assign=SCRIPT}
+ 
 
-    {$SCRIPT}
-
-    {if $HTML.BODY.SCRIPT != ''}
+    {if $SCRIPT}
         <script>
-            {$HTML.BODY.SCRIPT}
+            {$SCRIPT}
         </script>
     {/if} 
-
-    {if $HTML.BODY.INC.JS != ''}
-        {$HTML.BODY.INC.JS}
-    {/if} 
+ 
 
     <!-- page specific -->
 
@@ -547,10 +543,10 @@
                 </div>
             {/if}
 
-            {include file="$Door/$Xtra/$method.html" assign=XTRA_METHOD}    
+            {include file="$Door/$Xtra/$method.tpl" assign=XTRA_METHOD}    
             {$HTML.BODY.HTML = $XTRA_METHOD}
         {else if $HTML.BODY.HTML == ''}
-            {include file="$Door/portal.html" assign=PORTAL}
+            {include file="../../$Door/portal.tpl" assign=PORTAL}
             {$HTML.BODY.HTML = $PORTAL}
         {/if}
 
