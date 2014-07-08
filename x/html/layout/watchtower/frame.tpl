@@ -70,14 +70,26 @@
 <body class="background-dark">
 <div class="logo text-center">
     <h4>
+        
+        
         <a href="/" class="">
-            <i class="fa fa-globe"></i>
-        </a>
+            <i class="fa fa-globe"></i> 
+        </a> 
         <br/>
+       <!--  <span class="label label-warning">  
+         <strong>x</strong></span> -->
         <a href="/{$toBackDoor}">
-            <strong>Super</strong> Dom X
-        </a><br/>
-        <span class="label label-danger">&beta;</span>
+            <strong>Super</strong><span>Dom</span>
+           
+        </a>  <br/>
+        <span class="label    ">  
+           powered by </span>
+           <span class="label label-success">  
+        &alpha; </span> 
+        <span class="label    ">  
+            {$suite} </span>
+            
+      
     </h4>  
 </div>
 <nav id="sidebar" class="sidebar nav-collapse collapse">
