@@ -15,6 +15,8 @@
 		}
 
 		function fadeInElements(elementSelectors, lastFunction) {
+		   
+
 		    $(elementSelectors[0]).hide().load('/html/'+$(elementSelectors[0]).attr('blox').slice(1).toLowerCase().replace('-','/'),function (){
 		        $(elementSelectors[0]).show(function  () {
 		        	elementSelectors[1] ? 
@@ -30,8 +32,10 @@
 			    	top: 0
 			    });
 			{else}
-
-			 fadeInElements($('.blox-panel'), executeAfterFade);	  
+				if(	$('.blox-panel').length > 0	)
+					fadeInElements($('.blox-panel'), executeAfterFade);	 
+				else
+					$('.godbar').css({ top: 0 });
 			{/if}
 
 		});
