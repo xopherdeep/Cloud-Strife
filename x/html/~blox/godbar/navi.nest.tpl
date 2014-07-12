@@ -29,8 +29,6 @@
     {/foreach} 
     {if $children gt 0}  
         <ul class="dropdown-menu">
-            
-
             {foreach $navi as $nav => $l} 
                 {if $l.parent == $link.id} 
                    {include file="./navi.nest.tpl" linktothe=$linktothe link=$l sub=true}
