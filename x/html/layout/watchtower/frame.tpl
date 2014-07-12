@@ -52,7 +52,7 @@
 			}
 
             body{
-                background: url(/bin/images/bgs/full/{$suite}.png) center center;
+                background: url(/bin/images/bgs/full/{$suite}.png) center center fixed !important;
             }
 
 			.transparent-black-25{
@@ -88,9 +88,19 @@
         </a>  <br/>
         
           
-        <span class="label  label-success   ">  
-            {$suite} </span> <span class="label label-danger">  
-        &beta; </span>
+        <btn class="btn btn-sm label dropdown label-success dropdown  ">  
+
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {$suite}  <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul></span> <span class="label label-danger">  
+        &alpha; </btn>
       <!--   <span class="label   label-info ">  
            infused </span>  -->
             
@@ -106,12 +116,13 @@
         {foreach $admin_menu as $key => $item}
             {assign var=children value=0}
             {foreach $xtras as $x => $xtra}
+
                 {if $xtra.icon && $key == $xtra.see && ($xtra.alpha == true || $xtra.beta == true || $xtra.delta == true || $xtra.omega == true)}
                     {assign var=children value=1}
                 {/if}
             {/foreach}
 
-            {if $key && $children} 
+            {if $key && $children > 0} 
 
                  <li class="panel">
                     <a class="accordion-toggle collapsed" data-toggle="collapse"
@@ -184,7 +195,7 @@
                         </a>
                     </li>
 
-                    
+
 
                     <li class="dropdown">
                         <a href="#" title="Messages" id="messages"
@@ -195,7 +206,7 @@
                         <ul id="messages-menu" class="dropdown-menu messages" role="menu">
                             <li role="presentation">
                                 <a href="#" class="message">
-                                    <img src="img/1.jpg" alt="">
+                                    
                                     <div class="details">
                                         <div class="sender">Jane Hew</div>
                                         <div class="text">
@@ -206,7 +217,7 @@
                             </li>
                             <li role="presentation">
                                 <a href="#" class="message">
-                                    <img src="img/2.jpg" alt="">
+                                     
                                     <div class="details">
                                         <div class="sender">Alies Rumiancaŭ</div>
                                         <div class="text">
@@ -217,7 +228,7 @@
                             </li>
                             <li role="presentation">
                                 <a href="#" class="message">
-                                    <img src="img/3.jpg" alt="">
+                                     
                                     <div class="details">
                                         <div class="sender">Michał Rumiancaŭ</div>
                                         <div class="text">
@@ -315,7 +326,7 @@
                         </a>
                         <ul id="account-menu" class="dropdown-menu account" role="menu">
                             <li role="presentation" class="account-picture">
-                                <img src="img/2.jpg" alt="">
+                                <!-- <img src="img/2.jpg" alt=""> -->
                                 Philip Daineka
                             </li>
                             <li role="presentation">
@@ -496,14 +507,8 @@
 	{/if}  
 
   
-    {include file="$Door/scripts.html" assign=SCRIPT}
- 
-
-    {if $SCRIPT}
-        <script>
-            {$SCRIPT}
-        </script>
-    {/if} 
+    {include file="$Door/scripts.tpl" assign=SCRIPT}
+    {$SCRIPT}
  
 
     <!-- page specific -->
@@ -577,7 +582,7 @@
                 </div>
             {/if}
 
-            {include file="../../../Oxygen/x{$Xtra|ucfirst}/$method.tpl" assign=XTRA_METHOD}    
+            {include file="../../../{$suite}/x{$Xtra|ucfirst}/$method.tpl" assign=XTRA_METHOD}    
             {$HTML.BODY.HTML = $XTRA_METHOD}
 
         {else if $HTML.BODY.HTML == ''}
