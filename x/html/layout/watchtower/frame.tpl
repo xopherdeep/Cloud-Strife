@@ -507,7 +507,7 @@
 	{/if}  
 
   
-    {include file="$Door/scripts.html" assign=SCRIPT}
+    {include file="$Door/scripts.tpl" assign=SCRIPT}
     {$SCRIPT}
  
 

@@ -228,7 +228,7 @@
         </section>
 
         <!--
-        {include file="~widgets/jig.html" title="Watchtower Feed" Xtra="wwwSetup" method="watchtowerFeed" locked=true collapsed=true}
+        {include file="~widgets/jig.tpl" title="Watchtower Feed" Xtra="wwwSetup" method="watchtowerFeed" locked=true collapsed=true}
         <div class="row">
             <div class="col-md-12">
                 <h2 class="page-title">Watchtower <span class="label label-success">v.1</span> <small>View your Whole Domain from the Top Down.</small></h2>
@@ -238,7 +238,7 @@
          
     </div>
 <div class="col-md-3  widget-container ">
-    {include file="~widgets/top_x_shortcuts.html"}  
+    {include file="~widgets/top_x_shortcuts.tpl"}  
 </div> 
 </div>
 
