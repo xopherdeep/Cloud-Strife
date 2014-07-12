@@ -33,7 +33,7 @@
 
             {foreach $navi as $nav => $l} 
                 {if $l.parent == $link.id} 
-                   {include file="~blox/godbar/navi.nest.html" linktothe=$linktothe link=$l sub=true}
+                   {include file="./navi.nest.tpl" linktothe=$linktothe link=$l sub=true}
                 {/if}
             {/foreach}
         </ul> 
