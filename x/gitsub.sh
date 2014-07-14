@@ -18,7 +18,7 @@ do
 
     printf "Adding   %s\n" $item
     git rm -rf --cached x/$item 
-    git submodule add https://github.com/XenGenie/$item x/$item 
+    git submodule add --force https://github.com/XenGenie/$item x/$item 
 
     printf "Init Modules   %s\n" $item
     cd x/
