@@ -1,5 +1,5 @@
 <?php /* AUTOBUILT */
-	$this->db['host'] = 'localhost';
+	$this->db['host'] = 'magix';
 	$this->db['user'] = 'root';
 	$this->db['pass'] = '';
 	$this->db['database'] = 'superdomx';
