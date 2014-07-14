@@ -25,7 +25,7 @@ do
 
     cd $item/
 
-    git pull
+    git pull origin master
     ./gitsub.sh
     cd ../../
 done
