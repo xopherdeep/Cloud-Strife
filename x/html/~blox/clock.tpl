@@ -1,13 +1,21 @@
-<div id="clock" align="center">
+<div id="clock" align="center" style="display: inline-block">
 	<!-- <img title="{$SUPERDOMX.version}" src="{$thumb}src=/bin/images/logos/sdx.png&h=15&q=100&f=png" align="absmiddle"/> -->
 	<div id="time"></div>  
 </div>
 <script type="text/javascript">
 	
 	var BLINK_CLOCK = false;
+
+	var clock = {
+		setClock : function (time) {
+			clock.time = new Date(time);
+		},
+		time : new Date()
+	};
+
 	function updateClock ( )
 	{
-	  var currentTime = new Date ( );
+	  var currentTime = clock.time;
 	
 	  var currentHours = currentTime.getHours ( );
 	  var currentMinutes = currentTime.getMinutes ( );
@@ -30,7 +38,7 @@
 	  BLINK_CLOCK = (BLINK_CLOCK) ? false : true;
 
 
-		var d=new Date();
+		var d = clock.time;
 		var month=new Array(12);
 		month[0]="January";
 		month[1]="February";
@@ -45,7 +53,7 @@
 		month[10]="November";
 		month[11]="December";
 	
-		var zodiac = ['♑','♒','♓','♈','♉','♊','♋','♌','♍','♎','♏','♐'];
+		var zodiac = clock.zodiac = ['♑','♒','♓','♈','♉','♊','♋','♌','♍','♎','♏','♐'];
 		var trans = ['20','19','20','20','21','21','23','23','23','23','22','21'];
 	  
 	  // Compose the string for display - 

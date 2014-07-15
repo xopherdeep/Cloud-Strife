@@ -1,6 +1,6 @@
 {foreach $oBlox as $b => $o}
 	{assign var=go value={$o.blox|substr:1|strtolower|replace:'-':'/'}}
-	<div id="o-blox-{$o.blox}-{$o.id}" blox="{$o.blox}" bloxid="{$o.id}" class="blox-panel" style="display: none;" >
+	<div id="o-blox-{$o.blox}-{$o.id}" icon="{$o.icon}" blox="{$o.blox}" bloxid="{$o.id}" class="blox-panel" style="display: none;" >
 		<i class="fa fa-5x fa-spinner fa-spin"></i>
 	</div> 
 	<script type="text/javascript">
