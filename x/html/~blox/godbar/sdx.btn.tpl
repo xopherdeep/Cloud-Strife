@@ -1,7 +1,10 @@
-<button class="btn admin_menu"  >
-  	<span  data-toggle="dropdown" style="position: absolute; top : 0; left: 0; block; width: 100%; height: 100%;"></span><img src="{$thumb}src=/bin/images/logos/sdx.png&h=17">
+<button class="btn btn-success admin_menu"  >
+  	<span  data-toggle="dropdown" style="position: absolute; top : 0; left: 0; block; width: 100%; height: 100%;"></span>
+  	<!-- <img src="{$thumb}src=/bin/images/logos/sdx.png&h=17"> -->
+
 	<!-- <strong class=" text text-success">Super</strong><span class="text-primary">Dom</span>  -->
-	<i class="fa fa-caret-down text-info"></i> 
+	<i class="fa fa-leaf "></i> 
+	<i class="fa fa-caret-down"></i> 
 	<ul class="dropdown-menu" id="toy-blox-menu">
 		{foreach $admin_menu as $key => $item}
 			 

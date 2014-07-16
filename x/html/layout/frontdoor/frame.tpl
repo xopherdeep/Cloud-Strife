@@ -17,6 +17,17 @@
   		<link rel="stylesheet" href="/bin/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="{$HTML.HEAD.CSS}">
 		<SCRIPT src="{$HTML.HEAD.JS}"></SCRIPT>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+		{if $HTML.BODY.CSS}
+			<link rel="stylesheet" type="text/css" href="{$HTML.BODY.CSS}">
+		{/if}
+
 	</head>
 	<body>
 		<script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
@@ -130,7 +141,13 @@
 			transition                  : all .4s ease-in-out;
 
 			 
-			background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwJSIgY3k9IjAiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoNzQsIDEyMSwgMTQ3LCAwLjg5KSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSJyZ2JhKDIyNiwgMjI2LCAyMjYsIDAuODcpIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDE4NSwgMTM1LCAxMzEsIDAuODcpIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4=) 
+			/*background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwJSIgY3k9IjAiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoNzQsIDEyMSwgMTQ3LCAwLjg5KSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSJyZ2JhKDIyNiwgMjI2LCAyMjYsIDAuODcpIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDE4NSwgMTM1LCAxMzEsIDAuODcpIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4=) 
+
+*/
+
+/*
+			background: url(/bin/images/bgs/full/future.jpg);
+			 background-size: 100%;*/
 
 	      }
 	      .panel.flip > .front { 
@@ -151,7 +168,7 @@
 			z-index                     : 800;
 			width                       : inherit;
 			height                      : inherit;
-			border                      : 1px solid #ccc;
+			/*border                      : 1px solid #ccc;*/
 			/*background                : #333;*/
 			border-radius               : 20px;
 			
@@ -178,7 +195,9 @@
 			background                  : -o-linear-gradient(-45deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
 			background                  : -ms-linear-gradient(-45deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
 			background                  : linear-gradient(135deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
-			filter                      : progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d8f5', endColorstr='#c6ff9e',GradientType=1 ), url('/bin/images/bgs/full/cloud.png');
+			filter                      : progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d8f5', endColorstr='#c6ff9e',GradientType=1 );
+			/*background: url(/bin/images/bgs/full/future.jpg) top center;*/
+			 /*background-size: 100%;*/
 
 	  	}
 
@@ -357,8 +376,8 @@ top: 35px;">
 	          <div class="btn-group" style="padding-top: 10px;">
 						<!-- <img src="{$thumb}src=/bin/images/logos/sdx.png&h=10" class=""> -->
 							<!-- <button class="btn btn-warning action btn-sm"><i class="fa fa-key"></i></button> -->
-							<button class="btn btn-success active  "> 
-							<strong><i class="fa fa-key  " onclick="location.href = '/login/logout'"></i> </strong>
+							<button class="btn btn-primary  "> 
+							<strong><i class="fa fa-lock  " onclick="location.href = '/login/logout'"></i> </strong>
 							</button>	
 							<button class="btn btn-info   {if $quest == ''}active{/if}  " onclick="location.href='/' "> 
 							<strong><i class="fa fa-globe "></i> {$SVR['SERVER_NAME']}</strong>
@@ -464,7 +483,8 @@ top: 35px;">
 									</a>
 								</li>
 							</ul>
-						
+							
+			                     
 							<div class="btn-group" style="margin-top: 10px;">
 							<!-- 	<li class="dropdown" ><a href="/x/" class="text text-danger dropdown-toggle" data-toggle="dropdown">
 							<img src="{$thumb}src=/bin/images/logos/sdx.png&w=123">
@@ -473,14 +493,16 @@ top: 35px;">
 							</a>
 
 							</li> -->
-							<button class="btn btn-success active  " onclick="location.href = '/login/logout'"><i class="fa fa-key fa-flip-horizontal "></i></button>
-							{include file="~blox/godbar/sdx.btn.tpl"}
-
+							
+							
+			                    {include file="~blox/godbar/sdx.btn.tpl"}
 							<div class="btn-group admin_menu">
-							<button class="btn btn-info " data-toggle="dropdown"   > 
-								<i class="fa fa-cubes "></i>  
-								<i class="fa fa-caret-down"></i>  
-								</button> 
+							<button class="btn btn-info " onclick="location.href = '/blox/qBlox/{$key}';"    > 
+							<i class="fa fa-cubes "></i>    
+							</button> 
+							<button class="btn btn-info " data-toggle="dropdown"   >  
+							<i class="fa fa-caret-down"></i>  
+							</button> 
 							<ul class="dropdown-menu " id="toy-blox-menu">
 								<!-- {foreach $admin_menu as $key => $item}
 									 
@@ -548,27 +570,16 @@ top: 35px;">
 								{/foreach} 	 
 							</ul>
 							</div> 
+
+
+
 							<a   class="btn btn-default active disabled " >
 					          	{include file="~blox/clock.tpl"}
 					        </a>
-					        <div   class="btn-group" >
-					           
-					           <button  class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					           		<i class="fa fa-coffee"></i>
-
-					           </button>
-					           <ul class="dropdown-menu">
-					           	<li class="dropdown-header">Upcoming Events</li>
-					           	<li role="presentation">
-				           	<a>
-				           			<i class="fa fa-envelope-o fa-2x"></i> Newsletter Scheduled for Delivery This Thursday @ 5:45am
-				           	</a>
-					           	
-					           	</li>
-					           </ul>
-					        </div>
+					        
+					       
 							
-							
+							<button class="btn btn-warning  " onclick="location.href = '/x'"><i class="fa fa-key fa-flip-horizontal "></i></button>
 							
 
 				          	
@@ -601,11 +612,29 @@ top: 35px;">
 				          <ul class="nav   navbar-nav navbar-right btn-group  "  style="padding-top: 10px;"  > 
 						        
 
-						        
+						    <div   class="btn-group" >
+				           
+					           <button  class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					           		<i class="fa fa-coffee"></i> 
+					           </button>
+					           <ul class="dropdown-menu">
+					           	<li class="dropdown-header">Upcoming Events</li>
+					           	<li role="presentation">
+					           	<a>
+					           			<i class="fa fa-envelope-o fa-2x"></i> Newsletter Scheduled for Delivery This Thursday @ 5:45am
+					           	</a>
+					           	
+					           	</li>
+					           </ul>
+					        </div>
+
+				          	
+
 
 						        <a href="/x/calendar" class="btn btn-success  " >
 						           <i class="fa fa-tasks "></i>
 						        </a>
+
 						       <!-- <a href=" " class="btn btn-success  " >
 						          	<i class="fa fa-crosshairs"></i> <span class="count badge">{$page_landing.unique_hits}</span>
 						        </a> 
@@ -1089,7 +1118,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', end
 
 {/if}
  
-<script src="/x/html/layout/watchtower/lib/jquery-pjax/jquery.pjax.js"></script>
+		<script src="/x/html/layout/watchtower/lib/jquery-pjax/jquery.pjax.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed --> 
     <!-- Latest compiled and minified JavaScript -->
     <!-- Latest compiled and minified CSS -->
@@ -1102,15 +1131,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', end
     <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"> -->
 
 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
-		{if $HTML.BODY.CSS}
-			<link rel="stylesheet" type="text/css" href="{$HTML.BODY.CSS}">
-		{/if}
+		
 		<script>
 		// Create a new YUI instance and populate it with the required modules.
 		// YUI().use('pjax', function (Y) {
@@ -1166,7 +1187,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', end
 			.dropdown-leftsubmenu:hover>a:after{ border-right-color:#000;}
 			.dropdown-leftsubmenu.pull-left{ float:none;}.dropdown-leftsubmenu.pull-left>.dropdown-menu{ right:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
 
-			
+			.versions .dropdown-leftsubmenu ul {
+				margin-left : 35px;
+			}
 
  
 		</style>
