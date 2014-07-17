@@ -27,8 +27,7 @@
     // mysys("cd ../../");
 
 
-    exit;
-
+    exit; 
     //header("Location: /");
   } 
 ?>
@@ -333,7 +332,7 @@ body {
               <div class="carousel-caption">
                 <h1><?php echo $value ?></h1>
                 <p><?php echo get_data("https://raw.githubusercontent.com/XenGenie/$value/master/README.md")?></p>
-                <p><a class="btn btn-lg btn-primary" onClick="return popup(this, 'notes')" href="./install.php?suite=<?php echo $value; ?>" role="button">Install</a></p>
+                <p><a class="btn btn-lg btn-primary" onClick="return popup(this, 'notes')" href="/x/install.php?suite=<?php echo $value; ?>" role="button">Install</a></p>
               </div>
             </div>
           </div>
