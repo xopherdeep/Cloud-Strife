@@ -24,7 +24,7 @@
 
 	if( is_dir($cfg['dir']['libs']) ){
 
-		require('Hydrogen/x4deep/xengine.php'); 
+		require($cfg['dir']['libs'].'/x4deep/xengine.php'); 
 		
 		// Set
 		$X = new Xengine($cfg); 
