@@ -1,5 +1,7 @@
 <?php   
   function mysys($cmd){
+  	echo "# $cmd;
+";
     return system("($cmd)2>&1");
   } 
 
@@ -9,9 +11,12 @@
 
   if(isset($_GET['suite'])){
 
-    $s = $_GET['suite']; 
+    echo  $s = $_GET['suite']; 
 
     echo "<pre>";
+    
+    chdir('..');
+    mysys("rm x/Hydrogen -rf");
     git("rm x/Hydrogen -rf");  
     mysys("rm x/Hydrogen -r"); 
     git("submodule add --force https://github.com/XenGenie/Hydrogen x/Hydrogen ");
@@ -27,7 +32,7 @@
     // mysys("cd ../../");
 
 
-    exit; 
+    exit(); 
     //header("Location: /");
   } 
 ?>
