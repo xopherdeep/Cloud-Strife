@@ -24,7 +24,7 @@
 	$engine = $cfg['dir']['libs'].'/x4deep/xengine.php';
 
 	if( is_dir($cfg['dir']['libs']) && is_dir($cfg['dir']['Xtra'])  && is_file($engine) ){ 
-		require($cfg['dir']['libs'].'/x4deep/xengine.php');  
+		require($engine);  
 		// Set
 		$X = new Xengine($cfg); 
 		// GO!
