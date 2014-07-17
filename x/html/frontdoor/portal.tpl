@@ -1,10 +1,22 @@
+{foreach $oBlox as $b => $o}
+	{assign var=go value={$o.blox|substr:1|strtolower|replace:'-':'/'}}
+	<div id="o-blox-{$o.blox}-{$o.id}" icon="{$o.icon}" blox="{$o.blox}" bloxid="{$o.id}" class="blox-panel" style="display: none;" >
+		<i class="fa fa-5x fa-spinner fa-spin"></i>
+	</div> 
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// $('#o-blox-{$o.blox}-{$o.id}').load('/html/{$o.blox|substr:1|strtolower|replace:'-':'/'}', function  () {
+			// });
+			//fadeInElements($('.blox-panel'), executeAfterFade);
+		});
+	</script>
+{/foreach}
 
 	<script type="text/javascript">
-
 		function executeAfterFade() {
 		    //alert('Done!');
 
-	
+
 			setTimeout(function(){
 
 							$('.godbar').css({
@@ -15,7 +27,7 @@
 		}
 
 		function fadeInElements(elementSelectors, lastFunction) {
-		    $(elementSelectors[0]).hide().load('/html/'+$(elementSelectors[0]).attr('blox').slice(1).toLowerCase().replace('-','/'),function (){
+		    $(elementSelectors[0]).hide().load('/html/'+$(elementSelectors[0]).attr('blox').slice(1).toLowerCase().replace('-','/')+'/'+$(elementSelectors[0]).attr('bloxid'),function (){
 		        $(elementSelectors[0]).show(function  () {
 		        	elementSelectors[1] ? 
 		        	fadeInElements(elementSelectors.splice(1, elementSelectors.length - 1), lastFunction) : lastFunction(); 
@@ -24,7 +36,7 @@
 		}
 
 		$(document).ready(function() { 
-			
+
 			{if 0 == $oBlox|count}
 				$('.godbar').css({
 			    	top: 0
@@ -35,6 +47,5 @@
 			{/if}
 
 		});
-		
-	</script>
 
+	</script>
