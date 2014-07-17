@@ -1,9 +1,9 @@
 #!/bin/bash
-echo "Choose a Suite: Carbon, Nitrogen, Oxygen, Copper, Quartz, Golden-Goose-Egg, Emerald"
-read -p "Type to Install: " answer
+# echo "Choose a Suite: Carbon, Nitrogen, Oxygen, Copper, Quartz, Golden-Goose-Egg, Emerald"
+# read -p "Type to Install: " answer
 
 # array=(Hydrogen Carbon Nitrogen Oxygen Copper Quartz Golden-Goose-Egg Emerald)
-array=(Hydrogen $answer)
+array=(Hydrogen $SUITE)
 
 cd ../
 

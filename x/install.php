@@ -15,24 +15,27 @@
 
     echo "<pre>";
     
-    chdir('..');
-    mysys("rm x/Hydrogen -rf");
-    git("rm x/Hydrogen -rf");  
-    mysys("rm x/Hydrogen -r"); 
-    git("submodule add --force https://github.com/XenGenie/Hydrogen x/Hydrogen ");
-    mysys("cd x/; cd Hydrogen/; ./gitsub.sh");
-     
+    mysys("SUITE=$s ./wi.sh");
+    
+    
+    exit();
+	//     chdir('..');
+	//     mysys("rm x/Hydrogen -rf");
+	//     git("rm x/Hydrogen --cached -rf");  
+	//     mysys("rm x/Hydrogen -r"); 
+	//     git("submodule add --force https://github.com/XenGenie/Hydrogen x/Hydrogen ");
+	//     mysys("cd x/; cd Hydrogen/; ./gitsub.sh");
+	     
+	
+	//     // Assuming there are no problems... 
+	//     git("rm x/$s  --cached -rf");  
+	//     mysys("rm x/$s -r");
+	
+	//     git("submodule add --force https://github.com/XenGenie/$s x/$s ");
+	//     mysys("cd x/; cd $s/; ./gitsub.sh");
+	//     // mysys("cd ../../");
 
-    // Assuming there are no problems... 
-    git("rm x/$s -rf");  
-    mysys("rm x/$s -r");
 
-    git("submodule add --force https://github.com/XenGenie/$s x/$s ");
-    mysys("cd x/; cd $s/; ./gitsub.sh");
-    // mysys("cd ../../");
-
-
-    exit(); 
     //header("Location: /");
   } 
 ?>
