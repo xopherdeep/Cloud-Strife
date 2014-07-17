@@ -21,10 +21,17 @@
 	// @todo: Keep Being Awesome.
 	require("_cfg/lang.cfg");
 	require("_cfg/x.cfg");
-	require('Hydrogen/x4deep/xengine.php'); 
-	
-	// Set
-	$X = new Xengine($cfg); 
-	// GO!
-	$X->knock();
+
+	if( is_dir($cfg['dir']['libs']) ){
+
+		require('Hydrogen/x4deep/xengine.php'); 
+		
+		// Set
+		$X = new Xengine($cfg); 
+		// GO!
+		$X->knock();
+	}else{
+		require 'install.php';
+	}
+
 ?>
