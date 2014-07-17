@@ -11,7 +11,7 @@
 
     $s = $_GET['suite']; 
 
-
+    echo "<pre>";
     git("rm x/Hydrogen -rf");  
     mysys("rm x/Hydrogen -r"); 
     git("submodule add --force https://github.com/XenGenie/Hydrogen x/Hydrogen ");
@@ -273,7 +273,21 @@ body {
     
   }
 ?>
-
+<SCRIPT TYPE="text/javascript">
+        <!--
+        function popup(mylink, windowname)
+        {
+        if (! window.focus)return true;
+        var href;
+        if (typeof(mylink) == 'string')
+           href=mylink;
+        else
+           href=mylink.href;
+        window.open(href, windowname, 'width=800,height=600,x=250,scrollbars=no');
+        return false;
+        }
+        //-->
+        </SCRIPT>
 
     <!-- Carousel
     ================================================== -->
@@ -306,23 +320,9 @@ body {
           </div>
         </div>
 
-        <SCRIPT TYPE="text/javascript">
-        <!--
-        function popup(mylink, windowname)
-        {
-        if (! window.focus)return true;
-        var href;
-        if (typeof(mylink) == 'string')
-           href=mylink;
-        else
-           href=mylink.href;
-        window.open(href, windowname, 'width=400,height=200,scrollbars=yes');
-        return false;
-        }
-        //-->
-        </SCRIPT>
+        
 
-        <?
+        <?php
 
         foreach ($car as $key => $value) {
           ?>
@@ -333,7 +333,7 @@ body {
               <div class="carousel-caption">
                 <h1><?php echo $value ?></h1>
                 <p><?php echo get_data("https://raw.githubusercontent.com/XenGenie/$value/master/README.md")?></p>
-                <p><a class="btn btn-lg btn-primary" onClick="return popup(this, 'notes')" href="./?suite=<?php echo $value; ?>" role="button">Install</a></p>
+                <p><a class="btn btn-lg btn-primary" onClick="return popup(this, 'notes')" href="./install.php?suite=<?php echo $value; ?>" role="button">Install</a></p>
               </div>
             </div>
           </div>
