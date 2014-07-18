@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19-dev, created on 2014-07-18 06:38:35
+<?php /* Smarty version Smarty-3.1.19-dev, created on 2014-07-18 06:51:36
          compiled from "x/html/~widgets/jig.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:71182146253c8a4cb759310-67411613%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:201397228953c8a7d83c0b62-73892470%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '71182146253c8a4cb759310-67411613',
+  'nocache_hash' => '201397228953c8a7d83c0b62-73892470',
   'function' => 
   array (
   ),
@@ -28,9 +28,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19-dev',
-  'unifunc' => 'content_53c8a4cb793170_79044830',
+  'unifunc' => 'content_53c8a7d845a760_34398458',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53c8a4cb793170_79044830')) {function content_53c8a4cb793170_79044830($_smarty_tpl) {?> <section class="widget <?php if ($_smarty_tpl->tpl_vars['locked']->value) {?>locked<?php }?>" data-widgster-collapsed="<?php if ($_smarty_tpl->tpl_vars['collapsed']->value) {?>true<?php }?>" id="default-widget" data-widgster-load="/<?php echo $_smarty_tpl->tpl_vars['toBackDoor']->value;?>
+<?php if ($_valid && !is_callable('content_53c8a7d845a760_34398458')) {function content_53c8a7d845a760_34398458($_smarty_tpl) {?> <section class="widget <?php if ($_smarty_tpl->tpl_vars['locked']->value) {?>locked<?php }?>" data-widgster-collapsed="<?php if ($_smarty_tpl->tpl_vars['collapsed']->value) {?>true<?php }?>" id="default-widget" data-widgster-load="/<?php echo $_smarty_tpl->tpl_vars['toBackDoor']->value;?>
 /html/<?php if ($_smarty_tpl->tpl_vars['xPHP']->value!='') {?><?php echo $_smarty_tpl->tpl_vars['xPHP']->value;?>
 <?php } else { ?><?php echo $_smarty_tpl->tpl_vars['Xtra']->value;?>
 <?php }?>/<?php echo $_smarty_tpl->tpl_vars['method']->value;?>

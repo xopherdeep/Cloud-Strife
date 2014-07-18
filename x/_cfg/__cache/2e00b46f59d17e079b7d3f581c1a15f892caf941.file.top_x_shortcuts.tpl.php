@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19-dev, created on 2014-07-18 06:38:35
+<?php /* Smarty version Smarty-3.1.19-dev, created on 2014-07-18 06:51:36
          compiled from "x/html/~widgets/top_x_shortcuts.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:116028947853c8a4cb797994-42448700%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:47589234353c8a7d845efd1-22856981%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '116028947853c8a4cb797994-42448700',
+  'nocache_hash' => '47589234353c8a7d845efd1-22856981',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19-dev',
-  'unifunc' => 'content_53c8a4cb7be355_83587640',
+  'unifunc' => 'content_53c8a7d8489132_75883690',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53c8a4cb7be355_83587640')) {function content_53c8a4cb7be355_83587640($_smarty_tpl) {?><section class="widget ">
+<?php if ($_valid && !is_callable('content_53c8a7d8489132_75883690')) {function content_53c8a7d8489132_75883690($_smarty_tpl) {?><section class="widget ">
     <h5><STRONG>Top Ten</STRONG> Areas</h5>
      
     <div class="list-group"> 
