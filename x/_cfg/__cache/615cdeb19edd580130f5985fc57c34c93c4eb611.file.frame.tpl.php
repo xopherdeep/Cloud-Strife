@@ -1,22 +1,81 @@
-<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.19-dev, created on 2014-07-18 06:49:21
+         compiled from "x/html/layout/frontdoor/frame.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:61937907253c8a2210832d8-04168943%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '615cdeb19edd580130f5985fc57c34c93c4eb611' => 
+    array (
+      0 => 'x/html/layout/frontdoor/frame.tpl',
+      1 => 1405658957,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '61937907253c8a2210832d8-04168943',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.19-dev',
+  'unifunc' => 'content_53c8a2213b5433_03203842',
+  'variables' => 
+  array (
+    'Xtra' => 0,
+    'method' => 0,
+    'XTRA_METHOD' => 0,
+    'HTML' => 0,
+    'PORTAL' => 0,
+    'masterKey' => 0,
+    'SERVER' => 0,
+    'page_landing' => 0,
+    'quest' => 0,
+    'navi' => 0,
+    'link' => 0,
+    'thumb' => 0,
+    'SVR' => 0,
+    'walk' => 0,
+    'path' => 0,
+    'key' => 0,
+    'admin_menu' => 0,
+    'item' => 0,
+    'xtras' => 0,
+    'xtra' => 0,
+    'toBackDoor' => 0,
+    'qBlox' => 0,
+    'hasBlox' => 0,
+    'LANG' => 0,
+    'y' => 0,
+    'blox' => 0,
+    'suite' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_53c8a2213b5433_03203842')) {function content_53c8a2213b5433_03203842($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
-		{if $Xtra != '' AND $method  != '' AND ($Xtra != 'index')}
-			{include file="../../../Oxygen/x{$Xtra|ucfirst}/$method.tpl" assign=XTRA_METHOD}	 
-			{$HTML.BODY.HTML = $XTRA_METHOD}
-		{else if $HTML.BODY.HTML == ''}
-			{include file="$Door/portal.tpl" assign=PORTAL}
-			{$HTML.BODY.HTML = $PORTAL}
-		{/if}
-		<title>{$HTML.HEAD.TITLE}</title> 
+		<?php if ($_smarty_tpl->tpl_vars['Xtra']->value!=''&&$_smarty_tpl->tpl_vars['method']->value!=''&&($_smarty_tpl->tpl_vars['Xtra']->value!='index')) {?>
+			<?php ob_start();?><?php echo ucfirst($_smarty_tpl->tpl_vars['Xtra']->value);?>
+<?php $_tmp1=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['XTRA_METHOD'] = new Smarty_variable($_smarty_tpl->getSubTemplate ("../../../Oxygen/x".$_tmp1."/".((string)$_smarty_tpl->tpl_vars['method']->value).".tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0));?>
+	 
+			<?php $_smarty_tpl->createLocalArrayVariable('HTML', null, 0);
+$_smarty_tpl->tpl_vars['HTML']->value['BODY']['HTML'] = $_smarty_tpl->tpl_vars['XTRA_METHOD']->value;?>
+		<?php } elseif ($_smarty_tpl->tpl_vars['HTML']->value['BODY']['HTML']=='') {?>
+			<?php $_smarty_tpl->tpl_vars['PORTAL'] = new Smarty_variable($_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['Door']->value)."/portal.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0));?>
+
+			<?php $_smarty_tpl->createLocalArrayVariable('HTML', null, 0);
+$_smarty_tpl->tpl_vars['HTML']->value['BODY']['HTML'] = $_smarty_tpl->tpl_vars['PORTAL']->value;?>
+		<?php }?>
+		<title><?php echo $_smarty_tpl->tpl_vars['HTML']->value['HEAD']['TITLE'];?>
+</title> 
 		<!-- <link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet"> --> 
 		<link href="/x/html/layout/watchtower/css/white.application.min.css" rel="stylesheet">
   		<link rel="stylesheet" href="/bin/css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="{$HTML.HEAD.CSS}">
-		<SCRIPT src="{$HTML.HEAD.JS}"></SCRIPT>
+		<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['HTML']->value['HEAD']['CSS'];?>
+">
+		<SCRIPT src="<?php echo $_smarty_tpl->tpl_vars['HTML']->value['HEAD']['JS'];?>
+"></SCRIPT>
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -24,9 +83,10 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-		{if $HTML.BODY.CSS}
-			<link rel="stylesheet" type="text/css" href="{$HTML.BODY.CSS}">
-		{/if}
+		<?php if ($_smarty_tpl->tpl_vars['HTML']->value['BODY']['CSS']) {?>
+			<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['HTML']->value['BODY']['CSS'];?>
+">
+		<?php }?>
 
 	</head>
 	<body>
@@ -38,7 +98,7 @@
 			// <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"><script>
 			Modernizr.addTest('preserve3d', function(){ return Modernizr.testAllProps('transformStyle', 'preserve-3d');});
 		</script>
-		{if $masterKey.is.admin}   
+		<?php if ($_smarty_tpl->tpl_vars['masterKey']->value['is']['admin']) {?>   
 		<!--                     
                  77                       77777             
             7 .....                      7.....             
@@ -73,7 +133,7 @@
                         7..........                         
                             .....: 7   
 		-->
-		{/if}
+		<?php }?>
 		<!--[if gte IE 9]>
 		  <style type="text/css">
 		    .gradient {
@@ -82,14 +142,14 @@
 		  </style>
 		<![endif]-->
 	    <style type="text/css">
-	  		{if !$masterKey.is.admin}
+	  		<?php if (!$_smarty_tpl->tpl_vars['masterKey']->value['is']['admin']) {?>
 			body {    
 			}
-			{else }
+			<?php } else { ?>
 			html, body {
 				 
 			}
-	     	{/if}
+	     	<?php }?>
 			.panel { 
 				float               : left;
 				width               : 100%;
@@ -277,7 +337,7 @@
 	    </script>     
 
 
-{if $masterKey.is.admin}  
+<?php if ($_smarty_tpl->tpl_vars['masterKey']->value['is']['admin']) {?>  
 <!-- Master Tool Bar -->
     <div class="block panel"> 
       <div class="front">
@@ -322,25 +382,27 @@
 	            	</a>
 	            </li>
 	            <li class="active">
-	            	<a href="{$SERVER.REQUEST_URI}">
+	            	<a href="<?php echo $_smarty_tpl->tpl_vars['SERVER']->value['REQUEST_URI'];?>
+">
 	            		<span class="label label-success"> 
 	            			<i class="fa fa-3x fa-globe fa-spin-slow"></i> 
 	            		<!--  Public Mode --></span>
 	            		<div class="  label label-primary badge" style="position: absolute;
 left: 55%;
 top: 35px;">
-	            				<strong class="count "><i class="fa fa-crosshairs"></i>  {$page_landing.unique_hits}  </strong>
+	            				<strong class="count "><i class="fa fa-crosshairs"></i>  <?php echo $_smarty_tpl->tpl_vars['page_landing']->value['unique_hits'];?>
+  </strong>
 	            			</div>
 	            	</a>
 	            </li>
 	          </ul>
 
 	          <ul class="nav navbar-nav navbar-right text-right">
-	            <!-- <li class="span2 dropdown {if $quest == ''}active{/if}"><a href="/"><i class="fa fa-home text-success"></i> Home</a></li> -->
+	            <!-- <li class="span2 dropdown <?php if ($_smarty_tpl->tpl_vars['quest']->value=='') {?>active<?php }?>"><a href="/"><i class="fa fa-home text-success"></i> Home</a></li> -->
 	            <!-- TODO: Add Navigation Here -->
 	            
 	              
-				<li class="span2 dropdown {if $quest == ''}active{/if}">
+				<li class="span2 dropdown <?php if ($_smarty_tpl->tpl_vars['quest']->value=='') {?>active<?php }?>">
 					<a class="dropdown-toggle"  data-toggle="dropdown" >
 					<span class="label label-danger"> 
 	            			<i class="fa fa-3x fa-hand-o-up  "></i>
@@ -348,17 +410,25 @@ top: 35px;">
 					<div class="  label label-danger badge" style="position: absolute;
 left: 55%;
 top: 35px;">
-	            				 <strong>{$page_landing.page_views} </strong>
+	            				 <strong><?php echo $_smarty_tpl->tpl_vars['page_landing']->value['page_views'];?>
+ </strong>
 	            			</div>
 
 				</a>
 					<ul class="dropdown-menu">
 			            
-						{foreach $navi as $n => $link}
-		                    {if $link.parent == 0} 
-		                        {include file="~blox/godbar/navi.nest.tpl" link=$link sub=true} 
-		                    {/if} 
-		                {/foreach}
+						<?php  $_smarty_tpl->tpl_vars['link'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['link']->_loop = false;
+ $_smarty_tpl->tpl_vars['n'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['navi']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['link']->key => $_smarty_tpl->tpl_vars['link']->value) {
+$_smarty_tpl->tpl_vars['link']->_loop = true;
+ $_smarty_tpl->tpl_vars['n']->value = $_smarty_tpl->tpl_vars['link']->key;
+?>
+		                    <?php if ($_smarty_tpl->tpl_vars['link']->value['parent']==0) {?> 
+		                        <?php echo $_smarty_tpl->getSubTemplate ("~blox/godbar/navi.nest.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('link'=>$_smarty_tpl->tpl_vars['link']->value,'sub'=>true), 0);?>
+ 
+		                    <?php }?> 
+		                <?php } ?>
 			            
 			        </ul> 
 				</li>  
@@ -367,36 +437,47 @@ top: 35px;">
 	          </ul>
 
 	          <div class="btn-group" style="padding-top: 10px;">
-						<!-- <img src="{$thumb}src=/bin/images/logos/sdx.png&h=10" class=""> -->
+						<!-- <img src="<?php echo $_smarty_tpl->tpl_vars['thumb']->value;?>
+src=/bin/images/logos/sdx.png&h=10" class=""> -->
 							<!-- <button class="btn btn-warning action btn-sm"><i class="fa fa-key"></i></button> -->
 							<button class="btn btn-primary  "> 
 							<strong><i class="fa fa-lock  " onclick="location.href = '/login/logout'"></i> </strong>
 							</button>	
-							<button class="btn btn-info   {if $quest == ''}active{/if}  " onclick="location.href='/' "> 
-							<strong><i class="fa fa-globe "></i> {$SVR['SERVER_NAME']}</strong>
+							<button class="btn btn-info   <?php if ($_smarty_tpl->tpl_vars['quest']->value=='') {?>active<?php }?>  " onclick="location.href='/' "> 
+							<strong><i class="fa fa-globe "></i> <?php echo $_smarty_tpl->tpl_vars['SVR']->value['SERVER_NAME'];?>
+</strong>
 							</button>	
 
 
 
-							{foreach $quest.paths as $p => $walk}
-								{if $walk}
-									<button class="{if $walk == $path[{$path|count}] }active{/if}btn btn-success  ">
-										{if $walk == '/'}
+							<?php  $_smarty_tpl->tpl_vars['walk'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['walk']->_loop = false;
+ $_smarty_tpl->tpl_vars['p'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['quest']->value['paths']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['walk']->key => $_smarty_tpl->tpl_vars['walk']->value) {
+$_smarty_tpl->tpl_vars['walk']->_loop = true;
+ $_smarty_tpl->tpl_vars['p']->value = $_smarty_tpl->tpl_vars['walk']->key;
+?>
+								<?php if ($_smarty_tpl->tpl_vars['walk']->value) {?>
+									<button class="<?php ob_start();?><?php echo count($_smarty_tpl->tpl_vars['path']->value);?>
+<?php $_tmp2=ob_get_clean();?><?php if ($_smarty_tpl->tpl_vars['walk']->value==$_smarty_tpl->tpl_vars['path']->value[$_tmp2]) {?>active<?php }?>btn btn-success  ">
+										<?php if ($_smarty_tpl->tpl_vars['walk']->value=='/') {?>
 											<i class="fa fa-home"></i>
-										{else}
-											{$walk}
-										{/if}
+										<?php } else { ?>
+											<?php echo $_smarty_tpl->tpl_vars['walk']->value;?>
+
+										<?php }?>
 									</button>
-								{/if}
-							{/foreach}
+								<?php }?>
+							<?php } ?>
 
 							<!-- <button class="btn btn-success btn-sm" onclick="location.href = location.href"> 
 								<strong>
-								{if $quest == ''}
+								<?php if ($_smarty_tpl->tpl_vars['quest']->value=='') {?>
 								<i class="fa fa-home"></i>
-								{else}
-								{$quest}
-								{/if}
+								<?php } else { ?>
+								<?php echo $_smarty_tpl->tpl_vars['quest']->value;?>
+
+								<?php }?>
 								</strong>
 							</button>	 -->
 
@@ -440,12 +521,13 @@ top: 35px;">
 	        </div><!--/.nav-collapse -->
 	      </div>
 	    </div>
-{/if}
+<?php }?>
         <div class="content"> 
-			{$HTML.BODY.HTML}
+			<?php echo $_smarty_tpl->tpl_vars['HTML']->value['BODY']['HTML'];?>
+
         </div>      
 
-{if $masterKey.is.admin}  
+<?php if ($_smarty_tpl->tpl_vars['masterKey']->value['is']['admin']) {?>  
 <!-- BackSide To Master Tool Bar -->
       </div>
       <div class="back">
@@ -480,7 +562,8 @@ top: 35px;">
 			                     
 							<div class="btn-group" style="margin-top: 10px;">
 							<!-- 	<li class="dropdown" ><a href="/x/" class="text text-danger dropdown-toggle" data-toggle="dropdown">
-							<img src="{$thumb}src=/bin/images/logos/sdx.png&w=123">
+							<img src="<?php echo $_smarty_tpl->tpl_vars['thumb']->value;?>
+src=/bin/images/logos/sdx.png&w=123">
 							<strong class=" text text-success">Super</strong><span class="text-primary">Dom</span> 
 							<i class="fa fa-caret-down text-info"></i> 
 							</a>
@@ -488,86 +571,161 @@ top: 35px;">
 							</li> -->
 							
 							
-			                    {include file="~blox/godbar/sdx.btn.tpl"}
+			                    <?php echo $_smarty_tpl->getSubTemplate ("~blox/godbar/sdx.btn.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 							<div class="btn-group admin_menu">
-							<button class="btn btn-info " onclick="location.href = '/blox/qBlox/{$key}';"    > 
+							<button class="btn btn-info " onclick="location.href = '/blox/qBlox/<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+';"    > 
 							<i class="fa fa-cubes "></i>    
 							</button> 
 							<button class="btn btn-info " data-toggle="dropdown"   >  
 							<i class="fa fa-caret-down"></i>  
 							</button> 
 							<ul class="dropdown-menu " id="toy-blox-menu">
-								<!-- {foreach $admin_menu as $key => $item}
+								<!-- <?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['admin_menu']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['item']->key;
+?>
 									 
 
-									{if $key  }  
+									<?php if ($_smarty_tpl->tpl_vars['key']->value) {?>  
 										<li class="dropdown-rightsubmenu">
-											<a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}"><i class="fa fa-{$key} pull-left"></i> {$item.area|ucfirst}  </a>
+											<a data-filter="<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" href="/blox/qBlox/<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" class="dropdown-toggle" data-toggle="dropdown" title="<?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['desc']);?>
+"><i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+ pull-left"></i> <?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['area']);?>
+  </a>
 											<ul class="dropdown-menu">
-											{foreach $xtras as $x => $xtra} 
-											{if $xtra.icon && $key == $xtra.see}
-												<li class="{if $xtra.alpha}text-danger{elseif $xtra.beta}text-warning{elseif $xtra.delta}text-success{elseif $xtra.omega}text-primary{else}text-default{/if}"><a data-filter="{$xtra.class}" href="/{$toBackDoor}/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="  " > 
+											<?php  $_smarty_tpl->tpl_vars['xtra'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['xtra']->_loop = false;
+ $_smarty_tpl->tpl_vars['x'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['xtras']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['xtra']->key => $_smarty_tpl->tpl_vars['xtra']->value) {
+$_smarty_tpl->tpl_vars['xtra']->_loop = true;
+ $_smarty_tpl->tpl_vars['x']->value = $_smarty_tpl->tpl_vars['xtra']->key;
+?> 
+											<?php if ($_smarty_tpl->tpl_vars['xtra']->value['icon']&&$_smarty_tpl->tpl_vars['key']->value==$_smarty_tpl->tpl_vars['xtra']->value['see']) {?>
+												<li class="<?php if ($_smarty_tpl->tpl_vars['xtra']->value['alpha']) {?>text-danger<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['beta']) {?>text-warning<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['delta']) {?>text-success<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['omega']) {?>text-primary<?php } else { ?>text-default<?php }?>"><a data-filter="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['class'];?>
+" href="/<?php echo $_smarty_tpl->tpl_vars['toBackDoor']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['xtra']->value['link'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['desc'];?>
+"  data-placement="top" data-original-title="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['desc'];?>
+" class="  " > 
 
 
 
-														<i class="fa fa-{$xtra.mini}  pull-left"></i> {$xtra.name} 
+														<i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['xtra']->value['mini'];?>
+  pull-left"></i> <?php echo $_smarty_tpl->tpl_vars['xtra']->value['name'];?>
+ 
 														</a> 
 													</li>  
-											{/if}
-										{/foreach} 
+											<?php }?>
+										<?php } ?> 
 										</ul>
 										</li> 
-									{/if}
-								{/foreach}  -->
+									<?php }?>
+								<?php } ?>  -->
 
-								{foreach $admin_menu as $key => $item}
-									{assign var="hasBlox" value=false}
-									{foreach $xtras as $x => $xtra} 
-										{if $xtra.icon && $key == $xtra.see}
-											{if $qBlox[$xtra.class]}
-												{assign var="hasBlox" value=true}
-											{/if}
-										{/if}
-									{/foreach} 
+								<?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['admin_menu']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['item']->key;
+?>
+									<?php $_smarty_tpl->tpl_vars["hasBlox"] = new Smarty_variable(false, null, 0);?>
+									<?php  $_smarty_tpl->tpl_vars['xtra'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['xtra']->_loop = false;
+ $_smarty_tpl->tpl_vars['x'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['xtras']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['xtra']->key => $_smarty_tpl->tpl_vars['xtra']->value) {
+$_smarty_tpl->tpl_vars['xtra']->_loop = true;
+ $_smarty_tpl->tpl_vars['x']->value = $_smarty_tpl->tpl_vars['xtra']->key;
+?> 
+										<?php if ($_smarty_tpl->tpl_vars['xtra']->value['icon']&&$_smarty_tpl->tpl_vars['key']->value==$_smarty_tpl->tpl_vars['xtra']->value['see']) {?>
+											<?php if ($_smarty_tpl->tpl_vars['qBlox']->value[$_smarty_tpl->tpl_vars['xtra']->value['class']]) {?>
+												<?php $_smarty_tpl->tpl_vars["hasBlox"] = new Smarty_variable(true, null, 0);?>
+											<?php }?>
+										<?php }?>
+									<?php } ?> 
 									
-									{if $key && $hasBlox == true}  
+									<?php if ($_smarty_tpl->tpl_vars['key']->value&&$_smarty_tpl->tpl_vars['hasBlox']->value==true) {?>  
 										<li class=" dropdown-rightsubmenu "   > 
-											<a data-filter="{$key}" href="/blox/qBlox/{$key}"   title="{$item.desc|ucfirst}"  ><i class="fa fa-{$key} pull-left"></i> 
-											{$LANG.ADMIN.AREAS.{$key}|ucfirst}  </a>
-											<!-- <span class="dropdown-toggle" data-toggle="dropdown"  title="{$item.desc|ucfirst}"></span><i class="fa fa-{$key}"></i> --> 
-											<!-- <a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}" class="btn btn-success"><i class="fa fa-{$key}"></i>  <i class="fa fa-caret-right"></i></a> -->
+											<a data-filter="<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" href="/blox/qBlox/<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+"   title="<?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['desc']);?>
+"  ><i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+ pull-left"></i> 
+											<?php echo ucfirst($_smarty_tpl->tpl_vars['LANG']->value['ADMIN']['AREAS'][$_smarty_tpl->tpl_vars['key']->value]);?>
+  </a>
+											<!-- <span class="dropdown-toggle" data-toggle="dropdown"  title="<?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['desc']);?>
+"></span><i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+"></i> --> 
+											<!-- <a data-filter="<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" href="/blox/qBlox/<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" class="dropdown-toggle" data-toggle="dropdown" title="<?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['desc']);?>
+" class="btn btn-success"><i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+"></i>  <i class="fa fa-caret-right"></i></a> -->
 											<ul class="dropdown-menu">
-												{foreach $xtras as $x => $xtra} 
-													{if $xtra.icon && $key == $xtra.see}
-														{if $qBlox[$xtra.class]}
-															<li class="dropdown-submenu"><a data-filter="{$xtra.class}" href="/blox/qBlox/{$key}/{$xtra.class}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="{if $xtra.alpha}panel-danger{elseif $xtra.beta}panel-warning{elseif $xtra.delta}panel-success{elseif $xtra.omega}panel-primary{else}panel-default" disabled="disabled{/if}" > 
+												<?php  $_smarty_tpl->tpl_vars['xtra'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['xtra']->_loop = false;
+ $_smarty_tpl->tpl_vars['x'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['xtras']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['xtra']->key => $_smarty_tpl->tpl_vars['xtra']->value) {
+$_smarty_tpl->tpl_vars['xtra']->_loop = true;
+ $_smarty_tpl->tpl_vars['x']->value = $_smarty_tpl->tpl_vars['xtra']->key;
+?> 
+													<?php if ($_smarty_tpl->tpl_vars['xtra']->value['icon']&&$_smarty_tpl->tpl_vars['key']->value==$_smarty_tpl->tpl_vars['xtra']->value['see']) {?>
+														<?php if ($_smarty_tpl->tpl_vars['qBlox']->value[$_smarty_tpl->tpl_vars['xtra']->value['class']]) {?>
+															<li class="dropdown-submenu"><a data-filter="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['class'];?>
+" href="/blox/qBlox/<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['xtra']->value['class'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['desc'];?>
+"  data-placement="top" data-original-title="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['desc'];?>
+" class="<?php if ($_smarty_tpl->tpl_vars['xtra']->value['alpha']) {?>panel-danger<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['beta']) {?>panel-warning<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['delta']) {?>panel-success<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['omega']) {?>panel-primary<?php } else { ?>panel-default" disabled="disabled<?php }?>" > 
 
 
 
-																<i class="fa fa-{$xtra.mini}  pull-left"></i> {$xtra.name} 
+																<i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['xtra']->value['mini'];?>
+  pull-left"></i> <?php echo $_smarty_tpl->tpl_vars['xtra']->value['name'];?>
+ 
 																</a>
 																<ul class="dropdown-menu">
-																	{foreach $qBlox[$xtra.class] as $b => $y}
-																		<li ><a data-filter="{$y.name}" href="/blox/qBlox/{$key}/{$xtra.class}/{$y.name}" title=" "  data-placement="top" data-original-title=" " class=" " disabled=" " >
-																		<i class="fa fa-{$y.icon}  pull-left"></i> {$y.blox} 
+																	<?php  $_smarty_tpl->tpl_vars['y'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['y']->_loop = false;
+ $_smarty_tpl->tpl_vars['b'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['qBlox']->value[$_smarty_tpl->tpl_vars['xtra']->value['class']]; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['y']->key => $_smarty_tpl->tpl_vars['y']->value) {
+$_smarty_tpl->tpl_vars['y']->_loop = true;
+ $_smarty_tpl->tpl_vars['b']->value = $_smarty_tpl->tpl_vars['y']->key;
+?>
+																		<li ><a data-filter="<?php echo $_smarty_tpl->tpl_vars['y']->value['name'];?>
+" href="/blox/qBlox/<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['xtra']->value['class'];?>
+/<?php echo $_smarty_tpl->tpl_vars['y']->value['name'];?>
+" title=" "  data-placement="top" data-original-title=" " class=" " disabled=" " >
+																		<i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['y']->value['icon'];?>
+  pull-left"></i> <?php echo $_smarty_tpl->tpl_vars['y']->value['blox'];?>
+ 
 																		</a></li>
-																	{/foreach}
+																	<?php } ?>
 																</ul>
 															</li>  
-														{/if}
-													{/if}
-												{/foreach} 
+														<?php }?>
+													<?php }?>
+												<?php } ?> 
 											</ul>
 										</li>
-									{/if}
-								{/foreach} 	 
+									<?php }?>
+								<?php } ?> 	 
 							</ul>
 							</div> 
 
 
 
 							<a   class="btn btn-default active disabled " >
-					          	{include file="~blox/clock.tpl"}
+					          	<?php echo $_smarty_tpl->getSubTemplate ("~blox/clock.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 					        </a>
 					        
 					       
@@ -577,26 +735,46 @@ top: 35px;">
 
 				          	
 					          
-					         <!--  {foreach $admin_menu as $key => $item} 
-							  	{if $key}  
+					         <!--  <?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['admin_menu']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['item']->key;
+?> 
+							  	<?php if ($_smarty_tpl->tpl_vars['key']->value) {?>  
 									<button class="btn btn-sm btn-info admin_menu"   > 
-										<span class="dropdown-toggle" data-toggle="dropdown" style="position: absolute; top : 0; left: 0; block; width: 100%; height: 100%;"></span><i class="fa fa-{$key}"></i>
+										<span class="dropdown-toggle" data-toggle="dropdown" style="position: absolute; top : 0; left: 0; block; width: 100%; height: 100%;"></span><i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+"></i>
 										<ul class="dropdown-menu">
-											{foreach $xtras as $x => $xtra} 
-												{if $xtra.icon && $key == $xtra.see}
-													<li><a data-filter="{$xtra.class}" href="/{$toBackDoor}/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="{if $xtra.alpha}panel-danger{elseif $xtra.beta}panel-warning{elseif $xtra.delta}panel-success{elseif $xtra.omega}panel-primary{else}panel-default" disabled="disabled{/if}" > 
+											<?php  $_smarty_tpl->tpl_vars['xtra'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['xtra']->_loop = false;
+ $_smarty_tpl->tpl_vars['x'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['xtras']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['xtra']->key => $_smarty_tpl->tpl_vars['xtra']->value) {
+$_smarty_tpl->tpl_vars['xtra']->_loop = true;
+ $_smarty_tpl->tpl_vars['x']->value = $_smarty_tpl->tpl_vars['xtra']->key;
+?> 
+												<?php if ($_smarty_tpl->tpl_vars['xtra']->value['icon']&&$_smarty_tpl->tpl_vars['key']->value==$_smarty_tpl->tpl_vars['xtra']->value['see']) {?>
+													<li><a data-filter="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['class'];?>
+" href="/<?php echo $_smarty_tpl->tpl_vars['toBackDoor']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['xtra']->value['link'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['desc'];?>
+"  data-placement="top" data-original-title="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['desc'];?>
+" class="<?php if ($_smarty_tpl->tpl_vars['xtra']->value['alpha']) {?>panel-danger<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['beta']) {?>panel-warning<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['delta']) {?>panel-success<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['omega']) {?>panel-primary<?php } else { ?>panel-default" disabled="disabled<?php }?>" > 
 
 
 
-															<i class="fa fa-{$xtra.mini}  pull-left"></i> {$xtra.name} 
+															<i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['xtra']->value['mini'];?>
+  pull-left"></i> <?php echo $_smarty_tpl->tpl_vars['xtra']->value['name'];?>
+ 
 															</a> 
 														</li>  
-												{/if}
-											{/foreach} 
+												<?php }?>
+											<?php } ?> 
 										</ul>
 									</button>
-								{/if} 
-							{/foreach} -->
+								<?php }?> 
+							<?php } ?> -->
 							 
 
 					       	
@@ -629,10 +807,12 @@ top: 35px;">
 						        </a>
 
 						       <!-- <a href=" " class="btn btn-success  " >
-						          	<i class="fa fa-crosshairs"></i> <span class="count badge">{$page_landing.unique_hits}</span>
+						          	<i class="fa fa-crosshairs"></i> <span class="count badge"><?php echo $_smarty_tpl->tpl_vars['page_landing']->value['unique_hits'];?>
+</span>
 						        </a> 
 						        <a href=" " class="btn btn-info  " >
-						          	<i class="fa fa-hand-o-up"></i> <span class="count badge">{$page_landing.page_views}</span>
+						          	<i class="fa fa-hand-o-up"></i> <span class="count badge"><?php echo $_smarty_tpl->tpl_vars['page_landing']->value['page_views'];?>
+</span>
 						        </a>  -->
 						        
 
@@ -641,7 +821,8 @@ top: 35px;">
 			                            <i class="fa fa-user-md "></i> <span class="count badge">80%</span>
 			                        </a>
 			                        <ul id="messages-menu" class="dropdown-menu messages" role="menu">
-			                        	<li class="dropdown-header"> <i class="fa fa-globe"></i> {$SVR['SERVER_NAME']} Vitals <i class="fa fa-stethoscope"></i></li>
+			                        	<li class="dropdown-header"> <i class="fa fa-globe"></i> <?php echo $_smarty_tpl->tpl_vars['SVR']->value['SERVER_NAME'];?>
+ Vitals <i class="fa fa-stethoscope"></i></li>
 			                        	<li class="divider"></li>
 			                            <li role="presentation">
 			                                <a href="#" class="message">
@@ -707,33 +888,58 @@ top: 35px;">
 								</li> -->
 							<!--SDX img drop down
 							 <li class="dropdown" ><a href="/x/" class="text text-danger dropdown-toggle" data-toggle="dropdown">
-								<img src="{$thumb}src=/bin/images/logos/sdx.png&w=123">
+								<img src="<?php echo $_smarty_tpl->tpl_vars['thumb']->value;?>
+src=/bin/images/logos/sdx.png&w=123">
 								<strong class=" text text-success">Super</strong><span class="text-primary">Dom</span> 
 								<i class="fa fa-caret-down text-info"></i> 
 								</a>
 								<ul class="dropdown-menu" id="toy-blox-menu">
-									{foreach $admin_menu as $key => $item}
+									<?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['admin_menu']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['item']->key;
+?>
 										 
 
-										{if $key  }  
+										<?php if ($_smarty_tpl->tpl_vars['key']->value) {?>  
 											<li class="dropdown-leftsubmenu">
-												<a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}"><i class="fa fa-{$key} pull-right"></i> {$item.area|ucfirst}  </a>
+												<a data-filter="<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" href="/blox/qBlox/<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" class="dropdown-toggle" data-toggle="dropdown" title="<?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['desc']);?>
+"><i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+ pull-right"></i> <?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['area']);?>
+  </a>
 												<ul class="dropdown-menu">
-												{foreach $xtras as $x => $xtra} 
-												{if $xtra.icon && $key == $xtra.see}
-													<li class="{if $xtra.alpha}text-danger{elseif $xtra.beta}text-warning{elseif $xtra.delta}text-success{elseif $xtra.omega}text-primary{else}text-default{/if}"><a data-filter="{$xtra.class}" href="/{$toBackDoor}/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="  " > 
+												<?php  $_smarty_tpl->tpl_vars['xtra'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['xtra']->_loop = false;
+ $_smarty_tpl->tpl_vars['x'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['xtras']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['xtra']->key => $_smarty_tpl->tpl_vars['xtra']->value) {
+$_smarty_tpl->tpl_vars['xtra']->_loop = true;
+ $_smarty_tpl->tpl_vars['x']->value = $_smarty_tpl->tpl_vars['xtra']->key;
+?> 
+												<?php if ($_smarty_tpl->tpl_vars['xtra']->value['icon']&&$_smarty_tpl->tpl_vars['key']->value==$_smarty_tpl->tpl_vars['xtra']->value['see']) {?>
+													<li class="<?php if ($_smarty_tpl->tpl_vars['xtra']->value['alpha']) {?>text-danger<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['beta']) {?>text-warning<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['delta']) {?>text-success<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['omega']) {?>text-primary<?php } else { ?>text-default<?php }?>"><a data-filter="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['class'];?>
+" href="/<?php echo $_smarty_tpl->tpl_vars['toBackDoor']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['xtra']->value['link'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['desc'];?>
+"  data-placement="top" data-original-title="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['desc'];?>
+" class="  " > 
 
 
 
-															<i class="fa fa-{$xtra.mini}  pull-right"></i> {$xtra.name} 
+															<i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['xtra']->value['mini'];?>
+  pull-right"></i> <?php echo $_smarty_tpl->tpl_vars['xtra']->value['name'];?>
+ 
 															</a> 
 														</li>  
-												{/if}
-											{/foreach} 
+												<?php }?>
+											<?php } ?> 
 											</ul>
 											</li> 
-										{/if}
-									{/foreach} 
+										<?php }?>
+									<?php } ?> 
 								</ul>
 							</li> -->
 
@@ -741,47 +947,89 @@ top: 35px;">
 								<i class="fa  fa-spin-reverse fa-cubes"></i> Toy Blox <b class="caret"></b>
 								</a>
 								<ul class="dropdown-menu" id="toy-blox-menu">
-									{foreach $admin_menu as $key => $item}
-										{assign var="hasBlox" value=false}
-										{foreach $xtras as $x => $xtra} 
-											{if $xtra.icon && $key == $xtra.see}
-												{if $blox[$xtra.class]}
-													{assign var="hasBlox" value=true}
-												{/if}
-											{/if}
-										{/foreach}
+									<?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['admin_menu']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['item']->key;
+?>
+										<?php $_smarty_tpl->tpl_vars["hasBlox"] = new Smarty_variable(false, null, 0);?>
+										<?php  $_smarty_tpl->tpl_vars['xtra'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['xtra']->_loop = false;
+ $_smarty_tpl->tpl_vars['x'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['xtras']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['xtra']->key => $_smarty_tpl->tpl_vars['xtra']->value) {
+$_smarty_tpl->tpl_vars['xtra']->_loop = true;
+ $_smarty_tpl->tpl_vars['x']->value = $_smarty_tpl->tpl_vars['xtra']->key;
+?> 
+											<?php if ($_smarty_tpl->tpl_vars['xtra']->value['icon']&&$_smarty_tpl->tpl_vars['key']->value==$_smarty_tpl->tpl_vars['xtra']->value['see']) {?>
+												<?php if ($_smarty_tpl->tpl_vars['blox']->value[$_smarty_tpl->tpl_vars['xtra']->value['class']]) {?>
+													<?php $_smarty_tpl->tpl_vars["hasBlox"] = new Smarty_variable(true, null, 0);?>
+												<?php }?>
+											<?php }?>
+										<?php } ?>
 
-										{if $key && $hasBlox == true}  
+										<?php if ($_smarty_tpl->tpl_vars['key']->value&&$_smarty_tpl->tpl_vars['hasBlox']->value==true) {?>  
 											<li class="dropdown-submenu">
-												<a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}"><i class="fa fa-{$key} pull-right"></i> {$item.area|ucfirst}  </a>
+												<a data-filter="<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" href="/blox/qBlox/<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" class="dropdown-toggle" data-toggle="dropdown" title="<?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['desc']);?>
+"><i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+ pull-right"></i> <?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['area']);?>
+  </a>
 												<ul class="dropdown-menu">
-												{foreach $xtras as $x => $xtra}
+												<?php  $_smarty_tpl->tpl_vars['xtra'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['xtra']->_loop = false;
+ $_smarty_tpl->tpl_vars['x'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['xtras']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['xtra']->key => $_smarty_tpl->tpl_vars['xtra']->value) {
+$_smarty_tpl->tpl_vars['xtra']->_loop = true;
+ $_smarty_tpl->tpl_vars['x']->value = $_smarty_tpl->tpl_vars['xtra']->key;
+?>
 
 
 
-													{if $xtra.icon && $key == $xtra.see}
-														{if $blox[$xtra.class]}
-															<li class="dropdown-submenu"><a data-filter="{$xtra.class}" href="/blox/qBlox/{$key}/{$xtra.class}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="{if $xtra.alpha}panel-danger{elseif $xtra.beta}panel-warning{elseif $xtra.delta}panel-success{elseif $xtra.omega}panel-primary{else}panel-default" disabled="disabled{/if}" > 
+													<?php if ($_smarty_tpl->tpl_vars['xtra']->value['icon']&&$_smarty_tpl->tpl_vars['key']->value==$_smarty_tpl->tpl_vars['xtra']->value['see']) {?>
+														<?php if ($_smarty_tpl->tpl_vars['blox']->value[$_smarty_tpl->tpl_vars['xtra']->value['class']]) {?>
+															<li class="dropdown-submenu"><a data-filter="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['class'];?>
+" href="/blox/qBlox/<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['xtra']->value['class'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['desc'];?>
+"  data-placement="top" data-original-title="<?php echo $_smarty_tpl->tpl_vars['xtra']->value['desc'];?>
+" class="<?php if ($_smarty_tpl->tpl_vars['xtra']->value['alpha']) {?>panel-danger<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['beta']) {?>panel-warning<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['delta']) {?>panel-success<?php } elseif ($_smarty_tpl->tpl_vars['xtra']->value['omega']) {?>panel-primary<?php } else { ?>panel-default" disabled="disabled<?php }?>" > 
 
 
 
-																<i class="fa fa-{$xtra.mini}  pull-right"></i> {$xtra.name} 
+																<i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['xtra']->value['mini'];?>
+  pull-right"></i> <?php echo $_smarty_tpl->tpl_vars['xtra']->value['name'];?>
+ 
 																</a>
 																<ul class="dropdown-menu">
-																	{foreach $blox[$xtra.class] as $b => $y}
-																		<li><a data-filter="{$y.name}" href="/blox/qBlox/{$key}/{$xtra.class}/{$y.name}" title=" "  data-placement="top" data-original-title=" " class=" " disabled=" " >
-																		<i class="fa fa-{$y.icon}  pull-right"></i> {$y.blox} 
+																	<?php  $_smarty_tpl->tpl_vars['y'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['y']->_loop = false;
+ $_smarty_tpl->tpl_vars['b'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['blox']->value[$_smarty_tpl->tpl_vars['xtra']->value['class']]; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['y']->key => $_smarty_tpl->tpl_vars['y']->value) {
+$_smarty_tpl->tpl_vars['y']->_loop = true;
+ $_smarty_tpl->tpl_vars['b']->value = $_smarty_tpl->tpl_vars['y']->key;
+?>
+																		<li><a data-filter="<?php echo $_smarty_tpl->tpl_vars['y']->value['name'];?>
+" href="/blox/qBlox/<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['xtra']->value['class'];?>
+/<?php echo $_smarty_tpl->tpl_vars['y']->value['name'];?>
+" title=" "  data-placement="top" data-original-title=" " class=" " disabled=" " >
+																		<i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['y']->value['icon'];?>
+  pull-right"></i> <?php echo $_smarty_tpl->tpl_vars['y']->value['blox'];?>
+ 
 																</a>
-																	{/foreach}
+																	<?php } ?>
 																</ul>
 															</li>  
-														{/if}
-													{/if}
-												{/foreach} 
+														<?php }?>
+													<?php }?>
+												<?php } ?> 
 											</ul>
 											</li> 
-										{/if}
-									{/foreach} 
+										<?php }?>
+									<?php } ?> 
 								</ul>
 							</li> -->
 
@@ -797,7 +1045,8 @@ top: 35px;">
 					* Load Blue Print... 
 					* Load Blox
 				 -->
-				{include file="../../../{$suite}/xBlox/qBlox.tpl"}
+				<?php echo $_smarty_tpl->getSubTemplate ("../../../".((string)$_smarty_tpl->tpl_vars['suite']->value)."/xBlox/qBlox.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 			</div>
 
 			
@@ -1109,7 +1358,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', end
 	</div> 
 </div>
 
-{/if}
+<?php }?>
  
 		<script src="/x/html/layout/watchtower/lib/jquery-pjax/jquery.pjax.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed --> 
@@ -1152,9 +1401,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', end
 
 
 		
-		{if $HTML.BODY.JS}
-			<script src="{$HTML.BODY.JS}"></script>
-		{/if}
+		<?php if ($_smarty_tpl->tpl_vars['HTML']->value['BODY']['JS']) {?>
+			<script src="<?php echo $_smarty_tpl->tpl_vars['HTML']->value['BODY']['JS'];?>
+"></script>
+		<?php }?>
 		<style type="text/css">
 			.dropdown-rightsubmenu{ position:relative;}
 			.dropdown-rightsubmenu>.dropdown-menu{ top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
@@ -1188,4 +1438,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', end
 		</style>
 	</body>
 </html>
- 
+ <?php }} ?>
