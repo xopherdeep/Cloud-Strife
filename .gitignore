@@ -1,2 +1,2 @@
 !*.hits
-__cache/*
+!x/_cfg/__cache/*
