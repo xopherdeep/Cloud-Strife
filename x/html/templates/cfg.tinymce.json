@@ -9,7 +9,7 @@ toolbar: "save | insertfile undo redo | styleselect |  alignleft aligncenter ali
  
 image_advtab: true,
 apply_source_formatting : true,
-content_css : "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css,//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css",
+//content_css : "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css,//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css",
 templates: [
 	{include file="../../html/templates/jumbotron.tpl" assign=jumbotron}
     { title: 'Jumbotron', content: '{$jumbotron|strip}' },

@@ -5,11 +5,11 @@
 		<div id="o-blox-{$o.blox}-{$o.id}" icon="{$o.icon}" blox="{$o.blox}" bloxid="{$o.id}" class="blox-panel" style="display: none;" >
 			<i class="fa fa-5x fa-spinner fa-spin"></i>
 		</div> 
+
 	{else}
 		{* include some javascript in your template *} 
 		{fetch file="http://$HTTP_HOST/html/{$o.blox|substr:1|strtolower|replace:'-':'/'}/{$o.id}"} 
-	{/if}
-	
+	{/if} 
 	<script type="text/javascript">
 		$(document).ready(function() {
 			// $('#o-blox-{$o.blox}-{$o.id}').load('/html/{$o.blox|substr:1|strtolower|replace:'-':'/'}', function  () {
