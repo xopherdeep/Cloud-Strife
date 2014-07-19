@@ -1,2 +1,7 @@
-!*.hits
-!x/_cfg/__cache/*
+# Ignore everything:
+*
+*.hits
+*/__cache/*
+
+# Except for X:
+!x/
