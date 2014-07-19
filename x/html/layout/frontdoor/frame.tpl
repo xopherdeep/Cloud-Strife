@@ -292,8 +292,12 @@
         		/* -- transition is the magic sauce for animation -- */
 				-webkit-transition          : all .7s ease-in-out;
 				transition                  : all .7s ease-in-out;
-				visibility: visible !important;
-				display: inline-block !important;
+				visibility : visible;
+				display : inline-block;
+        	}
+
+        	.back .godbar{
+        		display: none;
         	}
 
         </style>
