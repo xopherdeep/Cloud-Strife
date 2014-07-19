@@ -13,10 +13,15 @@
 		{/if}
 		<title>{$HTML.HEAD.TITLE}</title> 
 		<!-- <link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet"> --> 
+
+		<SCRIPT src="{$HTML.HEAD.JS}"></SCRIPT>
+
+		{if $masterKey.is.admin} 
+
 		<link href="/x/html/layout/watchtower/css/white.application.min.css" rel="stylesheet">
   		<link rel="stylesheet" href="/bin/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="{$HTML.HEAD.CSS}">
-		<SCRIPT src="{$HTML.HEAD.JS}"></SCRIPT>
+		
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -24,21 +29,24 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
+		{/if}
+
 		{if $HTML.BODY.CSS}
 			<link rel="stylesheet" type="text/css" href="{$HTML.BODY.CSS}">
 		{/if}
 
 	</head>
 	<body>
-		<script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
 		<script src="/x/html/layout/watchtower/lib/jquery/jquery-2.0.3.min.js"> </script>
 		<script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-ui-1.10.3.custom.js"> </script>
+		
+		{if $masterKey.is.admin}   
+		<script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
 		<script>
 			// For IE11. May we one day live without your BS. 
 			// <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"><script>
 			Modernizr.addTest('preserve3d', function(){ return Modernizr.testAllProps('transformStyle', 'preserve-3d');});
 		</script>
-		{if $masterKey.is.admin}   
 		<!--                     
                  77                       77777             
             7 .....                      7.....             
@@ -72,8 +80,7 @@
                         :...~~+++.......                    
                         7..........                         
                             .....: 7   
-		-->
-		{/if}
+		--> 
 		<!--[if gte IE 9]>
 		  <style type="text/css">
 		    .gradient {
@@ -81,15 +88,8 @@
 		    }
 		  </style>
 		<![endif]-->
-	    <style type="text/css">
-	  		{if !$masterKey.is.admin}
-			body {    
-			}
-			{else }
-			html, body {
-				 
-			}
-	     	{/if}
+	    <style type="text/css"> 
+				
 			.panel { 
 				float               : left;
 				width               : 100%;
@@ -106,151 +106,151 @@
 				perspective         : 600px;
 
 				background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwJSIgY3k9IjAiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoNzQsIDEyMSwgMTQ3LCAwLjg5KSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSJyZ2JhKDIyNiwgMjI2LCAyMjYsIDAuODcpIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDE4NSwgMTM1LCAxMzEsIDAuODcpIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4=)
-	      }
-	      /* -- make sure to declare a default for every property that you want animated -- */
-	      /* -- general styles, including Y axis rotation -- */
-		.panel > .front { 
-			float                       : none;
-			position                    : absolute;
-			top                         : 0;
-			left                        : 0;
-			z-index                     : 900;
-			width                       : inherit;
-			height                      : inherit;
-			border                      : 0px solid #ccc; 
-			padding-top: 50px;
-			/*box-shadow                : 0 1px 5px rgba(0,0,0,0.9);*/
+			  }
+			  /* -- make sure to declare a default for every property that you want animated -- */
+			  /* -- general styles, including Y axis rotation -- */
+			.panel > .front { 
+				float                       : none;
+				position                    : absolute;
+				top                         : 0;
+				left                        : 0;
+				z-index                     : 900;
+				width                       : inherit;
+				height                      : inherit;
+				border                      : 0px solid #ccc; 
+				padding-top: 50px;
+				/*box-shadow                : 0 1px 5px rgba(0,0,0,0.9);*/
 
-			-webkit-transform           : rotateX(0deg) rotateY(0deg);
-			-moz-transform              : rotateX(0deg) rotateY(0deg);
-			transform                   : rotateX(0deg) rotateY(0deg);
+				-webkit-transform           : rotateX(0deg) rotateY(0deg);
+				-moz-transform              : rotateX(0deg) rotateY(0deg);
+				transform                   : rotateX(0deg) rotateY(0deg);
 
-			-webkit-transform-style     : preserve-3d;
-			-moz-transform-style        : preserve-3d;
-			transform-style             : preserve-3d;
+				-webkit-transform-style     : preserve-3d;
+				-moz-transform-style        : preserve-3d;
+				transform-style             : preserve-3d;
 
-			-webkit-backface-visibility : hidden;
-			-moz-backface-visibility    : hidden;
-			backface-visibility         : hidden;
+				-webkit-backface-visibility : hidden;
+				-moz-backface-visibility    : hidden;
+				backface-visibility         : hidden;
 
-			/* -- transition is the magic sauce for animation -- */
-			-webkit-transition          : all .4s ease-in-out;
-			transition                  : all .4s ease-in-out;
+				/* -- transition is the magic sauce for animation -- */
+				-webkit-transition          : all .4s ease-in-out;
+				transition                  : all .4s ease-in-out;
 
-			 
-/*			background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwJSIgY3k9IjAiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoNzQsIDEyMSwgMTQ3LCAwLjg5KSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSJyZ2JhKDIyNiwgMjI2LCAyMjYsIDAuODcpIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDE4NSwgMTM1LCAxMzEsIDAuODcpIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4=) 
-*/
+				 
+			/*			background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwJSIgY3k9IjAiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoNzQsIDEyMSwgMTQ3LCAwLjg5KSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSJyZ2JhKDIyNiwgMjI2LCAyMjYsIDAuODcpIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDE4NSwgMTM1LCAxMzEsIDAuODcpIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4=) 
+			*/
 
-			 
-	      }
-	      .panel.flip > .front { 
-			z-index           : 900; 
-			 
-			/*box-shadow      : 0 15px 50px rgba(0,0,0,0.2);*/
-			
-			-webkit-transform : rotateY(180deg);
-			-moz-transform    : rotateY(180deg);
-			transform         : rotateY(180deg);
-	      }
+				 
+			  }
+			  .panel.flip > .front { 
+				z-index           : 900; 
+				 
+				/*box-shadow      : 0 15px 50px rgba(0,0,0,0.2);*/
+				
+				-webkit-transform : rotateY(180deg);
+				-moz-transform    : rotateY(180deg);
+				transform         : rotateY(180deg);
+			  }
 
-	  	.panel > .back { 
-			float                       : none;
-			position                    : absolute;
-			top                         : 0;
-			left                        : 0;
-			z-index                     : 800;
-			width                       : inherit;
-			height                      : inherit;
-			/*border                      : 1px solid #ccc;*/
-			/*background                : #333;*/
-			border-radius               : 20px;
-			
-			-webkit-transform           : rotateY(-180deg);
-			transform                   : rotateY(-179deg);
-			
-			-moz-transform              : rotateY(-179deg); /* setting to 180 causes an unnatural-looking half-flip */
-			-webkit-transform-style     : preserve-3d;
-			-moz-transform-style        : preserve-3d;
-			transform-style             : preserve-3d;
-			
-			-webkit-backface-visibility : hidden;
-			-moz-backface-visibility    : hidden;
-			backface-visibility         : hidden;
-			display: none;
-			/* -- transition is the magic sauce for animation -- */
-			-webkit-transition          : all .4s ease-in-out;
-			transition                  : all .4s ease-in-out;
-			background                  : rgb(177,216,245);
-			background                  : url('/bin/images/bgs/full/cloud-transparent.png'), url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjYjFkOGY1IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMjUlIiBzdG9wLWNvbG9yPSIjYmVlNGY4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNDYlIiBzdG9wLWNvbG9yPSIjYzhlZWZiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjZTZmOGZkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjZmRmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjMjU4ZTMxIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTQlIiBzdG9wLWNvbG9yPSIjYzlmZmEzIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2M2ZmY5ZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-			background                  : -moz-linear-gradient(-45deg,  rgba(177,216,245,1) 0%, rgba(190,228,248,1) 25%, rgba(200,238,251,1) 46%, rgba(230,248,253,1) 70%, rgba(253,255,255,1) 86%, rgba(37,142,49,1) 86%, rgba(201,255,163,1) 94%, rgba(198,255,158,1) 100%);
-			background                  : -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(177,216,245,1)), color-stop(25%,rgba(190,228,248,1)), color-stop(46%,rgba(200,238,251,1)), color-stop(70%,rgba(230,248,253,1)), color-stop(86%,rgba(253,255,255,1)), color-stop(86%,rgba(37,142,49,1)), color-stop(94%,rgba(201,255,163,1)), color-stop(100%,rgba(198,255,158,1)));
-			background                  : -webkit-linear-gradient(-45deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
-			background                  : -o-linear-gradient(-45deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
-			background                  : -ms-linear-gradient(-45deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
-			background                  : linear-gradient(135deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
-			filter                      : progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d8f5', endColorstr='#c6ff9e',GradientType=1 );
-			/*background: url(/bin/images/bgs/full/future.jpg) top center;*/
-			 /*background-size: 100%;*/
+				.panel > .back { 
+				float                       : none;
+				position                    : absolute;
+				top                         : 0;
+				left                        : 0;
+				z-index                     : 800;
+				width                       : inherit;
+				height                      : inherit;
+				/*border                      : 1px solid #ccc;*/
+				/*background                : #333;*/
+				border-radius               : 20px;
+				
+				-webkit-transform           : rotateY(-180deg);
+				transform                   : rotateY(-179deg);
+				
+				-moz-transform              : rotateY(-179deg); /* setting to 180 causes an unnatural-looking half-flip */
+				-webkit-transform-style     : preserve-3d;
+				-moz-transform-style        : preserve-3d;
+				transform-style             : preserve-3d;
+				
+				-webkit-backface-visibility : hidden;
+				-moz-backface-visibility    : hidden;
+				backface-visibility         : hidden;
+				display: none;
+				/* -- transition is the magic sauce for animation -- */
+				-webkit-transition          : all .4s ease-in-out;
+				transition                  : all .4s ease-in-out;
+				background                  : rgb(177,216,245);
+				background                  : url('/bin/images/bgs/full/cloud-transparent.png'), url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjYjFkOGY1IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMjUlIiBzdG9wLWNvbG9yPSIjYmVlNGY4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNDYlIiBzdG9wLWNvbG9yPSIjYzhlZWZiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjZTZmOGZkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjZmRmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjMjU4ZTMxIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTQlIiBzdG9wLWNvbG9yPSIjYzlmZmEzIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2M2ZmY5ZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+				background                  : -moz-linear-gradient(-45deg,  rgba(177,216,245,1) 0%, rgba(190,228,248,1) 25%, rgba(200,238,251,1) 46%, rgba(230,248,253,1) 70%, rgba(253,255,255,1) 86%, rgba(37,142,49,1) 86%, rgba(201,255,163,1) 94%, rgba(198,255,158,1) 100%);
+				background                  : -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(177,216,245,1)), color-stop(25%,rgba(190,228,248,1)), color-stop(46%,rgba(200,238,251,1)), color-stop(70%,rgba(230,248,253,1)), color-stop(86%,rgba(253,255,255,1)), color-stop(86%,rgba(37,142,49,1)), color-stop(94%,rgba(201,255,163,1)), color-stop(100%,rgba(198,255,158,1)));
+				background                  : -webkit-linear-gradient(-45deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
+				background                  : -o-linear-gradient(-45deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
+				background                  : -ms-linear-gradient(-45deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
+				background                  : linear-gradient(135deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
+				filter                      : progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d8f5', endColorstr='#c6ff9e',GradientType=1 );
+				/*background: url(/bin/images/bgs/full/future.jpg) top center;*/
+				 /*background-size: 100%;*/
 
-	  	}
+				}
 
-	      .panel.flip > .back { 
-			z-index           : 1000;
-			/*background      : #80868d;*/
-			display: block;
-			border-radius     : 20px;
-			padding-top       : 50px;
-			-webkit-transform : rotateX(0deg) rotateY(0deg);
-			-moz-transform    : rotateX(0deg) rotateY(0deg);
-			transform         : rotateX(0deg) rotateY(0deg);
-			
-			box-shadow        : 0 15px 50px rgba(0,0,0,0.2);
-			
+			  .panel.flip > .back { 
+				z-index           : 1000;
+				/*background      : #80868d;*/
+				display: block;
+				border-radius     : 20px;
+				padding-top       : 50px;
+				-webkit-transform : rotateX(0deg) rotateY(0deg);
+				-moz-transform    : rotateX(0deg) rotateY(0deg);
+				transform         : rotateX(0deg) rotateY(0deg);
+				
+				box-shadow        : 0 15px 50px rgba(0,0,0,0.2);
+				
 
-	 
-			/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-	 
 
-	      }
+				/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 
-			.panel > .back .navbar *{ 
-			 	/* -- transition is the magic sauce for animation -- */
-					-webkit-transition          : all .1s linear;
-					transition                  : all .1s linear;
-			}
 
-	      /* -- X axis rotation for click panel -- */
-	      .click .front { 
-	        cursor: pointer;
-	        -webkit-transform: rotateX(0deg);
-	           -moz-transform: rotateX(0deg);
-	                transform: rotateX(0deg);
-	      }
-	      .click.flip .front { 
-	        -webkit-transform: rotateX(180deg);
-	           -moz-transform: rotateX(180deg);
-	                transform: rotateX(180deg);
-	      }
-	      .click .back { 
-	        cursor: pointer;
-	        -webkit-transform: rotateX(-180deg);
-	           -moz-transform: rotateX(-180deg);
-	                transform: rotateX(-180deg);
-	      }
-	      .click.flip .back { 
-	        -webkit-transform: rotateX(0deg);
-	           -moz-transform: rotateX(0deg);
-	                transform: rotateX(0deg);
-	      }
-	 
-	      /* -- cosmetics -- */
-	      .panel .pad { padding: 0 15px; }
-	      /*.panel.flip .action { display: none; }*/
-	      .block ol li { text-align: left; margin: 0 0 0 28px; }
-	      /*.block .action { display: block; padding: 3px; background: #333; text-align: right; font-size: .8em; opacity: 0; position: absolute; cursor: pointer; -webkit-transition: opacity .2s linear; }*/
-	      /*.block:hover .action { opacity: .7; }*/
-	      .circle div {  border-radius: 100px; width: 100px; }
-	      .circle div h2 {  padding-top: 3em; text-align: center; }
+			  }
+
+				.panel > .back .navbar *{ 
+				 	/* -- transition is the magic sauce for animation -- */
+						-webkit-transition          : all .1s linear;
+						transition                  : all .1s linear;
+				}
+
+			  /* -- X axis rotation for click panel -- */
+			  .click .front { 
+			    cursor: pointer;
+			    -webkit-transform: rotateX(0deg);
+			       -moz-transform: rotateX(0deg);
+			            transform: rotateX(0deg);
+			  }
+			  .click.flip .front { 
+			    -webkit-transform: rotateX(180deg);
+			       -moz-transform: rotateX(180deg);
+			            transform: rotateX(180deg);
+			  }
+			  .click .back { 
+			    cursor: pointer;
+			    -webkit-transform: rotateX(-180deg);
+			       -moz-transform: rotateX(-180deg);
+			            transform: rotateX(-180deg);
+			  }
+			  .click.flip .back { 
+			    -webkit-transform: rotateX(0deg);
+			       -moz-transform: rotateX(0deg);
+			            transform: rotateX(0deg);
+			  }
+
+			  /* -- cosmetics -- */
+			  .panel .pad { padding: 0 15px; }
+			  /*.panel.flip .action { display: none; }*/
+			  .block ol li { text-align: left; margin: 0 0 0 28px; }
+			  /*.block .action { display: block; padding: 3px; background: #333; text-align: right; font-size: .8em; opacity: 0; position: absolute; cursor: pointer; -webkit-transition: opacity .2s linear; }*/
+			  /*.block:hover .action { opacity: .7; }*/
+			  .circle div {  border-radius: 100px; width: 100px; }
+			  .circle div h2 {  padding-top: 3em; text-align: center; }
 
 	    </style>
 	    <script>
@@ -275,9 +275,7 @@
 
 	      });
 	    </script>     
-
-
-{if $masterKey.is.admin}  
+ 
 <!-- Master Tool Bar -->
     <div class="block panel"> 
       <div class="front">
@@ -441,9 +439,15 @@ top: 35px;">
 	      </div>
 	    </div>
 {/if}
+        {if $masterKey.is.admin} 
         <div class="content"> 
+        {/if}
+
+
 			{$HTML.BODY.HTML}
+        {if $masterKey.is.admin} 
         </div>      
+        {/if}
 
 {if $masterKey.is.admin}  
 <!-- BackSide To Master Tool Bar -->
