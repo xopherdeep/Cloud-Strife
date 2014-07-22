@@ -52,7 +52,7 @@
 			}
 
             body{
-                background: url(/bin/images/bgs/full/{$suite}.png) center center fixed !important;
+                background: url(/bin/images/bgs/full/{$suite}.png) center center fixed !important; 
             }
 
 			.transparent-black-25{
@@ -74,22 +74,18 @@
 <body class="background-dark">
 <div class="logo text-center">
     <h4>
-        
-        
+         
         <a href="/" class="">
-            <i class="fa fa-globe"></i> 
-        </a> 
-        <br/>
+            <i class="fa fa-globe text-info"></i> 
+        </a>  
        <!--  <span class="label label-warning">  
          <strong>x</strong></span> -->
-        <a href="/{$toBackDoor}">
-            <strong>Super</strong><span>Dom</span>
-           
+        <a href="/{$toBackDoor}" style=" ">
+           {$HTTP_HOST}
         </a>  <br/>
         
           
-        <btn class="btn btn-sm label dropdown label-success dropdown  ">  
-
+       <!--  <btn class="btn btn-sm label dropdown label-success dropdown  ">   
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {$suite}  <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Action</a></li>
@@ -100,7 +96,7 @@
               <li><a href="#">Separated link</a></li>
               <li><a href="#">One more separated link</a></li>
             </ul></span> <span class="label label-danger">  
-        &alpha; </btn>
+        &alpha; </btn> -->
       <!--   <span class="label   label-info ">  
            infused </span>  -->
             
@@ -189,6 +185,13 @@
     <header class="page-header">
         <div class="navbar"> 
                 <ul class="nav navbar-nav navbar-right pull-right">
+                    <li class=" ">
+                        <a href="/"  >
+                            <i class="fa fa-globe text-info"></i>
+                        </a>
+                    </li>
+
+                    
                     <li class="visible-phone-landscape">
                         <a href="#" id="search-toggle">
                             <i class="fa fa-search"></i>
@@ -310,6 +313,8 @@
                         </ul>
                     </li>
                     <li class="divider"></li>
+
+
                     <li class="hidden-xs">
                         <a href="#" id="settings"
                            title="Settings"
