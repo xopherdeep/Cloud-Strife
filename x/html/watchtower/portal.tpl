@@ -25,7 +25,10 @@
                             <div class="item active">
                                 <h1><i class="fa fa-4x fa-space-shuttle "></i><br/>Welcome {$user.username|ucfirst}  </h1>
                                 <p class="lead">
-                                   ... to the Future.
+                                    
+                                  
+                                    <i class='fa fa-clock'></i>{include file="../~blox/clock.tpl"}<br/>
+                                    
                                 </p>
                                 <p class="text-align-center">
                                     <!-- <a class="btn btn-success btn-lg " data-widgster="fullscreen"> -->

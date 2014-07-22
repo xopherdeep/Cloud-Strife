@@ -11,6 +11,9 @@
 		<link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/bin/css/font-awesome.css">
 
+        <link href='http://fonts.googleapis.com/css?family=Geo|Righteous|Allerta' rel='stylesheet' type='text/css'>
+        
+</head>
 	    <link rel="shortcut icon" href="img/favicon.png">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <meta name="description" content="">
@@ -41,18 +44,20 @@
 			 body{
 				background : rgb(109,179,242); /* Old browsers */
 				/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-				background : url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzZkYjNmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjE5JSIgc3RvcC1jb2xvcj0iIzU0YTNlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjYwJSIgc3RvcC1jb2xvcj0iIzM2OTBmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTY5ZGUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-				background : -moz-linear-gradient(left,  rgba(109,179,242,1) 0%, rgba(84,163,238,1) 19%, rgba(54,144,240,1) 60%, rgba(30,105,222,1) 100%); /* FF3.6+ */
-				background : -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(109,179,242,1)), color-stop(19%,rgba(84,163,238,1)), color-stop(60%,rgba(54,144,240,1)), color-stop(100%,rgba(30,105,222,1))); /* Chrome,Safari4+ */
-				background : -webkit-linear-gradient(left,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 19%,rgba(54,144,240,1) 60%,rgba(30,105,222,1) 100%); /* Chrome10+,Safari5.1+ */
-				background : -o-linear-gradient(left,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 19%,rgba(54,144,240,1) 60%,rgba(30,105,222,1) 100%); /* Opera 11.10+ */
-				background : -ms-linear-gradient(left,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 19%,rgba(54,144,240,1) 60%,rgba(30,105,222,1) 100%); /* IE10+ */
-				background : linear-gradient(to right,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 19%,rgba(54,144,240,1) 60%,rgba(30,105,222,1) 100%); /* W3C */
-				filter     : progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=1 ); /* IE6-8 */ 
+				/*background : url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzZkYjNmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjE5JSIgc3RvcC1jb2xvcj0iIzU0YTNlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjYwJSIgc3RvcC1jb2xvcj0iIzM2OTBmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTY5ZGUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+				background : -moz-linear-gradient(left,  rgba(109,179,242,1) 0%, rgba(84,163,238,1) 19%, rgba(54,144,240,1) 60%, rgba(30,105,222,1) 100%);  FF3.6+ 
+				background : -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(109,179,242,1)), color-stop(19%,rgba(84,163,238,1)), color-stop(60%,rgba(54,144,240,1)), color-stop(100%,rgba(30,105,222,1))); /* Chrome,Safari4+ 
+				background : -webkit-linear-gradient(left,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 19%,rgba(54,144,240,1) 60%,rgba(30,105,222,1) 100%); /* Chrome10+,Safari5.1+ 
+				background : -o-linear-gradient(left,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 19%,rgba(54,144,240,1) 60%,rgba(30,105,222,1) 100%); /* Opera 11.10+ 
+				background : -ms-linear-gradient(left,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 19%,rgba(54,144,240,1) 60%,rgba(30,105,222,1) 100%); /* IE10+ 
+				background : linear-gradient(to right,  rgba(109,179,242,1) 0%,rgba(84,163,238,1) 19%,rgba(54,144,240,1) 60%,rgba(30,105,222,1) 100%); /* W3C 
+				filter     : progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=1 ); /* IE6-8  */*/*/*/*/*/*/
 			}
 
             body{
-                background: url(/bin/images/bgs/full/{$suite}.png) center center fixed !important; 
+                background: none;
+                background: url(/bin/images/bgs/full/{$suite}.png) center center no-repeat fixed !important; 
+                background-position: center center  !important; 
             }
 
 			.transparent-black-25{
@@ -68,9 +73,6 @@
 				background-color: rgba(0,0,0,0.90);
 			} 
 			</STYLE>
-			<link href='http://fonts.googleapis.com/css?family=Geo|Righteous|Allerta' rel='stylesheet' type='text/css'>
-	    
-</head>
 <body class="background-dark">
 <div class="logo text-center">
     <h4>
@@ -122,7 +124,7 @@
 
                  <li class="panel">
                     <a class="accordion-toggle collapsed" data-toggle="collapse"
-                       data-parent="#side-nav" href="#{$key}-collapse"><i class="fa fa-{$key}"></i><span class="name">{$item.area|ucfirst}</span></a>
+                       data-parent="#side-nav" href="#{$key}-collapse"><i class="fa fa-3x fa-{$key}"></i><span class="name">{$item.area|ucfirst}</span></a>
                     <ul id="{$key}-collapse" class="panel-collapse collapse"> 
                         {foreach $xtras as $x => $xtra}
                             {if $xtra.icon && $key == $xtra.see}
@@ -131,7 +133,7 @@
                                 {if $xtra.alpha || $xtra.beta || $xtra.delta || $xtra.omega}
                                     <li> 
                                         <a href="/x/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}">
-                                        {if $xtra.alpha}
+                                        <!-- {if $xtra.alpha}
                                             <span class="label label-danger">&alpha;</span>
                                         {/if}
                                         {if $xtra.beta}
@@ -142,7 +144,8 @@
                                         {/if}
                                         {if $xtra.omega}
                                             <span class="label label-primary">&Omega;</span>
-                                        {/if}
+                                        {/if} -->
+                                        <i class="fa fa-2x pull-left fa-hover  fa-{$xtra.mini}"></i>
                                         {$xtra.name}</a>
                                     </li>
                                 {/if}
@@ -368,11 +371,29 @@
                 <form id="search-form" class="navbar-form pull-right" role="search">
                     <input type="search" class="search-query" placeholder="Search...">
                 </form>
-                <div class="notifications pull-right">
 
+                <div class="notifications pull-left">
+                    <div class="alert-warning alert pull-left">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        <i class='fa fa-users'></i>  <strong>11 Users Online</strong>  
+                    </div>
+                    <div class="alert-warning alert pull-left">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        <i class='fa fa-dashboard'></i>  <strong>11 MPS</strong>  
+                    </div> 
+                    <div class="alert-warning alert pull-left">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        <i class='fa fa-exchange fa-rotate-90'></i>  <strong>{$HTTP_HOST_TOTAL_HITS}</strong>  
+                    </div> 
+                </div>
+
+                <div class="notifications pull-right">
                     <div class="alert-info alert pull-right">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <i class="fa fa-info-circle"></i> Adjust the Layout using the <a id="notification-link" href="#">settings</a> on the right!
+                        Domain {$HTTP_HOST} is now SuperCharged! Launch it on any Device!
+                                    (<i class="fa fa-mobile "></i>
+                                    <a id="notification-link" href="#"><i class="fa fa-desktop "></i></a>
+                                    <i class="fa fa-tablet "></i>) 
                     </div>
                 </div>
         </div>
