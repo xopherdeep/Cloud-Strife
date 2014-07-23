@@ -562,15 +562,16 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="page-title">{$Xtra|ucfirst}
+                        <h2 class="page-title">
                          {if $method == 'index'}
-                             <small>
+                          
+                           
                             {foreach $xtras as $x => $xtra} 
                                 {if $Xtra == $xtra.link}
-                                     {$xtra.desc}
+                                    {$xtra.name|ucfirst}
+                                    <small>{$xtra.desc}</small>
                                 {/if}
                             {/foreach}
-                            </small>
                         {else}
                             / {$method|ucfirst}
                         {/if}
@@ -592,9 +593,8 @@
                                         <li class="active"><a href="/{$toBackDoor}/{$xtra.link}"><i class="fa fa-{$xtra.mini}"></i>
                                         {$xtra.name} 
 
-                                        {if $method == 'index'}
-
-                                        <span class="text-right label {if $xtra.alpha}label-danger{elseif $xtra.beta}label-warning{elseif $xtra.delta}label-success{elseif $xtra.omega}label-primary{else}label-default{/if}">{$xtra.version}</span></a>
+                                        {if $method == 'index'} 
+                                        <span class="text-right btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</span></a>
                                         </li>
                                         {else}
                                             <li class="active"><a href="/{$toBackDoor}/{$Xtra}/{$method}"><i class="fa fa-{$Xtra}-{$method}"> {$method|ucfirst}</i></a>
