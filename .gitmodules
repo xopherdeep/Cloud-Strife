@@ -22,3 +22,6 @@
 [submodule "x/Emerald"]
 	path = x/Emerald
 	url = https://github.com/XenGenie/Emerald
+[submodule "x/X"]
+	path = x/X
+	url = https://github.com/XenGenie/X

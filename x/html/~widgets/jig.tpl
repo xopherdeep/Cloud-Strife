@@ -1,9 +1,8 @@
- <section class="widget {if $locked}locked{/if}" data-widgster-collapsed="{if $collapsed}true{/if}" id="default-widget" data-widgster-load="/{$toBackDoor}/html/{if $xPHP!=''}{$xPHP}{else}{$Xtra}{/if}/{$method}" data-widgster-autoload="true">
+ <section class="widget {if $locked}locked{/if}" data-widgster-collapsed="{if $collapsed}true{/if}" id="default-widget" data-widgster-load="/{$toBackDoor}/{$toSideDoor}/{if $xPHP!=''}{$xPHP}{else}{$Xtra}{/if}/{$method}" data-widgster-autoload="true">
  {if !$header}
     <header>
         <h5>{$title}</h5>
-        <div class="widget-controls">
-            
+        <div class="widget-controls">            
             <a data-widgster="load" title="Reload" href="#"><i class="glyphicon glyphicon-refresh"></i></a>
             <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-plus"></i></a>
             <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-minus"></i></a>
@@ -15,5 +14,11 @@
     </header>
 {/if}
     <div class="body"> 
+        {* include some javascript in your template *} 
+        {if $xPHP!=''}
+            {* fetch file="http://$HTTP_HOST/$toSideDoor/$xPHP/$method" *} 
+        {else}
+            {* fetch file="http://$HTTP_HOST/$toSideDoor/$Xtra/$method" *} 
+        {/if}
     </div>
 </section>

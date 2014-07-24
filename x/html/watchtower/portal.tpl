@@ -14,30 +14,26 @@
                     </div>
                     <div id="carousel-example-generic" class="carousel slide">
                         <ol class="carousel-indicators outer">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="7"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="8"></li>
-
-                            <li data-target="#carousel-example-generic" data-slide-to="9"></li>
-                            <!-- <li data-target="#carousel-example-generic" data-slide-to="10"></li> -->
-                            <!-- <li data-target="#carousel-example-generic" data-slide-to="11"></li> -->
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li> 
+                            {foreach $admin_menu as $key => $item}
+                                {if $key} 
+                                    <li data-target="#key" data-slide-to="{counter start=1}"></li>    
+                                {/if}
+                            {/foreach} 
                         </ol>
                         <div class="carousel-inner text-align-center">
                             <div class="item active">
-                                <h1><i class="fa fa-cloud"></i><br/>Castle on a Cloud</h1>
+                                <h1><i class="fa fa-4x fa-space-shuttle "></i><br/>Welcome {$user.username|ucfirst}  </h1>
                                 <p class="lead">
-                                    Sit back, Relax! Visit the room full of <em>toys</em>...
+                                    
+                                  
+                                    <i class='fa fa-clock'></i>{include file="../~blox/clock.tpl"}<br/>
+                                    
                                 </p>
                                 <p class="text-align-center">
                                     <!-- <a class="btn btn-success btn-lg " data-widgster="fullscreen"> -->
-                                    <a class="btn btn-success btn-lg " href="/{$toBackDoor}/blox">
-                                        Go Fool around in the Toy <em>Blox</em> <i class="fa fa-cube"></i> 
+                                    <a class="btn btn-info btn-lg " href="/{$toBackDoor}/login/profile">
+                                        <i class="fa fa-user"></i> {$user.username}
                                     </a>
                                     <a class="btn btn-info btn-lg " data-widgster="restore">
                                         Watchtower
@@ -47,13 +43,13 @@
 
                             {foreach $admin_menu as $key => $item}
                                 {if $key} 
-                                    <div class="item">
-                                        <h1><i class="fa fa-{$key}"></i><br/>{$item.area|ucfirst}</h1>
+                                    <div class="item " id="{$key}">
+                                        <h1><i class="fa fa-{$key} fa-4x"></i><br/>{$item.area|ucfirst}</h1>
                                         <p class="lead">
                                             {$item.desc|ucfirst} 
                                         </p> 
                                         <p class="text-align-center">
-                                            <div class="btn-group">
+                                            
                                                  
                                              {foreach $xtras as $x => $xtra}
                                                 {if $xtra.icon && $key == $xtra.see}
@@ -63,12 +59,11 @@
 
                                                        
                                                         
-                                                        <i class="fa fa-{$xtra.mini}"></i> {$xtra.name} 
+                                                        <i class="fa fa-{$xtra.mini} fa-2x"></i> {$xtra.name} 
                                                     </a>
                                                 {/if}
                                             {/foreach}
-                                            
-                                            </div>
+                                             
                                               
                                         </p>
                                     </div>
