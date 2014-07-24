@@ -4,4 +4,6 @@
 */__cache/*
 
 # Except for X:
+!bin/ 
 !x/
+!x/.php
