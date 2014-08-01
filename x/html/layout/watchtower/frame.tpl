@@ -32,6 +32,118 @@
 		{/IF} 
 
 		<STYLE TYPE="text/css">
+            /*! 
+             * CSS Media Queries Boilerplate by @brandonhimpfen
+             * all.css
+             * Copyright Brandon Himpfen
+             * Licensed under http://www.gnu.org/licenses/gpl-2.0.html
+             * Website: himpfen.com
+             */
+
+            /*
+                General
+            */
+
+            @media all {
+                /* all devices */
+            } 
+            @media screen {
+                /* computer screens */
+            }
+            @media print {
+                /* printers */
+            }
+            @media aural {
+                /* speech and sound synthesizers */
+            }
+            @media braille {
+                /* braille tactile feedback devices */
+            }
+            @media embossed {
+                /* paged braille printers */
+            }
+            @media handheld {
+                /* small or handheld devices */
+            }
+            @media projection {
+                /* projected presentations */
+            }
+            @media tty {
+                /* teletypes and terminals */
+            }
+            @media tv {
+                /* television-type devices */
+            }
+
+            /*
+                iPad
+            */
+
+            @media only screen 
+            and (min-device-width : 768px) 
+            and (max-device-width : 1024px)  { 
+                /* all iPad models */
+            }
+            @media only screen 
+            and (min-device-width : 768px) 
+            and (max-device-width : 1024px) 
+            and (orientation : landscape) { 
+                /* all iPad models, landscape */
+            }
+            @media only screen 
+            and (min-device-width : 768px) 
+            and (max-device-width : 1024px) 
+            and (orientation : portrait) { 
+                /* all iPad models, portrait */ 
+            }
+
+            /*
+                Apple iPhone 5
+            */
+
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 568px) { 
+                /* iPhone 5 */
+            }
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 568px) 
+            and (orientation : landscape) { 
+                /* iPhone 5, landscape */
+            }
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 568px) 
+            and (orientation : portrait) { 
+                /* iPhone 5, portrait */ 
+            }
+
+            /*
+                iPhone 2 - 4 and iPod Touch
+            */
+
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 480px) { 
+                /* iPhone 2 - 4 and iPod Touch */ 
+            }
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 480px) 
+            and (orientation : landscape) { 
+                /* iPhone 2 - 4 and iPod Touch, landscape */ 
+            }
+            @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 480px) 
+            and (orientation : portrait) { 
+                /* iPhone 2 - 4 and iPod Touch, portrait */ 
+            }
+
+
+
+
 			{* Build CSS Based from DB Info *}
 			/*{FOREACH from=$HTML.HEAD.STYLE item=style}
 				{$style.element}{if $style.state != "" && $style.state != " "}:{$style.state}{/if}{
@@ -56,7 +168,7 @@
 
             body{
                 background: none;
-                background: url(/bin/images/bgs/full/{$suite}.png) center center no-repeat fixed !important; 
+                /*background: url(/bin/images/bgs/full/{$suite}.png) center center no-repeat fixed !important; */
                 background-position: center center  !important; 
             }
 
@@ -77,15 +189,16 @@
 <div class="logo text-center">
     <h4>
          
-        <a href="/" class="">
+       <!--  <a href="/" class="">
             <i class="fa fa-globe text-info"></i> 
-        </a>  
+        </a>   -->
        <!--  <span class="label label-warning">  
          <strong>x</strong></span> -->
-        <a href="/{$toBackDoor}" style=" ">
-           {$HTTP_HOST}
-        </a>  <br/>
-        
+
+        <span href="/{$toBackDoor}"  style="position: fixed; font-size: 500%; color: rgba(0,0,0,0.15); top: 30px; left: 45px;  z-index: -1;">
+           {$HTTP_HOST} 
+        </span>  <br/>
+         
           
        <!--  <btn class="btn btn-sm label dropdown label-success dropdown  ">   
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {$suite}  <span class="caret"></span></a>
@@ -104,9 +217,15 @@
             
       
     </h4>  
+    
+     
+</div>
+<div id="background-clock" style="position: fixed; font-size: 555%; color: rgba(0,0,0,0.10); bottom: 55px; right: 25px;">
+    {include file="../../~blox/clock.tpl"}   
 </div>
 <nav id="sidebar" class="sidebar nav-collapse collapse">
     <ul id="side-nav" class="side-nav">
+
         <li class="active">
             <a href="/{$toBackDoor}"><i class="fa fa-eye"></i> <span class="name">Watchtower</span>  </a>
         </li>
@@ -185,25 +304,72 @@
     </ul>
 </nav>
 <div class="wrap">
-    <header class="page-header">
-        <div class="navbar"> 
+    <header class="page-header" style="position: relative; z-index:10 ">
+        <div class="navbar" > 
+                
                 <ul class="nav navbar-nav navbar-right pull-right">
-                    <li class=" ">
+                    <li class=" hidden-xs">
                         <a href="/"  >
-                            <i class="fa fa-globe text-info"></i>
+                            <i class="fa fa-globe"></i>
                         </a>
                     </li>
 
+
+                    <li class="hidden-xs">
+                        <a href="#" id="settings"
+                           title="Settings"
+                           data-toggle="popover"
+                           data-placement="bottom">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                    </li>
                     
-                    <li class="visible-phone-landscape">
-                        <a href="#" id="search-toggle">
-                            <i class="fa fa-search"></i>
+                    <li class="divider"></li>
+                    
+                    <li class="hidden  dropdown">
+                        <a href="#" title="Account" id="account"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+                        </a>
+                        <ul id="account-menu" class="dropdown-menu account" role="menu">
+                            <li role="presentation" class="account-picture">
+                                <!-- <img src="img/2.jpg" alt=""> -->
+                                Philip Daineka
+                            </li>
+                            <li role="presentation">
+                                <a href="form_account.html" class="link">
+                                    <i class="fa fa-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="component_calendar.html" class="link">
+                                    <i class="fa fa-calendar"></i>
+                                    Calendar
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="link">
+                                    <i class="fa fa-inbox"></i>
+                                    Inbox
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="visible-xs">
+                        <a href="#"
+                           class="btn-navbar"
+                           data-toggle="collapse"
+                           data-target=".sidebar"
+                           title="">
+                            <i class="fa fa-bars"></i>
                         </a>
                     </li>
+                    
 
 
-
-                    <li class="dropdown">
+                    <li class="dropdown hidden">
                         <a href="#" title="Messages" id="messages"
                            class="dropdown-toggle"
                            data-toggle="dropdown">
@@ -250,7 +416,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown hidden">
                         <a href="#" title="8 support tickets"
                            class="dropdown-toggle"
                            data-toggle="dropdown">
@@ -315,80 +481,28 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="divider"></li>
+                    <li class=" "><a href="/{$toBackDoor}/login/logout"><i class="fa fa-sign-out"></i></a></li>
 
-
-                    <li class="hidden-xs">
-                        <a href="#" id="settings"
-                           title="Settings"
-                           data-toggle="popover"
-                           data-placement="bottom">
-                            <i class="fa fa-cog"></i>
-                        </a>
-                    </li>
-                    <li class="hidden-xs dropdown">
-                        <a href="#" title="Account" id="account"
-                           class="dropdown-toggle"
-                           data-toggle="dropdown">
-                            <i class="fa fa-user"></i>
-                        </a>
-                        <ul id="account-menu" class="dropdown-menu account" role="menu">
-                            <li role="presentation" class="account-picture">
-                                <!-- <img src="img/2.jpg" alt=""> -->
-                                Philip Daineka
-                            </li>
-                            <li role="presentation">
-                                <a href="form_account.html" class="link">
-                                    <i class="fa fa-user"></i>
-                                    Profile
-                                </a>
-                            </li>
-                            <li role="presentation">
-                                <a href="component_calendar.html" class="link">
-                                    <i class="fa fa-calendar"></i>
-                                    Calendar
-                                </a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#" class="link">
-                                    <i class="fa fa-inbox"></i>
-                                    Inbox
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="visible-xs">
-                        <a href="#"
-                           class="btn-navbar"
-                           data-toggle="collapse"
-                           data-target=".sidebar"
-                           title="">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </li>
-                    <li class="hidden-xs"><a href="/{$toBackDoor}/login/logout"><i class="fa fa-sign-out"></i></a></li>
                 </ul>
+    
                 <form id="search-form" class="navbar-form pull-right" role="search">
                     <input type="search" class="search-query" placeholder="Search...">
                 </form>
 
-                <div class="notifications pull-left">
-                    <div class="alert-warning alert pull-left">
+                <div class="notifications pull-right hidden">
+                     <div class="alert-warning alert pull-right hidden-xs">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
                         <i class='fa fa-users'></i>  <strong>11 Users Online</strong>  
                     </div>
-                    <div class="alert-warning alert pull-left">
+                    <div class="alert-warning alert pull-right hidden-xs">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <i class='fa fa-dashboard'></i>  <strong>11 MPS</strong>  
+                        <i class='fa fa-dashboard'></i>  <strong>{$total_used_space.left} - {$total_used_space.used} used of {$total_used_space.limit}</strong>  
                     </div> 
-                    <div class="alert-warning alert pull-left">
+                    <div class="alert-warning alert pull-right hidden-xs">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
                         <i class='fa fa-exchange fa-rotate-90'></i>  <strong>{$HTTP_HOST_TOTAL_HITS}</strong>  
                     </div> 
-                </div>
-
-                <div class="notifications pull-right">
-                    <div class="alert-info alert pull-right">
+                    <div class="alert-info alert pull-right hidden-xs">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
                         Domain {$HTTP_HOST} is now SuperCharged! Launch it on any Device!
                                     (<i class="fa fa-mobile "></i>
@@ -537,6 +651,235 @@
     {$SCRIPT}
  
 
+    <script type="text/javascript">
+        /*!
+         * jQuery Cookie Plugin v1.4.1
+         * https://github.com/carhartl/jquery-cookie
+         *
+         * Copyright 2013 Klaus Hartl
+         * Released under the MIT license
+         */
+        (function (factory) {
+            if (typeof define === 'function' && define.amd) {
+                // AMD
+                define(['jquery'], factory);
+            } else if (typeof exports === 'object') {
+                // CommonJS
+                factory(require('jquery'));
+            } else {
+                // Browser globals
+                factory(jQuery);
+            }
+        }(function ($) {
+
+            var pluses = /\+/g;
+
+            function encode(s) {
+                return config.raw ? s : encodeURIComponent(s);
+            }
+
+            function decode(s) {
+                return config.raw ? s : decodeURIComponent(s);
+            }
+
+            function stringifyCookieValue(value) {
+                return encode(config.json ? JSON.stringify(value) : String(value));
+            }
+
+            function parseCookieValue(s) {
+                if (s.indexOf('"') === 0) {
+                    // This is a quoted cookie as according to RFC2068, unescape...
+                    s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+                }
+
+                try {
+                    // Replace server-side written pluses with spaces.
+                    // If we can't decode the cookie, ignore it, it's unusable.
+                    // If we can't parse the cookie, ignore it, it's unusable.
+                    s = decodeURIComponent(s.replace(pluses, ' '));
+                    return config.json ? JSON.parse(s) : s;
+                } catch(e) {}
+            }
+
+            function read(s, converter) {
+                var value = config.raw ? s : parseCookieValue(s);
+                return $.isFunction(converter) ? converter(value) : value;
+            }
+
+            var config = $.cookie = function (key, value, options) {
+
+                // Write
+
+                if (value !== undefined && !$.isFunction(value)) {
+                    options = $.extend({}, config.defaults, options);
+
+                    if (typeof options.expires === 'number') {
+                        var days = options.expires, t = options.expires = new Date();
+                        t.setTime(+t + days * 864e+5);
+                    }
+
+                    return (document.cookie = [
+                        encode(key), '=', stringifyCookieValue(value),
+                        options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+                        options.path    ? '; path=' + options.path : '',
+                        options.domain  ? '; domain=' + options.domain : '',
+                        options.secure  ? '; secure' : ''
+                    ].join(''));
+                }
+
+                // Read
+
+                var result = key ? undefined : {};
+
+                // To prevent the for loop in the first place assign an empty array
+                // in case there are no cookies at all. Also prevents odd result when
+                // calling $.cookie().
+                var cookies = document.cookie ? document.cookie.split('; ') : [];
+
+                for (var i = 0, l = cookies.length; i < l; i++) {
+                    var parts = cookies[i].split('=');
+                    var name = decode(parts.shift());
+                    var cookie = parts.join('=');
+
+                    if (key && key === name) {
+                        // If second argument (value) is a function it's a converter...
+                        result = read(cookie, value);
+                        break;
+                    }
+
+                    // Prevent storing a cookie that we couldn't decode.
+                    if (!key && (cookie = read(cookie)) !== undefined) {
+                        result[name] = cookie;
+                    }
+                }
+
+                return result;
+            };
+
+            config.defaults = {};
+
+            $.removeCookie = function (key, options) {
+                if ($.cookie(key) === undefined) {
+                    return false;
+                }
+
+                // Must not alter options, thus extending a fresh object...
+                $.cookie(key, '', $.extend({}, options, { expires: -1 }));
+                return !$.cookie(key);
+            };
+
+        }));
+$(document).ready(function() {
+    for (var t = [{
+        color: "#7CD6E8",
+        title: "Theme 1",
+        style: "css/theme-2.min.css"
+    }, {
+        color: "#95879c",
+        title: "Theme 2",
+        style: "css/theme-3.min.css"
+    }, {
+        color: "#00cccc",
+        title: "Theme 3",
+        style: "css/theme-4.min.css"
+    }, {
+        color: "#e36f8a",
+        title: "Theme 4",
+        style: "css/theme-5.min.css"
+    }, {
+        color: "#9999ff",
+        title: "Theme 5",
+        style: "css/theme-6.min.css"
+    }, {
+        color: "#bda093",
+        title: "Theme 6",
+        style: "css/theme-7.min.css"
+    }, {
+        color: "#ff8855",
+        title: "Theme 7",
+        style: "css/theme-8.min.css"
+    }, {
+        color: "#828282",
+        title: "Theme 8",
+        style: "css/theme-9.min.css"
+    }, {
+        color: "#1abc9c",
+        title: "Theme 9",
+        style: "css/theme-10.min.css"
+    }, {
+        color: "#2ecc71",
+        title: "Theme 10",
+        style: "css/theme-11.min.css"
+    }, {
+        color: "#3498db",
+        title: "Theme 11",
+        style: "css/theme-12.min.css"
+    }, {
+        color: "#9b59b6",
+        title: "Theme 12",
+        style: "css/theme-13.min.css"
+    }, {
+        color: "#34495e",
+        title: "Theme 13",
+        style: "css/theme-14.min.css"
+    }, {
+        color: "#f1c40f",
+        title: "Theme 14",
+        style: "css/theme-15.min.css"
+    }, {
+        color: "#e67e22",
+        title: "Theme 15",
+        style: "css/theme-16.min.css"
+    }, {
+        color: "#e74c3c",
+        title: "Theme 16",
+        style: "css/theme-17.min.css"
+    }, {
+        color: "#95a5a6",
+        title: "Theme 17",
+        style: "css/theme-18.min.css"
+    }, {
+        color: "#96d7a0",
+        title: "Theme Default",
+        style: "css/theme-1.min.css"
+    }], i = "", n = 0; n < t.length; n++) i += '<a href="#" data-color="' + t[n].color + '"  data-theme-css="' + t[n].style + '" title="' + t[n].title + '" style="display: inline-block; height: 50px;  width: 50px; margin-right: 10px;text-decoration: none!important; border: 1px solid rgba(77, 77, 77, 0.95); background-color: ' + t[n].color + '"><\/a>';
+
+    $("body").append(' <a title="Show/Hide Theme Changer" href="#" id="theme-changer" style="position: fixed;display: inline-block;top: 0px;left: 0;width: 40px;line-height: 40px;background-color: rgba(77, 77, 77, 0.23);border-radius: 0 3px 3px 0;color: white;z-index: 1003;text-align: center;font-size: 1.5em;text-decoration: none!important"><i class="fa fa-eye"><\/i><\/a><div class="theme-changer-colors theme-changer-hidden" style="border:0px solid rgb(238, 238, 238);visibility: hidden;opacity: 0;position: fixed;top: 40px;left: -170px;width: 150px;padding: 10px;text-align: center;z-index: 1002;border-radius: 0 3px 3px 0;background-color: rgba(77, 77, 77, 0.23);-moz-transition-duration: .4s;-o-transition-duration: .4s;-webkit-transition-duration: .4s;transition-duration: .4s;">' + i + "<\/div>");
+    $("#theme-changer").click(function() {
+        return $(".theme-changer-colors").toggleClass("theme-changer-hidden"), $(".theme-changer-colors").hasClass("theme-changer-hidden") ? $(".theme-changer-colors").css({
+            visibility : "hidden",
+            opacity    : 0, 
+            left       : "-170px"
+        }) : $(".theme-changer-colors").css({
+            visibility : "visible",
+            opacity    : 1, 
+            left       : 0
+            }), !1
+    });
+    $.cookie("theme_css_cookie") != null && 
+        $('body').css({
+            background : $.cookie("theme_css_cookie")
+        });
+    $(".theme-changer-colors a[data-theme-css]").click(function(n) {
+        //
+        n.preventDefault();
+        var t = $(this).data("color");
+        var c = $(this).data("color");
+        
+        $('body').css({
+            background : c 
+        });
+
+        // $("[data-id-stylesheet]").attr("href", t);
+        $.cookie("theme_css_cookie", c.toString(), {
+            expires: 1
+        });
+
+
+    })
+});
+    </script>
+
     <!-- page specific -->
 
 
@@ -557,30 +900,11 @@
        
             {if $Xtra != 'login'}     
                 {assign var="php" value="x{$Xtra|ucfirst}.php"}
-                <head><title>{$xtras.$php.name}: {$xtras.$php.desc} | Super Dom</title></head>
-               
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="page-title">
-                         {if $method == 'index'}
-                          
-                           
-                            {foreach $xtras as $x => $xtra} 
-                                {if $Xtra == $xtra.link}
-                                    {$xtra.name|ucfirst}
-                                    <small>{$xtra.desc}</small>
-                                {/if}
-                            {/foreach}
-                        {else}
-                            / {$method|ucfirst}
-                        {/if}
-                        </h2>
-                    </div>
-                </div>
+                <head><title>{$xtras.$php.name}: {$xtras.$php.desc} | Super Dom</title></head>             
+                
                 
                 <div class="row"> 
-                    <div class="col-md-12 widget-container "> 
+                    <div class="col-md-12 widget-container " style="position: relative; z-index: 10;"> 
                         <section class="widget locked">
                             <ol class="breadcrumb">
                                 <li><a href="/"><i class="fa fa-globe"></i> Home</a></li>
@@ -594,7 +918,7 @@
                                         {$xtra.name} 
 
                                         {if $method == 'index'} 
-                                        <span class="text-right btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</span></a>
+                                        
                                         </li>
                                         {else}
                                             <li class="active"><a href="/{$toBackDoor}/{$Xtra}/{$method}"><i class="fa fa-{$Xtra}-{$method}"> {$method|ucfirst}</i></a>
@@ -604,6 +928,25 @@
                                 {/foreach}
                             </ol>
                         </section>  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="page-title">
+                         {if $method == 'index'}
+                          
+                           
+                            {foreach $xtras as $x => $xtra} 
+                                {if $Xtra == $xtra.link}
+                                    {$xtra.name|ucfirst}
+                                    <span class="pull-right btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</span>
+                                    <small>{$xtra.desc}</small>
+                                {/if}
+                            {/foreach}
+                        {else}
+                            / {$method|ucfirst}
+                        {/if}
+                        </h2>
                     </div>
                 </div>
             {/if}

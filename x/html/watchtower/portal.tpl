@@ -1,9 +1,7 @@
 <div class="row"> 
-    <div class="col-md-9 widget-container ">  
+    <div class="col-md-12 widget-container ">  
         <section class="widget locked">
-            <p class="pull-right visible-xs">
-                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-            </p>
+            
             <div class="jumbotron handle">
                 <div class="container">
                     <div class="widget-controls" data-widgster="restore">
@@ -22,13 +20,12 @@
                             {/foreach} 
                         </ol>
                         <div class="carousel-inner text-align-center">
-                            <div class="item active">
-                                <h1><i class="fa fa-4x fa-space-shuttle "></i><br/>Welcome {$user.username|ucfirst}  </h1>
+                            <div class="item active" id="0">
+                                <h1><i class="fa fa-4x fa-space-shuttle "></i><br/>Hello {$user.username|ucfirst}  </h1>
                                 <p class="lead">
-                                    
-                                  
-                                    <i class='fa fa-clock'></i>{include file="../~blox/clock.tpl"}<br/>
-                                    
+                                   
+                                Welcome to your Super <b>Space-i-licious</b>  Dashboard!
+                                   
                                 </p>
                                 <p class="text-align-center">
                                     <!-- <a class="btn btn-success btn-lg " data-widgster="fullscreen"> -->
@@ -59,7 +56,7 @@
 
                                                        
                                                         
-                                                        <i class="fa fa-{$xtra.mini} fa-2x"></i> {$xtra.name} 
+                                                        <i class="fa fa-{$xtra.mini}  "></i> {$xtra.name} 
                                                     </a>
                                                 {/if}
                                             {/foreach}
@@ -232,9 +229,9 @@
         -->
          
     </div>
-<div class="col-md-3  widget-container ">
-    {include file="~widgets/top_x_shortcuts.tpl"}  
-</div> 
+    <!-- <div class="col-md-3  widget-container ">
+        {include file="~widgets/top_x_shortcuts.tpl"}  
+    </div>  -->
 </div>
 
     

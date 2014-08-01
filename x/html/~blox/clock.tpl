@@ -10,12 +10,14 @@
 		setClock : function (time) {
 			clock.time = new Date(time);
 		},
-		time : new Date()
+		time : function () {
+			return new Date();
+		}
 	};
 
 	function updateClock ( )
 	{
-	  var currentTime = clock.time;
+	  var currentTime = clock.time();
 	
 	  var currentHours = currentTime.getHours ( );
 	  var currentMinutes = currentTime.getMinutes ( );
@@ -34,24 +36,26 @@
 	  // Convert an hours component of "0" to "12"
 	  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
 
-	  var blink = (BLINK_CLOCK) ? ':' : ' ';
+	  var blink = (BLINK_CLOCK) ? ':' : ':';
 	  BLINK_CLOCK = (BLINK_CLOCK) ? false : true;
+		var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+		var month = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 
-		var d = clock.time;
-		var month=new Array(12);
-		month[0]="January";
-		month[1]="February";
-		month[2]="March";
-		month[3]="April";
-		month[4]="May";
-		month[5]="June";
-		month[6]="July";
-		month[7]="August";
-		month[8]="September";
-		month[9]="October";
-		month[10]="November";
-		month[11]="December";
+		var d = clock.time();
+		// var month=new Array(12);
+		// month[0]="January";
+		// month[1]="February";
+		// month[2]="March";
+		// month[3]="April";
+		// month[4]="May";
+		// month[5]="June";
+		// month[6]="July";
+		// month[7]="August";
+		// month[8]="September";
+		// month[9]="October";
+		// month[10]="November";
+		// month[11]="December";
 	
 		var zodiac = clock.zodiac = ['♑','♒','♓','♈','♉','♊','♋','♌','♍','♎','♏','♐'];
 		var trans = ['20','19','20','20','21','21','23','23','23','23','22','21'];
@@ -60,11 +64,13 @@
 	  // var currentTimeString = (currentTime.format) ? 
 	  // 	currentTime.format('F jS h:i(s) A') :
 	  // 	month[d.getMonth()] + " "+ d.getDay() + " | hi | " + currentHours + blink + currentMinutes + " " + timeOfDay ; 
-	
+		var point = '<span class="point">:</span>';
+	  
 	  var currentTimeString = (typeof currentTime.format != 'undefined') ? 
 	  	currentTime.format('F jS' + ' h:i(s) A') :
-	  	month[d.getMonth()] + " "+ d.getDate() + " Z " + currentHours + blink + currentMinutes + " " + timeOfDay ; 
+	  	 days[ d.getDay() ] +", "+ month[d.getMonth()] + " "+ d.getDate() + " Z " + currentHours + ":" + currentMinutes + point + currentSeconds+ timeOfDay ; 
 
+ 
 
 	  	var next = ( d.getDate() > trans[d.getMonth()] ) ? 1 : 0;
 
@@ -74,7 +80,6 @@
 
 	
 
-	  var point = '<span class="point">:</span>';
 	  
 	  //x4.theTimeIs = currentTime.format('h') + point + currentTime.format('i');// + point + currentTime.format('s');
 	  
