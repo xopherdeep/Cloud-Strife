@@ -11,135 +11,151 @@
 		<link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/bin/css/font-awesome.css">
 
-        <link href='http://fonts.googleapis.com/css?family=Geo|Righteous|Allerta' rel='stylesheet' type='text/css'>
-        
+        <link href='http://fonts.googleapis.com/css?family=Geo|Righteous|Allerta' rel='stylesheet' type='text/css'> 
+        <link rel="shortcut icon" href="img/favicon.png">
+
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta charset="utf-8">
+
+        {* TODO: Make a min & compress file for all css *}
+        {if $HTML.HEAD.CSS != ''}
+        <link rel="stylesheet" type="text/css" href="{$HTML.HEAD.CSS}">
+        {/if} 
+
+        {if $HTML.HEAD.JS != ''}
+        <!--
+        <script type="text/javascript" src="{$HTML.HEAD.JS}"></SCRIPT>
+        -->
+        {/IF} 
+
+        <style type="text/css">
+        /*! 
+                 * CSS Media Queries Boilerplate by @brandonhimpfen
+                 * all.css
+                 * Copyright Brandon Himpfen
+                 * Licensed under http://www.gnu.org/licenses/gpl-2.0.html
+                 * Website: himpfen.com
+                 */
+
+                /*
+                    General
+                */
+
+               
+
+                @media all {
+                    /* all devices */
+                     .background-clock {
+                        position: fixed; font-size: 555%; color: rgba(0,0,0,0.10); bottom: 55px; right: 25px;
+                        /* -- transition is the magic sauce for animation -- */
+                        -webkit-transition          : all .4s ease-in-out;
+                        transition                  : all .4s ease-in-out;
+                    }
+                } 
+                @media screen {
+                    /* computer screens */
+                     
+                }
+                @media print {
+                    /* printers */
+                }
+                @media aural {
+                    /* speech and sound synthesizers */
+                }
+                @media braille {
+                    /* braille tactile feedback devices */
+                }
+                @media embossed {
+                    /* paged braille printers */
+                }
+                @media handheld {
+                    /* small or handheld devices */
+                }
+                @media projection {
+                    /* projected presentations */
+                }
+                @media tty {
+                    /* teletypes and terminals */
+                }
+                @media tv {
+                    /* television-type devices */
+                }
+
+
+                @media screen and (max-width: 768px){ 
+                    /* all iPad models */
+                    
+                }
+
+                /*
+                    iPad
+                */
+
+                @media screen and (min-width : 768px) and (max-width : 1024px)  { 
+                    /* all iPad models */
+                    .background-clock {
+                         font-size: 333%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                    }
+                }
+                @media screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) { 
+                    /* all iPad models, landscape */
+                   
+                }
+                @media screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) { 
+                    /* all iPad models, portrait */ 
+                }
+
+                @media screen and (min-width : 568px) and (max-width : 768px) { 
+                    /* iPhone 5 */
+                    .background-clock {
+                         font-size: 222%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                    }
+                    
+                }
+
+                /*
+                    Apple iPhone 5
+                */
+
+                @media screen and (min-width : 320px) and (max-width : 568px) { 
+                    /* iPhone 5 */
+                    .background-clock {
+                         font-size: 222%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                    }
+                    
+                }
+                @media screen and (min-width : 320px) and (max-width : 568px) and (orientation : landscape) { 
+                    /* iPhone 5, landscape */
+                     
+                }
+                @media screen and (min-width : 320px) and (max-width : 568px) and (orientation : portrait) { 
+                    /* iPhone 5, portrait */ 
+                     
+                }
+
+                /*
+                    iPhone 2 - 4 and iPod Touch
+                */
+
+                @media screen and (min-width : 320px) and (max-width : 480px) {     /* iPhone 2 - 4 and iPod Touch */ 
+                     
+                }
+                @media screen and (min-width : 320px) and (max-width : 480px) and (orientation : landscape) { 
+                    /* iPhone 2 - 4 and iPod Touch, landscape */ 
+                    
+                }
+                @media screen  and (min-width : 320px)  and (max-width : 480px)  and (orientation : portrait) { 
+                    /* iPhone 2 - 4 and iPod Touch, portrait */ 
+                     
+                }
+        </style>
 </head>
-	    <link rel="shortcut icon" href="img/favicon.png">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <meta name="description" content="">
-	    <meta name="author" content="">
-	    <meta charset="utf-8">
-
-		{* TODO: Make a min & compress file for all css *}
-		{if $HTML.HEAD.CSS != ''}
-		<link rel="stylesheet" type="text/css" href="{$HTML.HEAD.CSS}">
-		{/if} 
-
-		{if $HTML.HEAD.JS != ''}
-		<!--
-		<script type="text/javascript" src="{$HTML.HEAD.JS}"></SCRIPT>
-		-->
-		{/IF} 
+	    
 
 		<STYLE TYPE="text/css">
-            /*! 
-             * CSS Media Queries Boilerplate by @brandonhimpfen
-             * all.css
-             * Copyright Brandon Himpfen
-             * Licensed under http://www.gnu.org/licenses/gpl-2.0.html
-             * Website: himpfen.com
-             */
 
-            /*
-                General
-            */
-
-            @media all {
-                /* all devices */
-            } 
-            @media screen {
-                /* computer screens */
-            }
-            @media print {
-                /* printers */
-            }
-            @media aural {
-                /* speech and sound synthesizers */
-            }
-            @media braille {
-                /* braille tactile feedback devices */
-            }
-            @media embossed {
-                /* paged braille printers */
-            }
-            @media handheld {
-                /* small or handheld devices */
-            }
-            @media projection {
-                /* projected presentations */
-            }
-            @media tty {
-                /* teletypes and terminals */
-            }
-            @media tv {
-                /* television-type devices */
-            }
-
-            /*
-                iPad
-            */
-
-            @media only screen 
-            and (min-device-width : 768px) 
-            and (max-device-width : 1024px)  { 
-                /* all iPad models */
-            }
-            @media only screen 
-            and (min-device-width : 768px) 
-            and (max-device-width : 1024px) 
-            and (orientation : landscape) { 
-                /* all iPad models, landscape */
-            }
-            @media only screen 
-            and (min-device-width : 768px) 
-            and (max-device-width : 1024px) 
-            and (orientation : portrait) { 
-                /* all iPad models, portrait */ 
-            }
-
-            /*
-                Apple iPhone 5
-            */
-
-            @media only screen 
-            and (min-device-width : 320px) 
-            and (max-device-width : 568px) { 
-                /* iPhone 5 */
-            }
-            @media only screen 
-            and (min-device-width : 320px) 
-            and (max-device-width : 568px) 
-            and (orientation : landscape) { 
-                /* iPhone 5, landscape */
-            }
-            @media only screen 
-            and (min-device-width : 320px) 
-            and (max-device-width : 568px) 
-            and (orientation : portrait) { 
-                /* iPhone 5, portrait */ 
-            }
-
-            /*
-                iPhone 2 - 4 and iPod Touch
-            */
-
-            @media only screen 
-            and (min-device-width : 320px) 
-            and (max-device-width : 480px) { 
-                /* iPhone 2 - 4 and iPod Touch */ 
-            }
-            @media only screen 
-            and (min-device-width : 320px) 
-            and (max-device-width : 480px) 
-            and (orientation : landscape) { 
-                /* iPhone 2 - 4 and iPod Touch, landscape */ 
-            }
-            @media only screen 
-            and (min-device-width : 320px) 
-            and (max-device-width : 480px) 
-            and (orientation : portrait) { 
-                /* iPhone 2 - 4 and iPod Touch, portrait */ 
-            }
 
 
 
@@ -220,7 +236,7 @@
     
      
 </div>
-<div id="background-clock" style="position: fixed; font-size: 555%; color: rgba(0,0,0,0.10); bottom: 55px; right: 25px;">
+<div class="background-clock" >
     {include file="../../~blox/clock.tpl"}   
 </div>
 <nav id="sidebar" class="sidebar nav-collapse collapse">
@@ -916,7 +932,7 @@ $(document).ready(function() {
                                         </li>
                                         <li class="active"><a href="/{$toBackDoor}/{$xtra.link}"><i class="fa fa-{$xtra.mini}"></i>
                                         {$xtra.name} 
-
+                                        </a>
                                         {if $method == 'index'} 
                                         
                                         </li>
@@ -944,7 +960,13 @@ $(document).ready(function() {
                                 {/if}
                             {/foreach}
                         {else}
-                            / {$method|ucfirst}
+                            {foreach $xtras as $x => $xtra} 
+                                {if $Xtra == $xtra.link}
+                                    {$xtra.name|ucfirst}
+                                    <span class="pull-right btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</span>
+                                    <small>{$method|ucfirst}</small>
+                                {/if}
+                            {/foreach} 
                         {/if}
                         </h2>
                     </div>
@@ -963,6 +985,5 @@ $(document).ready(function() {
         {$HTML.BODY.HTML}
 
     </div>
-
 </body>
 </html>

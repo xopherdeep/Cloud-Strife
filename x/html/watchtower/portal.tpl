@@ -24,7 +24,7 @@
                                 <h1><i class="fa fa-4x fa-space-shuttle "></i><br/>Hello {$user.username|ucfirst}  </h1>
                                 <p class="lead">
                                    
-                                Welcome to your Super <b>Space-i-licious</b>  Dashboard!
+                                Welcome to your Super <b>Spacylecious</b>  Dashboard!
                                    
                                 </p>
                                 <p class="text-align-center">

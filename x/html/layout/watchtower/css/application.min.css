@@ -3065,11 +3065,11 @@ input.parsley-error {
 }
 
 .single-widget-container {
-    left: 0;
-    top: 50%;
-    margin-top: -192.5px;
+    left: 20%;
+    top: 20%;
+    /*margin-top: -192.5px;*/
     position: absolute;
-    width: 100%;
+    width: 70%;
 }
 
 .single-widget-container .widget {
