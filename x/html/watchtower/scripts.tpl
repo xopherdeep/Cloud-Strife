@@ -69,6 +69,10 @@
 <!-- bootstrap custom plugins -->
 <script src="/x/html/layout/watchtower/lib/bootstrap-datepicker.js"></script>
 <script src="/x/html/layout/watchtower/lib/bootstrap-select/bootstrap-select.js"></script>
+
+<script src="/x/html/layout/watchtower/lib/jquery.bootstrap.wizard.js"></script>
+
+
 <script src="/x/html/layout/watchtower/lib/wysihtml5/wysihtml5-0.3.0_rc2.js"></script>
 <script src="/x/html/layout/watchtower/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
 
