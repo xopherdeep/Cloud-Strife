@@ -96,7 +96,7 @@
                 @media screen and (min-width : 768px) and (max-width : 1024px)  { 
                     /* all iPad models */
                     .background-clock {
-                         font-size: 333%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                         font-size: 444%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
                     }
                 }
                 @media screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) { 
@@ -110,7 +110,7 @@
                 @media screen and (min-width : 568px) and (max-width : 768px) { 
                     /* iPhone 5 */
                     .background-clock {
-                         font-size: 222%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                         font-size: 333%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
                     }
                     
                 }
@@ -913,8 +913,9 @@ $(document).ready(function() {
     <div class="content container" id="container" data-pjax-container>
         {assign var="WT" value="/x/html/layout/watchtower/"}
         {if $TPL_EXISTS && $Xtra != '' AND $method  != '' AND ($Xtra != 'index')}
-       
-            {if $Xtra != 'login'}     
+
+
+            {if $masterKey.is.user}     
                 {assign var="php" value="x{$Xtra|ucfirst}.php"}
                 <head><title>{$xtras.$php.name}: {$xtras.$php.desc} | Super Dom</title></head>             
                 
@@ -922,53 +923,56 @@ $(document).ready(function() {
                 <div class="row"> 
                     <div class="col-md-12 widget-container " style="position: relative; z-index: 10;"> 
                         <section class="widget locked">
+                         
                             <ol class="breadcrumb">
                                 <li><a href="/"><i class="fa fa-globe"></i> Home</a></li>
-                                <li><a href="/{$toBackDoor}"><i class="fa fa-dashboard"></i> SuperDom</a></li>
+                                <li><a href="/{$toBackDoor}"><i class="fa fa-dashboard"></i> Watchtower</a></li>
                                 {foreach $xtras as $x => $xtra}
-                                    {if $xtra.icon && $Xtra == $xtra.link}
+                                    
+                                    {if $xtra.icon && "x{$Xtra|ucfirst}" == $xtra.class}
                                         <li><a href="/{$toBackDoor}"><i class="fa fa-{$xtra.see}"></i>
                                         {$xtra.see|ucfirst}</a> 
                                         </li>
                                         <li class="active"><a href="/{$toBackDoor}/{$xtra.link}"><i class="fa fa-{$xtra.mini}"></i>
                                         {$xtra.name} 
-                                        </a>
+                                        </a> 
                                         {if $method == 'index'} 
                                         
                                         </li>
                                         {else}
-                                            <li class="active"><a href="/{$toBackDoor}/{$Xtra}/{$method}"><i class="fa fa-{$Xtra}-{$method}"> {$method|ucfirst}</i></a>
+                                            <li class="active">
+                                                <a href="/{$toBackDoor}/{$Xtra}/{$method}"><i class="fa fa-{$Xtra}-{$method}"> {$method|ucfirst}</i>
+                                            </a>
                                         {/if}
 
                                     {/if}
                                 {/foreach}
                             </ol>
+                            <h2 class="page-title">
+                             {if $method == 'index'}
+                                {foreach $xtras as $x => $xtra} 
+                                    {if $xtra.icon && "x{$Xtra|ucfirst}" == $xtra.class}
+                                        {$xtra.name|ucfirst}
+                                        <span class="hidden-xs btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</span>
+                                        <small class="hidden-xs">{$xtra.desc}</small>
+                                    {/if}
+                                {/foreach}
+                            {else}
+                                {foreach $xtras as $x => $xtra} 
+                                    {if $xtra.icon && "x{$Xtra|ucfirst}" == $xtra.class}
+                                        {$xtra.name|ucfirst}
+                                        <span class="hidden-xs btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</span>
+                                        <small class="hidden-xs">{$method|ucfirst}</small>
+                                    {/if}
+                                {/foreach} 
+                            {/if}
+                            </h2>
                         </section>  
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="page-title">
-                         {if $method == 'index'}
-                          
-                           
-                            {foreach $xtras as $x => $xtra} 
-                                {if $Xtra == $xtra.link}
-                                    {$xtra.name|ucfirst}
-                                    <span class="pull-right btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</span>
-                                    <small>{$xtra.desc}</small>
-                                {/if}
-                            {/foreach}
-                        {else}
-                            {foreach $xtras as $x => $xtra} 
-                                {if $Xtra == $xtra.link}
-                                    {$xtra.name|ucfirst}
-                                    <span class="pull-right btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</span>
-                                    <small>{$method|ucfirst}</small>
-                                {/if}
-                            {/foreach} 
-                        {/if}
-                        </h2>
+                        
                     </div>
                 </div>
             {/if}
