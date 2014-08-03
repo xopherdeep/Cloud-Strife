@@ -860,7 +860,7 @@ $(document).ready(function() {
         style: "css/theme-1.min.css"
     }], i = "", n = 0; n < t.length; n++) i += '<a href="#" data-color="' + t[n].color + '"  data-theme-css="' + t[n].style + '" title="' + t[n].title + '" style="display: inline-block; height: 50px;  width: 50px; margin-right: 10px;text-decoration: none!important; border: 1px solid rgba(77, 77, 77, 0.95); background-color: ' + t[n].color + '"><\/a>';
 
-    $("body").append(' <a title="Show/Hide Theme Changer" href="#" id="theme-changer" style="position: fixed;display: inline-block;top: 0px;left: 0;width: 40px;line-height: 40px;background-color: rgba(77, 77, 77, 0.23);border-radius: 0 3px 3px 0;color: white;z-index: 1003;text-align: center;font-size: 1.5em;text-decoration: none!important"><i class="fa fa-eye"><\/i><\/a><div class="theme-changer-colors theme-changer-hidden" style="border:0px solid rgb(238, 238, 238);visibility: hidden;opacity: 0;position: fixed;top: 40px;left: -170px;width: 150px;padding: 10px;text-align: center;z-index: 1002;border-radius: 0 3px 3px 0;background-color: rgba(77, 77, 77, 0.23);-moz-transition-duration: .4s;-o-transition-duration: .4s;-webkit-transition-duration: .4s;transition-duration: .4s;">' + i + "<\/div>");
+    $("body").append(' <a title="Show/Hide Theme Changer" class="widget" href="#" id="theme-changer" style="position: fixed;display: inline-block;top: 0px;left: 0;width: 40px;line-height: 40px; padding: 0px; border-radius: 0 3px 3px 0;color: white;z-index: 1003;text-align: center;font-size: 1.5em;text-decoration: none!important"><i class="fa fa-eye"><\/i><\/a><div class="theme-changer-colors theme-changer-hidden widget" style="border:0px solid rgb(238, 238, 238);visibility: hidden;opacity: 0;position: fixed;top: 40px;left: -170px;width: 150px;padding: 10px;text-align: center;z-index: 1002;border-radius: 0 3px 3px 0;background-color: rgba(77, 77, 77, 0.23);-moz-transition-duration: .4s;-o-transition-duration: .4s;-webkit-transition-duration: .4s;transition-duration: .4s;">' + i + "<\/div>");
     $("#theme-changer").click(function() {
         return $(".theme-changer-colors").toggleClass("theme-changer-hidden"), $(".theme-changer-colors").hasClass("theme-changer-hidden") ? $(".theme-changer-colors").css({
             visibility : "hidden",
@@ -925,8 +925,8 @@ $(document).ready(function() {
                         <section class="widget locked">
                          
                             <ol class="breadcrumb">
-                                <li><a href="/"><i class="fa fa-globe"></i> Home</a></li>
-                                <li><a href="/{$toBackDoor}"><i class="fa fa-dashboard"></i> Watchtower</a></li>
+                                <li><a href="/" target="_blank"><i class="fa fa-globe"></i> www</a></li>
+                                <li><a href="/{$toBackDoor}"><i class="fa fa-eye"></i> Watchtower</a></li>
                                 {foreach $xtras as $x => $xtra}
                                     
                                     {if $xtra.icon && "x{$Xtra|ucfirst}" == $xtra.class}
@@ -948,24 +948,27 @@ $(document).ready(function() {
                                     {/if}
                                 {/foreach}
                             </ol>
-                            <h2 class="page-title">
-                             {if $method == 'index'}
+                            <h2 class="page-title"> 
                                 {foreach $xtras as $x => $xtra} 
                                     {if $xtra.icon && "x{$Xtra|ucfirst}" == $xtra.class}
-                                        {$xtra.name|ucfirst}
-                                        <span class="hidden-xs btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</span>
-                                        <small class="hidden-xs">{$xtra.desc}</small>
-                                    {/if}
-                                {/foreach}
-                            {else}
-                                {foreach $xtras as $x => $xtra} 
-                                    {if $xtra.icon && "x{$Xtra|ucfirst}" == $xtra.class}
-                                        {$xtra.name|ucfirst}
-                                        <span class="hidden-xs btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</span>
-                                        <small class="hidden-xs">{$method|ucfirst}</small>
+                                        <i class="fa fa-{$xtra.mini} fa-3x" style="position: absolute; z-index: 0; top: -15px; left: 0; color: rgba(0,0,0,0.05)"></i> {$xtra.name|ucfirst}
+                                        <a href="/{$toBackDoor}/nexus/git/{$xtra.class}" class="hidden-xs btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</a>
+                                        <small class="hidden-xs">
+
+
+                                        </small>
+
+                                        <small class="hidden-xs">
+                                            {if $method == 'index'}
+                                                
+                                                {$xtra.desc}
+                                            {else}
+                                                
+                                                {$method|ucfirst}
+                                            {/if} 
+                                        </small>
                                     {/if}
                                 {/foreach} 
-                            {/if}
                             </h2>
                         </section>  
                     </div>

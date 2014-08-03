@@ -12,10 +12,10 @@
                     </div>
                     <div id="carousel-example-generic" class="carousel slide">
                         <ol class="carousel-indicators outer">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li> 
+                            <li data-target="# " data-slide-to="0" class="active"></li> 
                             {foreach $admin_menu as $key => $item}
                                 {if $key} 
-                                    <li data-target="#key" data-slide-to="{counter start=1}"></li>    
+                                    <li data-target="#{$key}" data-slide-to="{$key}"></li>    
                                 {/if}
                             {/foreach} 
                         </ol>
@@ -66,48 +66,11 @@
                                     </div>
                                    
 
-                                   <!--  <div align="center" id="map-{$key}" area="{$key}" style="overflow: hidden"> 
-                                        <img src="{$ICON.A}{$key}.png"  id="area-{$key}" height="128" width="128" >
-                                        {foreach $xtras as $x => $xtra}
-                                            {if $xtra.icon && $key == $xtra.see}
-                                            <img src="{$ICON.48}{$xtra.icon}" desc="{$xtra.desc}" link="{$xtra.link}" file="{$x}" icon="{$xtra.icon}" title="{$xtra.name}"> 
-                                            {/if}
-                                        {/foreach}
-                                        <p>{$item.area|ucfirst}</p>
-                                        <span class="transparent-black-25" style="display: none; height: 48px; padding : 5px;">
-                                            <img align="absmiddle" style="margin: 5px;" />
-                                            <h1 style="float: left; margin-left: 60px;"></h1>
-                                            <h3 style=" "></h3>
-                                        </span> 
-                                    </div>   -->
+                                    
                                 {/if}
                             {/foreach}
 
-                           <!--  <div class="item">
-                                <h1>The SuperDom neXus</h1>
-                                <p class="lead">
-                                    Or as we like to call it... <em>SuperDomX</em>! 
-                                </p> 
-                                <p class="text-align-center">
-                                    <a class="btn btn-info btn-lg ">
-                                       Connect to the <em>neXus</em>! &nbsp;
-                                        <i class="fa fa-globe"></i>
-                                    </a>
-                                </p>
-                            </div>
-                            <div class="item">
-                                <h1>Blox & Costumez</h1>
-                                <p class="lead">
-                                    Check our the plethora of contributions from other <em>Users</em>! 
-                                </p> 
-                                <p class="text-align-center">
-                                    <a class="btn btn-danger btn-lg ">
-                                       Get More <em>Pieces</em>! &nbsp;
-                                        <i class="fa fa-puzzle-piece"></i>
-                                    </a>
-                                </p>
-                            </div>
-                        </div> -->
+                            
                         <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                             <i class="fa fa-angle-left"></i>
                         </a>
