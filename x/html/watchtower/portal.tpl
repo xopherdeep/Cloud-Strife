@@ -18,7 +18,7 @@
                                 <p >
                                    
                                  Welcome to your Super <b>Spacylecious</b>  Dashboard!
-                                   <br/>
+                                   <br/><br/>
                                 
                                     <!-- <a class="btn btn-success btn-lg " data-widgster="fullscreen"> -->
                                     <a class="btn btn-info btn-lg " href="/{$toBackDoor}/login/profile">
@@ -33,7 +33,7 @@
                                 <h1><i class="fa fa-{$key} fa-4x"></i><br/>{$item.area|ucfirst}</h1>
                                 <p>
                                     {$item.desc|ucfirst}  
-                                        <br/>
+                                        <br/><br/>
                                      {foreach $xtras as $x => $xtra}
                                         {if $xtra.icon && $key == $xtra.see}
                                             

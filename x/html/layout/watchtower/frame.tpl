@@ -927,11 +927,12 @@ $(document).ready(function() {
                             <ol class="breadcrumb">
                                 <li><a href="/" target="_blank"><i class="fa fa-globe"></i> www</a></li>
                                 <li><a href="/{$toBackDoor}"><i class="fa fa-eye"></i> Watchtower</a></li>
+                                
                                 {foreach $xtras as $x => $xtra}
                                     
                                     {if $xtra.icon && "x{$Xtra|ucfirst}" == $xtra.class}
                                         <li><a href="/{$toBackDoor}"><i class="fa fa-{$xtra.see}"></i>
-                                        {$xtra.see|ucfirst}</a> 
+                                        {$admin_menu[$xtra.see].area|ucfirst}</a> 
                                         </li>
                                         <li class="active"><a href="/{$toBackDoor}/{$xtra.link}"><i class="fa fa-{$xtra.mini}"></i>
                                         {$xtra.name} 
@@ -951,7 +952,7 @@ $(document).ready(function() {
                             <h2 class="page-title"> 
                                 {foreach $xtras as $x => $xtra} 
                                     {if $xtra.icon && "x{$Xtra|ucfirst}" == $xtra.class}
-                                        <i class="fa fa-{$xtra.mini} fa-3x" style="position: absolute; z-index: 0; top: -15px; left: 0; color: rgba(0,0,0,0.05)"></i> {$xtra.name|ucfirst}
+                                        <i class="fa fa-{$xtra.mini} fa-5x" style="font-size: 500%; position: absolute; z-index: 0; bottom: -50%; left: 100px; color: rgba(0,0,0,0.05)"></i> {$xtra.name|ucfirst}
                                         <a href="/{$toBackDoor}/nexus/git/{$xtra.class}" class="hidden-xs btn-xs btn {if $xtra.alpha}btn-danger{elseif $xtra.beta}btn-warning{elseif $xtra.delta}btn-success{elseif $xtra.omega}btn-primary{else}btn-default{/if}">{$xtra.version}</a>
                                         <small class="hidden-xs">
 
@@ -972,12 +973,12 @@ $(document).ready(function() {
                             </h2>
                         </section>  
                     </div>
-                </div>
+                </div><!-- 
                 <div class="row">
                     <div class="col-md-12">
                         
                     </div>
-                </div>
+                </div> -->
             {/if}
 
             {include file="../../../{$suite}/x{$Xtra|ucfirst}/$method.tpl" assign=XTRA_METHOD}    
