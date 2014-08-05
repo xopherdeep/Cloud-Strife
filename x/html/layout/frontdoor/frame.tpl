@@ -53,18 +53,23 @@
 
 		<SCRIPT src="{$HTML.HEAD.JS}"></SCRIPT>
 
-		{if $masterKey.is.admin} 
-
-		<link href="/x/html/layout/watchtower/css/white.application.min.css" rel="stylesheet">
-  		<link rel="stylesheet" href="/bin/css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="{$HTML.HEAD.CSS}">
 		
-
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		
+		<!-- <link href="/x/html/layout/watchtower/css/white.application.min.css" rel="stylesheet"> -->
+		<link href="/x/html/layout/watchtower/css/shopfrog.css" rel="stylesheet" media="screen">   
+        <link href="/x/html/layout/watchtower/shopfrog-grey.css" rel="stylesheet" media="screen">
+
+		<link rel="stylesheet" href="/bin/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="{$HTML.HEAD.CSS}">
+		
+
+
+		{if $masterKey.is.admin} 
 
 		{/if}
 
@@ -77,8 +82,8 @@
 		<script src="/x/html/layout/watchtower/lib/jquery/jquery-2.0.3.min.js"> </script>
 		<script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-ui-1.10.3.custom.js"> </script>
 		
-		{if $masterKey.is.admin}   
 		<script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
+		{if $masterKey.is.admin}   
 		<script>
 			// For IE11. May we one day live without your BS. 
 			// <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"><script>
