@@ -35,6 +35,9 @@
 			</div>
 		</section>
 	</div>  
+	{if !$col}
+		{$col = 6}
+	{/if}
 
 	{foreach $qBlox as $q => $blox}
 
@@ -42,9 +45,9 @@
 			{foreach $blox as $b => $x}
 				{if $x.backdoor}
 					{if $method != 'index' && $x.filter == $method}
-						{include file="~widgets/col.tpl" col=6 method="$b" title=$x.blox}
+						{include file="~widgets/col.tpl"   method="$b" title=$x.blox}
 					{elseif $method == 'index'}
-						{include file="~widgets/col.tpl" col=6 method="$b" title=$x.blox}
+						{include file="~widgets/col.tpl"  method="$b" title=$x.blox}
 					{/if}
 				{/if}
 			{/foreach}
