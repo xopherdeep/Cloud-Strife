@@ -1,4 +1,4 @@
-$(function(){
+window.gridBlox = function(){
     function pageLoad(){
         $(".widget-container").sortable({
             connectWith          : '.widget-container',
@@ -15,9 +15,9 @@ $(function(){
             tolerance            : 'pointer'
         });
 
-        var $widgets = $('.widget'),
-            $newsWidget = $('#news-widget'),
-            $sharesWidget = $('#shares-widget'),
+        var $widgets = $('.widget');
+            // $newsWidget = $('#news-widget'),
+            // $sharesWidget = $('#shares-widget'),
             $autoloadWidget = $('#autoload-widget');
 
         /**
@@ -38,33 +38,33 @@ $(function(){
         /**
          * Make refresh button spin when loading
          */
-        $newsWidget.on("load.widgster", function(){
-            $(this).find('[data-widgster="load"] > i').addClass('fa-spin')
-        }).on("loaded.widgster", function(){
-            $(this).find('[data-widgster="load"] > i').removeClass('fa-spin')
-        });
+        // $newsWidget.on("load.widgster", function(){
+        //     $(this).find('[data-widgster="load"] > i').addClass('fa-spin')
+        // }).on("loaded.widgster", function(){
+        //     $(this).find('[data-widgster="load"] > i').removeClass('fa-spin')
+        // });
 
         /**
          * Custom close prompt for news widget
          */
-        $newsWidget.widgster({
-            showLoader: false,
-            closePrompt: function(callback){
-                $('#news-close-modal').modal('show');
-                $('#news-widget-remove').on('click', function(){
-                    $('#news-close-modal').on('hidden.bs.modal', callback).modal('hide');
-                });
-            }
-        });
+        // $newsWidget.widgster({
+        //     showLoader: false,
+        //     closePrompt: function(callback){
+        //         $('#news-close-modal').modal('show');
+        //         $('#news-widget-remove').on('click', function(){
+        //             $('#news-close-modal').on('hidden.bs.modal', callback).modal('hide');
+        //         });
+        //     }
+        // });
 
         /**
          * Use custom loader template
          */
-        $sharesWidget.widgster({
-            loaderTemplate: '<div class="loader animated fadeIn">' +
-                            '   <span class="spinner"><i class="fa fa-spinner fa-spin"></i></span>' +
-                            '</div>'
-        });
+        // $sharesWidget.widgster({
+        //     loaderTemplate: '<div class="loader animated fadeIn">' +
+        //                     '   <span class="spinner"><i class="fa fa-spinner fa-spin"></i></span>' +
+        //                     '</div>'
+        // });
 
         /**
          * Make hidden spinner appear & spin when loading
@@ -91,4 +91,4 @@ $(function(){
     pageLoad();
 
     PjaxApp.onPageLoad(pageLoad);
-});
+};

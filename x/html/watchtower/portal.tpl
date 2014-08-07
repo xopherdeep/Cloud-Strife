@@ -2,18 +2,18 @@
     <div class="col-md-12 widget-container ">  
         <section class="widget locked"> 
             <div class="jumbotron handle">
-                <div class="container">
-                    <div id="carousel-example-generic" class="carousel slide">
+                <div class="container">   
+                    <div id="carousel-watchtower" class="carousel slide">
                         <ol class="carousel-indicators outer">
-                            <li data-target="#carousel-example-generic" data-slide-to="{counter start=0}" class="active"></li>
+                            <li data-target="#carousel-watchtower" data-slide-to="{counter start=0}" class="{if $anchor == 'index'}active{/if}"></li>
                             {foreach $admin_menu as $key => $item}
-                                {if $key} 
-                            <li data-target="#carousel-example-generic" data-slide-to="{counter}"></li>    
+                                {if $key}  
+                            <li data-target="#carousel-watchtower" data-slide-to="{counter}" class="{if $anchor == $key}active{/if}"></li>    
                                 {/if}
                             {/foreach} 
                         </ol>
                         <div class="carousel-inner text-align-center">
-                            <div class="item active">
+                            <div class="item {if $anchor == 'index'}active{/if}">
                                 <h1><i class="fa fa-4x fa-space-shuttle "></i><br/>Hello {$user.username|ucfirst}  </h1>
                                 <p >
                                    
@@ -29,7 +29,7 @@
                             </div>
                             {foreach $admin_menu as $key => $item}
                                 {if $key} 
-                            <div class="item">
+                            <div class="item {if $anchor == $key}active{/if}">
                                 <h1><i class="fa fa-{$key} fa-4x"></i><br/>{$item.area|ucfirst}</h1>
                                 <p>
                                     {$item.desc|ucfirst}  
@@ -50,10 +50,10 @@
                                 {/if}
                             {/foreach} 
                         </div>
-                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <a class="left carousel-control" href="#carousel-watchtower" data-slide="prev">
                             <i class="fa fa-angle-left"></i>
                         </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <a class="right carousel-control" href="#carousel-watchtower" data-slide="next">
                             <i class="fa fa-angle-right"></i>
                         </a>
                     </div>

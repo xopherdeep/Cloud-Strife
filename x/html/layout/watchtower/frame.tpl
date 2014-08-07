@@ -248,26 +248,27 @@
 
         {foreach $admin_menu as $key => $item}
             {assign var=children value=0}
-            {foreach $xtras as $x => $xtra}
 
+            {foreach $xtras as $x => $xtra}
                 {if $xtra.icon && $key == $xtra.see && ($xtra.alpha == true || $xtra.beta == true || $xtra.delta == true || $xtra.omega == true)}
                     {assign var=children value=1}
                 {/if}
             {/foreach}
 
-            {if $key && $children > 0} 
-
+            {if $key && $children > 0}  
                  <li class="panel">
                     <a class="accordion-toggle collapsed" data-toggle="collapse"
                        data-parent="#side-nav" href="#{$key}-collapse"><i class="fa fa-3x fa-{$key}"></i><span class="name">{$item.area|ucfirst}</span></a>
                     <ul id="{$key}-collapse" class="panel-collapse collapse"> 
                         {foreach $xtras as $x => $xtra}
                             {if $xtra.icon && $key == $xtra.see}
-                                <!-- <img src="{$ICON.48}{$xtra.icon}" desc="{$xtra.desc}" link="{$xtra.link}" file="{$x}" icon="{$xtra.icon}" title="{$xtra.name}">  -->
-
+                                <!-- <img src="{$ICON.48}{$xtra.icon}" desc="{$xtra.desc}" link="{$xtra.link}" file="{$x}" icon="{$xtra.icon}" title="{$xtra.name}">  --> 
                                 {if $xtra.alpha || $xtra.beta || $xtra.delta || $xtra.omega}
                                     <li> 
                                         <a href="/x/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}">
+                                        
+                                        <i class="fa fa-2x pull-left fa-hover  fa-{$xtra.mini}"></i>
+                                        {$xtra.name}</a>
                                         <!-- {if $xtra.alpha}
                                             <span class="label label-danger">&alpha;</span>
                                         {/if}
@@ -280,29 +281,12 @@
                                         {if $xtra.omega}
                                             <span class="label label-primary">&Omega;</span>
                                         {/if} -->
-                                        <i class="fa fa-2x pull-left fa-hover  fa-{$xtra.mini}"></i>
-                                        {$xtra.name}</a>
                                     </li>
                                 {/if}
                             {/if}
                         {/foreach}
                     </ul>
-                </li>
-
-               <!--  <div align="center" id="map-{$key}" area="{$key}" style="overflow: hidden"> 
-                    <img src="{$ICON.A}{$key}.png"  id="area-{$key}" height="128" width="128" >
-                    {foreach $xtras as $x => $xtra}
-                        {if $xtra.icon && $key == $xtra.see}
-                        <img src="{$ICON.48}{$xtra.icon}" desc="{$xtra.desc}" link="{$xtra.link}" file="{$x}" icon="{$xtra.icon}" title="{$xtra.name}"> 
-                        {/if}
-                    {/foreach}
-                    <p>{$item.area|ucfirst}</p>
-                    <span class="transparent-black-25" style="display: none; height: 48px; padding : 5px;">
-                        <img align="absmiddle" style="margin: 5px;" />
-                        <h1 style="float: left; margin-left: 60px;"></h1>
-                        <h3 style=" "></h3>
-                    </span> 
-                </div>   -->
+                </li> 
             {/if}
         {/foreach}
 
@@ -331,13 +315,8 @@
                     </li>
 
 
-                    <li class="hidden-xs">
-                        <a href="#" id="settings"
-                           title="Settings"
-                           data-toggle="popover"
-                           data-placement="bottom">
-                            <i class="fa fa-cog"></i>
-                        </a>
+                    <li>
+                        <a href="#" id="settings" title="Settings" data-toggle="popover" data-placement="bottom"  ><i class="fa fa-cog"></i></a>
                     </li>
                     
                     <li class="divider"></li>
@@ -534,58 +513,6 @@
         <i class="fa fa-spinner fa-spin fa-5x"></i>
     </div>
 
-<!-- jquery and friends -->
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery/jquery-2.0.3.min.js"> </script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-pjax/jquery.pjax.js"></script>
-
-
-<!-- jquery plugins -->
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/icheck.js/jquery.icheck.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/sparkline/jquery.sparkline.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-ui-1.10.3.custom.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.slimscroll.js"></script>
-
-
-<!-- jquery plugins -->
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-maskedinput/jquery.maskedinput.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/parsley/parsley.js"> </script> 
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/select2.js"></script>
-
-<!-- d3, nvd3-->
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/lib/d3.v2.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/nv.d3.custom.js"></script>
-
-<!-- nvd3 models -->
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/src/models/scatter.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/src/models/axis.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/src/models/legend.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/src/models/multiBar.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/src/models/multiBarChart.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/src/models/line.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/src/models/lineChart.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/stream_layers.js"></script>
-
-<!--backbone and friends -->
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/backbone/underscore-min.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/backbone/backbone-min.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/backbone/backbone.localStorage-min.js"></script>
-
-<!-- bootstrap default plugins -->
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/transition.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/collapse.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/alert.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/tooltip.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/popover.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/button.js"></script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/tab.js"> </script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/dropdown.js"></script>
-
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/carousel.js"></script>
- 
-<!-- page specific -->
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-ui-1.10.3.custom.js"> </script>
-<script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.ui.touch-punch.js"> </script>
-
 <script type="text/template" id="message-template">
         <div class="sender pull-left">
             <div class="icon">
@@ -604,37 +531,23 @@
         </div>
 </script>
 
-<script type="text/template" id="settings-template">
-    <div class="setting clearfix">
-        <div>Background</div>
-        <div id="background-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
-            <% dark = background == 'dark'; light = background == 'light';%>
-            <button type="button" data-value="dark" class="btn btn-sm btn-transparent <%= dark? 'active' : '' %>">Dark</button>
-            <button type="button" data-value="light" class="btn btn-sm btn-transparent <%= light? 'active' : '' %>">Light</button>
-        </div>
-    </div>
-    <div class="setting clearfix">
+<script type="text/template" id="settings-template"> 
+    <div class="setting clearfix text-align-center">
         <div>Sidebar on the</div>
-        <div id="sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+        <div id="sidebar-toggle" class="btn-group" data-toggle="buttons-radio">
             <% onRight = sidebar == 'right'%>
             <button type="button" data-value="left" class="btn btn-sm btn-transparent <%= onRight? '' : 'active' %>">Left</button>
             <button type="button" data-value="right" class="btn btn-sm btn-transparent <%= onRight? 'active' : '' %>">Right</button>
         </div>
     </div>
-    <div class="setting clearfix">
+    <div class="setting clearfix text-align-center">
         <div>Sidebar</div>
-        <div id="display-sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+        <div id="display-sidebar-toggle" class=" btn-group" data-toggle="buttons-radio">
             <% display = displaySidebar%>
             <button type="button" data-value="true" class="btn btn-sm btn-transparent <%= display? 'active' : '' %>">Show</button>
             <button type="button" data-value="false" class="btn btn-sm btn-transparent <%= display? '' : 'active' %>">Hide</button>
         </div>
-    </div>
-    <div class="setting clearfix">
-        <div>White Version</div>
-        <div>
-            <a href="white/" class="btn btn-sm btn-transparent">&nbsp; Switch &nbsp;   <i class="fa fa-angle-right"></i></a>
-        </div>
-    </div>
+    </div> 
 </script>
 
 <script type="text/template" id="sidebar-settings-template">
@@ -662,9 +575,83 @@
 		<!-- script src="{$HTML.BODY.JS}"></script -->
 	{/if}  
 
-  
+    
+
+    <!-- jquery and friends -->
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery/jquery-2.0.3.min.js"> </script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-pjax/jquery.pjax.js"></script>
+
+
+    <!-- jquery plugins -->
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/icheck.js/jquery.icheck.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/sparkline/jquery.sparkline.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-ui-1.10.3.custom.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.slimscroll.js"></script> 
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.ui.touch-punch.js"> </script>
+
+    <!-- jquery plugins -->
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-maskedinput/jquery.maskedinput.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/parsley/parsley.js"> </script> 
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/select2.js"></script>
+
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/fullcalendar/fullcalendar.js"></script>
+    <!-- d3, nvd3-->
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/lib/d3.v2.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/nvd3/nv.d3.custom.js"></script>
+
+    <!-- nvd3 models -->
+    <script src="/x/html/layout/watchtower/lib/nvd3/src/models/scatter.js"></script>
+    <script src="/x/html/layout/watchtower/lib/nvd3/src/models/axis.js"></script>
+    <script src="/x/html/layout/watchtower/lib/nvd3/src/models/legend.js"></script>
+    <script src="/x/html/layout/watchtower/lib/nvd3/src/models/stackedArea.js"></script>
+    <script src="/x/html/layout/watchtower/lib/nvd3/src/models/stackedAreaChart.js"></script>
+    <script src="/x/html/layout/watchtower/lib/nvd3/src/models/line.js"></script>
+    <script src="/x/html/layout/watchtower/lib/nvd3/src/models/pie.js"></script>
+    <script src="/x/html/layout/watchtower/lib/nvd3/src/models/pieChartTotal.js"></script>
+    <script src="/x/html/layout/watchtower/lib/nvd3/stream_layers.js"></script>
+    <script src="/x/html/layout/watchtower/lib/nvd3/src/models/lineChart.js"></script>
+    <script src="/x/html/layout/watchtower/lib/nvd3/src/models/multiBar.js"></script>
+    <script src="/x/html/layout/watchtower/lib/nvd3/src/models/multiBarChart.js"></script>
+
+    <!--backbone and friends -->
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/backbone/underscore-min.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/backbone/backbone-min.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/backbone/backbone.localStorage-min.js"></script>
+
+    <!-- bootstrap default plugins -->
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/transition.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/collapse.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/alert.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/tooltip.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/popover.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/button.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/tab.js"> </script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/dropdown.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/modal.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/tab.js"> </script>
+
+
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/carousel.js"></script>
+      
+
+    <!-- bootstrap custom plugins -->
+    <script src="/x/html/layout/watchtower/lib/bootstrap-datepicker.js"></script>
+    <script src="/x/html/layout/watchtower/lib/bootstrap-select/bootstrap-select.js"></script>
+
+    <script src="/x/html/layout/watchtower/lib/jquery.bootstrap.wizard.js"></script>
+
+
+    <script src="/x/html/layout/watchtower/lib/wysihtml5/wysihtml5-0.3.0_rc2.js"></script>
+    <script src="/x/html/layout/watchtower/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+
+    <!-- basic application js-->
+    <script src="/x/html/layout/watchtower/js/app.js"></script>
+    <script src="/x/html/layout/watchtower/js/settings.js"></script> 
+
+    <script type="text/javascript" src="/x/html/layout/watchtower/js/grid-live.js"> </script>
+
     {include file="$Door/scripts.tpl" assign=SCRIPT}
-    {$SCRIPT}
+    
  
 
     <script type="text/javascript">
@@ -785,116 +772,126 @@
             };
 
         }));
-$(document).ready(function() {
-    for (var t = [{
-        color: "#7CD6E8",
-        image : 'url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMmY0YjU5IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNjklIiBzdG9wLWNvbG9yPSIjMDBjY2Y5IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzllZThmYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=)',
-        title: "Theme 1",
-        style: "css/theme-2.min.css"
-    }, {
-        color: "#95879c",
-        title: "Theme 2",
-        style: "css/theme-3.min.css"
-    }, {
-        color: "#00cccc",
-        title: "Theme 3",
-        style: "css/theme-4.min.css"
-    }, {
-        color: "#e36f8a",
-        title: "Theme 4",
-        style: "css/theme-5.min.css"
-    }, {
-        color: "#9999ff",
-        title: "Theme 5",
-        style: "css/theme-6.min.css"
-    }, {
-        color: "#bda093",
-        title: "Theme 6",
-        style: "css/theme-7.min.css"
-    }, {
-        color: "#ff8855",
-        title: "Theme 7",
-        style: "css/theme-8.min.css"
-    }, {
-        color: "#828282",
-        title: "Theme 8",
-        style: "css/theme-9.min.css"
-    }, {
-        color: "#1abc9c",
-        title: "Theme 9",
-        style: "css/theme-10.min.css"
-    }, {
-        color: "#2ecc71",
-        title: "Theme 10",
-        style: "css/theme-11.min.css"
-    }, {
-        color: "#3498db",
-        title: "Theme 11",
-        style: "css/theme-12.min.css"
-    }, {
-        color: "#9b59b6",
-        title: "Theme 12",
-        style: "css/theme-13.min.css"
-    }, {
-        color: "#34495e",
-        title: "Theme 13",
-        style: "css/theme-14.min.css"
-    }, {
-        color: "#f1c40f",
-        title: "Theme 14",
-        style: "css/theme-15.min.css"
-    }, {
-        color: "#e67e22",
-        title: "Theme 15",
-        style: "css/theme-16.min.css"
-    }, {
-        color: "#e74c3c",
-        title: "Theme 16",
-        style: "css/theme-17.min.css"
-    }, {
-        color: "#95a5a6",
-        title: "Theme 17",
-        style: "css/theme-18.min.css"
-    }, {
-        color: "#96d7a0",
-        title: "Theme Default",
-        style: "css/theme-1.min.css"
-    }], i = "", n = 0; n < t.length; n++) i += '<a href="#" data-color="' + t[n].color + '"  data-theme-css="' + t[n].style + '" title="' + t[n].title + '" style="display: inline-block; height: 35px;  width: 35px; margin-right: 10px;text-decoration: none!important; border: 1px solid rgba(77, 77, 77, 0.95); background-color: ' + t[n].color + '"><\/a>';
 
-    $("body").append(' <a title="Show/Hide Theme Changer" class="widget" href="#" id="theme-changer" style="position: fixed;display: inline-block;top: 0px;left: 0;width: 40px;line-height: 40px; padding: 0px; border-radius: 0 3px 3px 0;color: white;z-index: 1003;text-align: center;font-size: 1.5em;text-decoration: none!important"><i class="fa fa-eye"><\/i><\/a><div class="theme-changer-colors theme-changer-hidden widget" style="border:0px solid rgb(238, 238, 238);visibility: hidden;opacity: 0;position: fixed;top: 40px;left: -170px;width: 150px;padding: 10px;text-align: center;z-index: 1002;border-radius: 0 3px 3px 0;background-color: rgba(77, 77, 77, 0.23);-moz-transition-duration: .4s;-o-transition-duration: .4s;-webkit-transition-duration: .4s;transition-duration: .4s;">' + i + "<\/div>");
-    $("#theme-changer").click(function() {
-        return $(".theme-changer-colors").toggleClass("theme-changer-hidden"), $(".theme-changer-colors").hasClass("theme-changer-hidden") ? $(".theme-changer-colors").css({
-            visibility : "hidden",
-            opacity    : 0, 
-            left       : "-170px"
-        }) : $(".theme-changer-colors").css({
-            visibility : "visible",
-            opacity    : 1, 
-            left       : 0
-            }), !1
-    });
-    $.cookie("theme_css_cookie") != null && 
-        $('body').css({
-            background : $.cookie("theme_css_cookie")
+        $(document).ready(function() {
+            window.gridBlox();
+            for (var t = [{
+                color: "#7CD6E8",
+                image : 'url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMmY0YjU5IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNjklIiBzdG9wLWNvbG9yPSIjMDBjY2Y5IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzllZThmYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=)',
+                title: "Theme 1",
+                style: "css/theme-2.min.css"
+            }, {
+                color: "#95879c",
+                title: "Theme 2",
+                style: "css/theme-3.min.css"
+            }, {
+                color: "#00cccc",
+                title: "Theme 3",
+                style: "css/theme-4.min.css"
+            }, {
+                color: "#e36f8a",
+                title: "Theme 4",
+                style: "css/theme-5.min.css"
+            }, {
+                color: "#9999ff",
+                title: "Theme 5",
+                style: "css/theme-6.min.css"
+            }, {
+                color: "#bda093",
+                title: "Theme 6",
+                style: "css/theme-7.min.css"
+            }, {
+                color: "#ff8855",
+                title: "Theme 7",
+                style: "css/theme-8.min.css"
+            }, {
+                color: "#828282",
+                title: "Theme 8",
+                style: "css/theme-9.min.css"
+            }, {
+                color: "#1abc9c",
+                title: "Theme 9",
+                style: "css/theme-10.min.css"
+            }, {
+                color: "#2ecc71",
+                title: "Theme 10",
+                style: "css/theme-11.min.css"
+            }, {
+                color: "#3498db",
+                title: "Theme 11",
+                style: "css/theme-12.min.css"
+            }, {
+                color: "#9b59b6",
+                title: "Theme 12",
+                style: "css/theme-13.min.css"
+            }, {
+                color: "#34495e",
+                title: "Theme 13",
+                style: "css/theme-14.min.css"
+            }, {
+                color: "#f1c40f",
+                title: "Theme 14",
+                style: "css/theme-15.min.css"
+            }, {
+                color: "#e67e22",
+                title: "Theme 15",
+                style: "css/theme-16.min.css"
+            }, {
+                color: "#e74c3c",
+                title: "Theme 16",
+                style: "css/theme-17.min.css"
+            }, {
+                color: "#95a5a6",
+                title: "Theme 17",
+                style: "css/theme-18.min.css"
+            }, {
+                color: "#96d7a0",
+                title: "Theme Default",
+                style: "css/theme-1.min.css"
+            }], i = "", n = 0; n < t.length; n++) i += '<a href="#" data-color="' + t[n].color + '"  data-theme-css="' + t[n].style + '" title="' + t[n].title + '" style="display: inline-block; height: 35px;  width: 35px; margin-right: 10px;text-decoration: none!important; border: 1px solid rgba(77, 77, 77, 0.95); background-color: ' + t[n].color + '"><\/a>';
+
+            $("body").append('<a title="Show/Hide Theme Changer" class="widget" href="#" id="theme-changer" style="position: fixed;display: inline-block;top: 0px;left: 0;width: 40px;line-height: 40px; padding: 0px; border-radius: 0 3px 3px 0;color: white;z-index: 1003;text-align: center;font-size: 1.5em;text-decoration: none!important"><i class="fa fa-laptop"><\/i><\/a><div class="theme-changer-colors theme-changer-hidden widget" style="border:0px solid rgb(238, 238, 238);visibility: hidden;opacity: 0;position: fixed;top: 40px;left: -170px;width: 150px;padding: 10px;text-align: center;z-index: 1002;border-radius: 0 3px 3px 0;background-color: rgba(77, 77, 77, 0.23);-moz-transition-duration: .4s;-o-transition-duration: .4s;-webkit-transition-duration: .4s;transition-duration: .4s;">' + i + "<\/div>");
+            
+            // $("body").append('<a href="#" id="settings" title="Settings" data-toggle="popover" data-placement="bottom" style="position: fixed;display: inline-block;top: 40px;left: 0px;width: 40px;line-height: 40px; padding: 0px; border-radius: 0 3px 3px 0;color: white;z-index: 1003;text-align: center;font-size: 1.5em;text-decoration: none!important;background-color: rgba(77, 77, 77, 0.23)"><i class="fa fa-cog"><\/i><\/a>');
+
+            
+
+            $("#theme-changer").click(function() {
+                return $(".theme-changer-colors").toggleClass("theme-changer-hidden"), $(".theme-changer-colors").hasClass("theme-changer-hidden") ? $(".theme-changer-colors").css({
+                    visibility : "hidden",
+                    opacity    : 0, 
+                    left       : "-170px"
+                }) : $(".theme-changer-colors").css({
+                    visibility : "visible",
+                    opacity    : 1, 
+                    left       : 0
+                    }), !1
+            });
+            $.cookie("theme_css_cookie") != null && 
+                $('body').css({
+                    background : $.cookie("theme_css_cookie")
+                });
+            $(".theme-changer-colors a[data-theme-css]").click(function(n) {
+                //
+                n.preventDefault();
+                var t = $(this).data("color");
+                var c = $(this).data("color");
+                
+                var i = $(this).data("color");
+                
+
+                $('body').css({
+                    background : c 
+                });
+
+                // $("[data-id-stylesheet]").attr("href", t);
+                $.cookie("theme_css_cookie", c.toString(), {
+                    expires: 1
+                });
+
+
+            })
         });
-    $(".theme-changer-colors a[data-theme-css]").click(function(n) {
-        //
-        n.preventDefault();
-        var t = $(this).data("color");
-        var c = $(this).data("color");
-        
-        $('body').css({
-            background : c 
-        });
-
-        // $("[data-id-stylesheet]").attr("href", t);
-        $.cookie("theme_css_cookie", c.toString(), {
-            expires: 1
-        });
-
-
-    })
-});
     </script>
 
     <!-- page specific -->
@@ -922,7 +919,7 @@ $(document).ready(function() {
                 
                 
                 <div class="row"> 
-                    <div class="col-md-12 widget-container " style="position: relative; z-index: 10;"> 
+                    <div class="col-md-12 widget-container " style="position: relative; z-index: 1;"> 
                         <section class="widget locked">
                          
                             <ol class="breadcrumb">
@@ -932,7 +929,7 @@ $(document).ready(function() {
                                 {foreach $xtras as $x => $xtra}
                                     
                                     {if $xtra.icon && "x{$Xtra|ucfirst}" == $xtra.class}
-                                        <li><a href="/{$toBackDoor}"><i class="fa fa-{$xtra.see}"></i>
+                                        <li><a href="/{$toBackDoor}/{$xtra.see}/"><i class="fa fa-{$xtra.see}"></i>
                                         {$admin_menu[$xtra.see].area|ucfirst}</a> 
                                         </li>
                                         <li class="active"><a href="/{$toBackDoor}/{$xtra.link}"><i class="fa fa-{$xtra.mini}"></i>
