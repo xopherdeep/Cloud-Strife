@@ -233,7 +233,8 @@
         <li class="active">
             <a href="/{$toBackDoor}"><i class="fa fa-eye"></i> <span class="name">Watchtower</span>  </a>
         </li>
-
+                
+        <!-- {counter start=0} -->
         {foreach $admin_menu as $key => $item}
             {assign var=children value=0}
 
@@ -243,10 +244,11 @@
                 {/if}
             {/foreach}
 
+
             {if $key && $children > 0}  
                  <li class="panel">
                     <a class="accordion-toggle collapsed" data-toggle="collapse"
-                       data-parent="#side-nav" href="#{$key}-collapse"><i class="fa fa-3x fa-{$key}"></i><span class="name">{$item.area|ucfirst}</span></a>
+                       data-parent="#side-nav" href="#{$key}-collapse" onclick="$($('.carousel-indicators li')[{counter}]).click()"><i class="fa fa-3x fa-{$key}"></i><span class="name">{$item.area|ucfirst}</span></a>
                     <ul id="{$key}-collapse" class="panel-collapse collapse"> 
                         {foreach $xtras as $x => $xtra}
                             {if $xtra.icon && $key == $xtra.see}
