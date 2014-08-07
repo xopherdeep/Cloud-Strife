@@ -213,7 +213,7 @@
 
         <span href="/{$toBackDoor}"  style="position: fixed; font-size: 500%; color: rgba(0,0,0,0.15); top: 30px; left: 45px;  z-index: -1;">
            {$HTTP_HOST} 
-        </span>  <br/>
+        </span><br/>
          
           
        <!--  <btn class="btn btn-sm label dropdown label-success dropdown  ">   
