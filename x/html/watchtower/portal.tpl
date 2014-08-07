@@ -62,11 +62,16 @@
             </div>
         </section> 
     </div> 
-</div>
 
+    <div class="col-md-12 widget-container">   
+        {$portal = true}
+        {foreach $watchtower.data as $r => $t}  
+            {if $t.path} 
+                {include file="~widgets/col.tpl" col=$t.col xPHP=$t.path title=$t.title}
+            {/if}
+        {/foreach}
+    </div>
+</div>
     
-    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-ui-1.10.3.custom.js"> </script>
-    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.ui.touch-punch.js"> </script>
-   <!-- page specific -->
-    <script type="text/javascript" src="/x/html/layout/watchtower/js/index.js"></script>
-    <script type="text/javascript" src="/x/html/layout/watchtower/js/grid-live.js"> </script>
+<!-- page specific -->
+<script type="text/javascript" src="/x/html/layout/watchtower/js/index.js"></script>

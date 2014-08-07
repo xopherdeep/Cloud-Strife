@@ -53,6 +53,16 @@
                         -webkit-transition          : all .4s ease-in-out;
                         transition                  : all .4s ease-in-out;
                     }
+                    .bg-host{
+                        position           : fixed;
+                        font-size          : 500%;
+                        color              : rgba(0,0,0,0.15);
+                        top                : 30px; 
+                        left               : 45px;
+                        z-index            : -1;
+                        -webkit-transition : all .4s ease-in-out;
+                        transition         : all .4s ease-in-out;
+                    }
                 } 
                 @media screen {
                     /* computer screens */
@@ -96,7 +106,10 @@
                 @media screen and (min-width : 768px) and (max-width : 1024px)  { 
                     /* all iPad models */
                     .background-clock {
-                         font-size: 444%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                         font-size: 400%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                    }
+                    .bg-host{
+                        font-size: 400%;
                     }
                 }
                 @media screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) { 
@@ -110,9 +123,11 @@
                 @media screen and (min-width : 568px) and (max-width : 768px) { 
                     /* iPhone 5 */
                     .background-clock {
-                         font-size: 333%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                         font-size: 300%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
                     }
-                    
+                    .bg-host{
+                        font-size: 333%;
+                    }
                 }
 
                 /*
@@ -124,7 +139,9 @@
                     .background-clock {
                          font-size: 222%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
                     }
-                    
+                    .bg-host{
+                        font-size: 222%;
+                    }
                 }
                 @media screen and (min-width : 320px) and (max-width : 568px) and (orientation : landscape) { 
                     /* iPhone 5, landscape */
@@ -203,49 +220,20 @@
 			</STYLE>
 <body class="background-dark">
 <div class="logo text-center">
-    <h4>
-         
-       <!--  <a href="/" class="">
-            <i class="fa fa-globe text-info"></i> 
-        </a>   -->
-       <!--  <span class="label label-warning">  
-         <strong>x</strong></span> -->
-
-        <span href="/{$toBackDoor}"  style="position: fixed; font-size: 500%; color: rgba(0,0,0,0.15); top: 30px; left: 45px;  z-index: -1;">
-           {$HTTP_HOST} 
-        </span><br/>
-         
-          
-       <!--  <btn class="btn btn-sm label dropdown label-success dropdown  ">   
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {$suite}  <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul></span> <span class="label label-danger">  
-        &alpha; </btn> -->
-      <!--   <span class="label   label-info ">  
-           infused </span>  -->
-            
-      
-    </h4>  
-    
-     
+    <h4  class="bg-host ">
+        {$HTTP_HOST} 
+    </h4>   
 </div>
 <div class="background-clock" >
     {include file="../../~blox/clock.tpl"}   
 </div>
 <nav id="sidebar" class="sidebar nav-collapse collapse">
-    <ul id="side-nav" class="side-nav">
-
+    <ul id="side-nav" class="side-nav"> 
         <li class="active">
             <a href="/{$toBackDoor}"><i class="fa fa-eye"></i> <span class="name">Watchtower</span>  </a>
-        </li>
+        </li> 
 
+        <!-- {counter start=0} -->
         {foreach $admin_menu as $key => $item}
             {assign var=children value=0}
 
@@ -255,20 +243,21 @@
                 {/if}
             {/foreach}
 
+
             {if $key && $children > 0}  
                  <li class="panel">
                     <a class="accordion-toggle collapsed" data-toggle="collapse"
-                       data-parent="#side-nav" href="#{$key}-collapse"><i class="fa fa-3x fa-{$key}"></i><span class="name">{$item.area|ucfirst}</span></a>
+                       data-parent="#side-nav" href="#{$key}-collapse" onclick="$($('.carousel-indicators li')[{counter}]).click()"><i class="fa fa-3x fa-{$key}"></i><span class="name">{$item.area|ucfirst}</span></a>
                     <ul id="{$key}-collapse" class="panel-collapse collapse"> 
                         {foreach $xtras as $x => $xtra}
                             {if $xtra.icon && $key == $xtra.see}
                                 <!-- <img src="{$ICON.48}{$xtra.icon}" desc="{$xtra.desc}" link="{$xtra.link}" file="{$x}" icon="{$xtra.icon}" title="{$xtra.name}">  --> 
                                 {if $xtra.alpha || $xtra.beta || $xtra.delta || $xtra.omega}
                                     <li> 
-                                        <a href="/x/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}">
-                                        
-                                        <i class="fa fa-2x pull-left fa-hover  fa-{$xtra.mini}"></i>
-                                        {$xtra.name}</a>
+                                        <a href="/x/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}"> 
+                                        <i class="fa fa-2x fa-{$xtra.mini}"></i>
+                                        <span>{$xtra.name}</span>
+                                        </a>
                                         <!-- {if $xtra.alpha}
                                             <span class="label label-danger">&alpha;</span>
                                         {/if}
@@ -652,9 +641,45 @@
 
     {include file="$Door/scripts.tpl" assign=SCRIPT}
     
- 
 
-    <script type="text/javascript">
+    <script type="text/javascript"> 
+
+        window.addBloxToTower = function(t,p,c,i){
+
+            var i = $(i).find('i');
+
+            i.toggleClass('fa-eye');
+            i.toggleClass('fa-eye-slash');
+
+            $.ajax({
+                type     : "POST",
+                url      : "/{$toBackDoor}/blox/watchtower/add/.json",
+                data     : {
+                    title   : t,
+                    path    : p,
+                    col     : c,
+                    user_id : {$user.id}
+                },
+                dataType : "json",
+                success: function(data)
+                {
+                  // Handle the server response (display errors if necessary)
+
+                  if(data.success){  
+
+                  }else{
+                    alert(data.error);
+                  }
+
+                  
+
+                }
+            });
+
+
+        };
+
+
         /*!
          * jQuery Cookie Plugin v1.4.1
          * https://github.com/carhartl/jquery-cookie

@@ -1949,6 +1949,11 @@ a {
     margin: 80px 0 0 1.6%;
 }
 
+.sidebar.sidebar-icons a span{
+   display: none;
+}
+
+
 .sidebar.sidebar-icons h2 {
     display: none;
 }

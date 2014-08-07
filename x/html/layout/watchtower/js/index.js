@@ -52,16 +52,16 @@ $(function(){
         }
         var values = [[],[],[],[],[]],
             options = {
-                width: '150px',
-                height: '30px',
-                lineColor: $white,
-                lineWidth: '2',
-                spotRadius: '2',
-                highlightLineColor: $gray,
-                highlightSpotColor: $gray,
-                spotColor: false,
-                minSpotColor: false,
-                maxSpotColor: false
+                width              : '150px',
+                height             : '30px',
+                lineColor          : $white,
+                lineWidth          : '2',
+                spotRadius         : '2',
+                highlightLineColor : $gray,
+                highlightSpotColor : $gray,
+                spotColor          : false,
+                minSpotColor       : false,
+                maxSpotColor       : false
             };
         for (var i = 0; i < values.length; i++){
             values[i] = [10 + randomValue(), 15 + randomValue(), 20 + randomValue(), 15 + randomValue(), 25 + randomValue(),
