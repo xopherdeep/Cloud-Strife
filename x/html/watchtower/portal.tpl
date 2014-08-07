@@ -62,8 +62,16 @@
             </div>
         </section> 
     </div> 
-</div>
 
+    <div class="col-md-12 widget-container">   
+        {$portal = true}
+        {foreach $watchtower.data as $r => $t}  
+            {if $t.path} 
+                {include file="~widgets/col.tpl" col=$t.col xPHP=$t.path title=$t.title}
+            {/if}
+        {/foreach}
+    </div>
+</div>
     
 <!-- page specific -->
 <script type="text/javascript" src="/x/html/layout/watchtower/js/index.js"></script>

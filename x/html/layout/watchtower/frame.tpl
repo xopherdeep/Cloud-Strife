@@ -228,12 +228,11 @@
     {include file="../../~blox/clock.tpl"}   
 </div>
 <nav id="sidebar" class="sidebar nav-collapse collapse">
-    <ul id="side-nav" class="side-nav">
-
+    <ul id="side-nav" class="side-nav"> 
         <li class="active">
             <a href="/{$toBackDoor}"><i class="fa fa-eye"></i> <span class="name">Watchtower</span>  </a>
-        </li>
-                
+        </li> 
+
         <!-- {counter start=0} -->
         {foreach $admin_menu as $key => $item}
             {assign var=children value=0}
@@ -255,10 +254,10 @@
                                 <!-- <img src="{$ICON.48}{$xtra.icon}" desc="{$xtra.desc}" link="{$xtra.link}" file="{$x}" icon="{$xtra.icon}" title="{$xtra.name}">  --> 
                                 {if $xtra.alpha || $xtra.beta || $xtra.delta || $xtra.omega}
                                     <li> 
-                                        <a href="/x/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}">
-                                        
-                                        <i class="fa fa-2x pull-left fa-hover  fa-{$xtra.mini}"></i>
-                                        {$xtra.name}</a>
+                                        <a href="/x/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}"> 
+                                        <i class="fa fa-2x fa-{$xtra.mini}"></i>
+                                        <span>{$xtra.name}</span>
+                                        </a>
                                         <!-- {if $xtra.alpha}
                                             <span class="label label-danger">&alpha;</span>
                                         {/if}
@@ -642,9 +641,45 @@
 
     {include file="$Door/scripts.tpl" assign=SCRIPT}
     
- 
 
-    <script type="text/javascript">
+    <script type="text/javascript"> 
+
+        window.addBloxToTower = function(t,p,c,i){
+
+            var i = $(i).find('i');
+
+            i.toggleClass('fa-eye');
+            i.toggleClass('fa-eye-slash');
+
+            $.ajax({
+                type     : "POST",
+                url      : "/{$toBackDoor}/blox/watchtower/add/.json",
+                data     : {
+                    title   : t,
+                    path    : p,
+                    col     : c,
+                    user_id : {$user.id}
+                },
+                dataType : "json",
+                success: function(data)
+                {
+                  // Handle the server response (display errors if necessary)
+
+                  if(data.success){  
+
+                  }else{
+                    alert(data.error);
+                  }
+
+                  
+
+                }
+            });
+
+
+        };
+
+
         /*!
          * jQuery Cookie Plugin v1.4.1
          * https://github.com/carhartl/jquery-cookie
