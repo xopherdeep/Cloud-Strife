@@ -39,11 +39,12 @@
 		{$col = 6}
 	{/if}
 
-	{foreach $qBlox as $q => $blox}
-
+	{foreach $qBlox as $q => $blox} 
 		{if $q == "x{$Xtra|ucfirst}"}
+
 			{foreach $blox as $b => $x}
 				{if $x.backdoor}
+
 					{if $method != 'index' && $x.filter == $method}
 						{include file="~widgets/col.tpl"   method="$b" title=$x.blox}
 					{elseif $method == 'index'}
