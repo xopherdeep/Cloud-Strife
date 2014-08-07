@@ -176,12 +176,21 @@ function initPjax(){
      */
     PjaxApp.prototype.onPageLoad = function(fn){
         this._addPageCallback(this.pageLoadCallbacks, fn);
+        var f = this.loadGrid;
         $(document).pjax('.content a:not(.accordion-toggle):not([data-no-pjax])', '.content', {
             fragment: '.content',
             type: 'GET', //use POST to prevent caching when debugging,
-            timeout: 10000
+            timeout: 10000,
+            success: function(){
+            	f();
+            }
         });
     };
+
+    PjaxApp.prototype._loadGrid = function(){
+    	alert('The page was loaded with pjax!');
+		window.gridBlox();
+    }
 
     PjaxApp.prototype.pageLoaded = function(){
         this._runPageCallbacks(this.pageLoadCallbacks);
@@ -256,7 +265,8 @@ function initPjax(){
         var view = this;
         $previous.load(function(){
             $(document).trigger('pjax-app:loaded');
-            view.log('scripts loaded.');
+            view.log('scripts loaded');
+            window.gridBlox();
         })
     };
 
@@ -303,9 +313,7 @@ function initPjax(){
 
 
 function initDemoFunctions(){
-    $(document).one('pjax:end', function(){
-//        alert('The page was loaded with pjax!');
-    });
+    $(document).one('pjax:end', function(){});
 }
 
 $(function(){

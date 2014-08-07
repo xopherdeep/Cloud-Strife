@@ -6,7 +6,6 @@
 <script src="/x/html/layout/watchtower/lib/jquery/jquery-2.0.3.min.js"> </script>
 <script src="/x/html/layout/watchtower/lib/jquery-pjax/jquery.pjax.js"></script>
 
-
 <!-- jquery plugins -->
 <script src="/x/html/layout/watchtower/lib/icheck.js/jquery.icheck.js"></script>
 <script src="/x/html/layout/watchtower/lib/sparkline/jquery.sparkline.js"></script>
@@ -65,17 +64,3 @@
 <script src="/x/html/layout/watchtower/lib/bootstrap/dropdown.js"></script>
 <script src="/x/html/layout/watchtower/lib/bootstrap/modal.js"></script>
 <script src="/x/html/layout/watchtower/lib/bootstrap/tab.js"> </script>
-
-<!-- bootstrap custom plugins -->
-<script src="/x/html/layout/watchtower/lib/bootstrap-datepicker.js"></script>
-<script src="/x/html/layout/watchtower/lib/bootstrap-select/bootstrap-select.js"></script>
-
-<script src="/x/html/layout/watchtower/lib/jquery.bootstrap.wizard.js"></script>
-
-
-<script src="/x/html/layout/watchtower/lib/wysihtml5/wysihtml5-0.3.0_rc2.js"></script>
-<script src="/x/html/layout/watchtower/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
-
-<!-- basic application js-->
-<script src="/x/html/layout/watchtower/js/app.js"></script>
-<script src="/x/html/layout/watchtower/js/settings.js"></script> 

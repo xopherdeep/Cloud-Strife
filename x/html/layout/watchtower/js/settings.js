@@ -14,10 +14,10 @@ $(function(){
     var $settings = $("#settings"),
         $sidebarSettings = $("#sidebar-settings"),
         settingsState = JSON.parse(localStorage.getItem("settings-state")) || {
-            sidebar: 'left',
-            background: 'dark',
-            sidebarState: 'auto',
-            displaySidebar: true
+            sidebar        : 'left',
+            background     : 'dark',
+            sidebarState   : 'auto',
+            displaySidebar : true
         },
         $pageHeader = $(".page-header"),
         $body = $("body"),
