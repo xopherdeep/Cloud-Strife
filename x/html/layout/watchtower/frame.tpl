@@ -53,6 +53,16 @@
                         -webkit-transition          : all .4s ease-in-out;
                         transition                  : all .4s ease-in-out;
                     }
+                    .bg-host{
+                        position           : fixed;
+                        font-size          : 500%;
+                        color              : rgba(0,0,0,0.15);
+                        top                : 30px; 
+                        left               : 45px;
+                        z-index            : -1;
+                        -webkit-transition : all .4s ease-in-out;
+                        transition         : all .4s ease-in-out;
+                    }
                 } 
                 @media screen {
                     /* computer screens */
@@ -96,7 +106,10 @@
                 @media screen and (min-width : 768px) and (max-width : 1024px)  { 
                     /* all iPad models */
                     .background-clock {
-                         font-size: 444%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                         font-size: 400%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                    }
+                    .bg-host{
+                        font-size: 400%;
                     }
                 }
                 @media screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) { 
@@ -110,9 +123,11 @@
                 @media screen and (min-width : 568px) and (max-width : 768px) { 
                     /* iPhone 5 */
                     .background-clock {
-                         font-size: 333%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                         font-size: 300%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
                     }
-                    
+                    .bg-host{
+                        font-size: 333%;
+                    }
                 }
 
                 /*
@@ -124,7 +139,9 @@
                     .background-clock {
                          font-size: 222%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
                     }
-                    
+                    .bg-host{
+                        font-size: 222%;
+                    }
                 }
                 @media screen and (min-width : 320px) and (max-width : 568px) and (orientation : landscape) { 
                     /* iPhone 5, landscape */
@@ -203,38 +220,9 @@
 			</STYLE>
 <body class="background-dark">
 <div class="logo text-center">
-    <h4>
-         
-       <!--  <a href="/" class="">
-            <i class="fa fa-globe text-info"></i> 
-        </a>   -->
-       <!--  <span class="label label-warning">  
-         <strong>x</strong></span> -->
-
-        <span href="/{$toBackDoor}"  style="position: fixed; font-size: 500%; color: rgba(0,0,0,0.15); top: 30px; left: 45px;  z-index: -1;">
-           {$HTTP_HOST} 
-        </span><br/>
-         
-          
-       <!--  <btn class="btn btn-sm label dropdown label-success dropdown  ">   
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {$suite}  <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul></span> <span class="label label-danger">  
-        &alpha; </btn> -->
-      <!--   <span class="label   label-info ">  
-           infused </span>  -->
-            
-      
-    </h4>  
-    
-     
+    <h4  class="bg-host ">
+        {$HTTP_HOST} 
+    </h4>   
 </div>
 <div class="background-clock" >
     {include file="../../~blox/clock.tpl"}   
