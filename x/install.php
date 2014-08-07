@@ -1,5 +1,7 @@
 <?php   
   function mysys($cmd){
+  	echo "# $cmd;
+";
     return system("($cmd)2>&1");
   } 
 
@@ -9,25 +11,30 @@
 
   if(isset($_GET['suite'])){
 
-    $s = $_GET['suite']; 
+    echo  $s = $_GET['suite']; 
 
-
-    git("rm x/Hydrogen -rf");  
-    mysys("rm x/Hydrogen -r"); 
-    git("submodule add --force https://github.com/XenGenie/Hydrogen x/Hydrogen ");
-    mysys("cd x/; cd Hydrogen/; ./gitsub.sh");
-     
-
-    // Assuming there are no problems... 
-    git("rm x/$s -rf");  
-    mysys("rm x/$s -r");
-
-    git("submodule add --force https://github.com/XenGenie/$s x/$s ");
-    mysys("cd x/; cd $s/; ./gitsub.sh");
-    // mysys("cd ../../");
-
-
+    echo "<pre>";
     
+    mysys("SUITE=$s ./wi.sh");
+    
+    
+    exit();
+	//     chdir('..');
+	//     mysys("rm x/Hydrogen -rf");
+	//     git("rm x/Hydrogen --cached -rf");  
+	//     mysys("rm x/Hydrogen -r"); 
+	//     git("submodule add --force https://github.com/XenGenie/Hydrogen x/Hydrogen ");
+	//     mysys("cd x/; cd Hydrogen/; ./gitsub.sh");
+	     
+	
+	//     // Assuming there are no problems... 
+	//     git("rm x/$s  --cached -rf");  
+	//     mysys("rm x/$s -r");
+	
+	//     git("submodule add --force https://github.com/XenGenie/$s x/$s ");
+	//     mysys("cd x/; cd $s/; ./gitsub.sh");
+	//     // mysys("cd ../../");
+
 
     //header("Location: /");
   } 
@@ -273,7 +280,21 @@ body {
     
   }
 ?>
-
+<SCRIPT TYPE="text/javascript">
+        <!--
+        function popup(mylink, windowname)
+        {
+        if (! window.focus)return true;
+        var href;
+        if (typeof(mylink) == 'string')
+           href=mylink;
+        else
+           href=mylink.href;
+        window.open(href, windowname, 'width=800,height=600,x=250,scrollbars=no');
+        return false;
+        }
+        //-->
+        </SCRIPT>
 
     <!-- Carousel
     ================================================== -->
@@ -306,7 +327,9 @@ body {
           </div>
         </div>
 
-        <?
+        
+
+        <?php
 
         foreach ($car as $key => $value) {
           ?>
@@ -317,7 +340,7 @@ body {
               <div class="carousel-caption">
                 <h1><?php echo $value ?></h1>
                 <p><?php echo get_data("https://raw.githubusercontent.com/XenGenie/$value/master/README.md")?></p>
-                <p><a class="btn btn-lg btn-primary" href="./?suite=<?php echo $value; ?>" role="button">Install</a></p>
+                <p><a class="btn btn-lg btn-primary" onClick="return popup(this, 'notes')" href="/x/install.php?suite=<?php echo $value; ?>" role="button">Install</a></p>
               </div>
             </div>
           </div>
