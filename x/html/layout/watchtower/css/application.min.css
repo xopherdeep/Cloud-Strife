@@ -2330,7 +2330,7 @@ input.parsley-error {
 }
 
 .sidebar-hidden .sidebar,.sidebar-hidden .logo {
-    display: none;
+    /*display: none;*/
 }
 
 .sidebar-hidden .wrap {
@@ -4988,12 +4988,12 @@ ol.text-list {
     }
 
     .logo,.sidebar-on-right .logo,.sidebar-hidden .logo,.logo.sidebar-icons,.sidebar-on-right .logo.sidebar-icons,.sidebar-hidden .logo.sidebar-icons {
-        display: block;
-        left: 1.6%;
-        right: auto;
-        padding-right: 5px;
-        width: 150px;
-        top: 0px;
+		display       : block;
+		left          : 1.6%;
+		right         : auto;
+		padding-right : 5px;
+		width         : 150px;
+		top           : 0px;
     }
 
     .modal-body {
