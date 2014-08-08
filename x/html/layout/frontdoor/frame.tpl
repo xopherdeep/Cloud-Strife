@@ -37,19 +37,19 @@
 {else}
 <!DOCTYPE html>
 <html lang="en">
+	{if $Xtra != '' AND $method  != '' AND ($Xtra != 'index')}
+		{include file="../../../{$suite}/x{$Xtra|ucfirst}/$method.tpl" assign=XTRA_METHOD}	 
+		{$HTML.BODY.HTML = $XTRA_METHOD}
+	{else if $HTML.BODY.HTML == ''}
+		{include file="$Door/portal.tpl" assign=PORTAL}
+		{$HTML.BODY.HTML = $PORTAL}
+	{/if}
 	<head>
-		<meta charset="utf-8"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
-		{if $Xtra != '' AND $method  != '' AND ($Xtra != 'index')}
-			{include file="../../../{$suite}/x{$Xtra|ucfirst}/$method.tpl" assign=XTRA_METHOD}	 
-			{$HTML.BODY.HTML = $XTRA_METHOD}
-		{else if $HTML.BODY.HTML == ''}
-			{include file="$Door/portal.tpl" assign=PORTAL}
-			{$HTML.BODY.HTML = $PORTAL}
-		{/if}
 		<title>{$HTML.HEAD.TITLE}</title> 
-		<!-- <link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet"> --> 
+		<meta charset="utf-8">  
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		
+		<link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet"> 
 
 		<SCRIPT src="{$HTML.HEAD.JS}"></SCRIPT>
 

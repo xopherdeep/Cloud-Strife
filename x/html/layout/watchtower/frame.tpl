@@ -658,7 +658,7 @@
                     title   : t,
                     path    : p,
                     col     : c,
-                    user_id : {$user.id}
+                    user_id : 0 + "{$user.id}"
                 },
                 dataType : "json",
                 success: function(data)
@@ -917,19 +917,7 @@
 
             })
         });
-    </script>
-
-    <!-- page specific -->
-
-
-    <!-- basic application js
-
-
-    <script type="text/javascript" src="/bin/js/ext-4.2.1/examples/shared/include-ext.js"></script>
-	<script type="text/javascript" src="/fileServer/js/x4/x4.js"></script>
-	<script type="text/javascript" src="/fileServer/js/x4/ume.js"></script>
-
--->
+    </script> 
 
     <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.nestable.js"> </script>
 
