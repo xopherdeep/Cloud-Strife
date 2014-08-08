@@ -1,5 +1,5 @@
-<div class="row"> 
-    <div class="col-md-12 widget-container ">  
+<div class="row widget-container "> 
+    <div class="col-md-12 ">  
         <section class="widget locked"> 
             <div class="jumbotron handle">
                 <div class="container">   
@@ -17,7 +17,7 @@
                                 <h1><i class="fa fa-4x fa-space-shuttle "></i><br/>Hello {$user.username|ucfirst}  </h1>
                                 <p >
                                    
-                                 Welcome to your Super <b>Spacylecious</b>  Dashboard!
+                                 Welcome to your Super <b>Spacylecious</b> Watchtower
                                    <br/><br/>
                                 
                                     <!-- <a class="btn btn-success btn-lg " data-widgster="fullscreen"> -->
@@ -61,16 +61,14 @@
                 </div>
             </div>
         </section> 
-    </div> 
+    </div>  
 
-    <div class="col-md-12 widget-container">   
         {$portal = true}
         {foreach $watchtower.data as $r => $t}  
             {if $t.path} 
                 {include file="~widgets/col.tpl" col=$t.col xPHP=$t.path title=$t.title}
             {/if}
         {/foreach}
-    </div>
 </div>
     
 <!-- page specific -->
