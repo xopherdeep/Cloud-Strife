@@ -13,13 +13,13 @@
 			{$HTML.BODY.HTML = $PORTAL}
 		{/if}
 		<title>{$HTML.HEAD.TITLE}</title> 
-		<!-- <link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet"> --> 
+		<link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet"> 
 
 		<SCRIPT src="{$HTML.HEAD.JS}"></SCRIPT>
 
 		{if $masterKey.is.admin} 
 
-		<link href="/x/html/layout/watchtower/css/white.application.min.css" rel="stylesheet">
+		<!-- <link href="/x/html/layout/watchtower/css/white.application.min.css" rel="stylesheet"> -->
   		<link rel="stylesheet" href="/bin/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="{$HTML.HEAD.CSS}">
 		
@@ -56,7 +56,10 @@
 		  </style>
 		<![endif]-->
 	    <style type="text/css"> 
-				
+			body{
+				background: none;
+			}
+
 			.panel { 
 				float               : left;
 				width               : 100%;
@@ -71,8 +74,7 @@
 				-webkit-perspective : 600px;
 				-moz-perspective    : 600px;
 				perspective         : 600px;
-
-				background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwJSIgY3k9IjAiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoNzQsIDEyMSwgMTQ3LCAwLjg5KSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSJyZ2JhKDIyNiwgMjI2LCAyMjYsIDAuODcpIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDE4NSwgMTM1LCAxMzEsIDAuODcpIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4=)
+ 
 			  }
 			  /* -- make sure to declare a default for every property that you want animated -- */
 			  /* -- general styles, including Y axis rotation -- */
@@ -85,28 +87,27 @@
 				width                       : inherit;
 				height                      : inherit;
 				border                      : 0px solid #ccc; 
-				padding-top: 50px;
+				padding-top                 : 50px;
 				/*box-shadow                : 0 1px 5px rgba(0,0,0,0.9);*/
-
+				
 				-webkit-transform           : rotateX(0deg) rotateY(0deg);
 				-moz-transform              : rotateX(0deg) rotateY(0deg);
 				transform                   : rotateX(0deg) rotateY(0deg);
-
+				
 				-webkit-transform-style     : preserve-3d;
 				-moz-transform-style        : preserve-3d;
 				transform-style             : preserve-3d;
-
+				
 				-webkit-backface-visibility : hidden;
 				-moz-backface-visibility    : hidden;
 				backface-visibility         : hidden;
-
+				
 				/* -- transition is the magic sauce for animation -- */
 				-webkit-transition          : all .4s ease-in-out;
 				transition                  : all .4s ease-in-out;
-
-				 
-			/*			background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwJSIgY3k9IjAiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoNzQsIDEyMSwgMTQ3LCAwLjg5KSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSJyZ2JhKDIyNiwgMjI2LCAyMjYsIDAuODcpIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDE4NSwgMTM1LCAxMzEsIDAuODcpIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4=) 
-			*/
+				
+				
+				background: url(http://xengenie.github.io/SuperDom/images/header-bg.jpg); 
 
 				 
 			  }
@@ -127,11 +128,12 @@
 				left                        : 0;
 				z-index                     : 800;
 				width                       : inherit;
-				height                      : inherit;
+				min-height                      : 100%;
+				height: auto;
 				/*border                      : 1px solid #ccc;*/
 				/*background                : #333;*/
 				border-radius               : 20px;
-				
+				text-align: center;
 				-webkit-transform           : rotateY(-180deg);
 				transform                   : rotateY(-179deg);
 				
@@ -146,19 +148,8 @@
 				display: none;
 				/* -- transition is the magic sauce for animation -- */
 				-webkit-transition          : all .4s ease-in-out;
-				transition                  : all .4s ease-in-out;
-				background                  : rgb(177,216,245);
-				background                  : url('/bin/images/bgs/full/cloud-transparent.png'), url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjYjFkOGY1IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMjUlIiBzdG9wLWNvbG9yPSIjYmVlNGY4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNDYlIiBzdG9wLWNvbG9yPSIjYzhlZWZiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjZTZmOGZkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjZmRmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjMjU4ZTMxIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTQlIiBzdG9wLWNvbG9yPSIjYzlmZmEzIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2M2ZmY5ZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-				background                  : -moz-linear-gradient(-45deg,  rgba(177,216,245,1) 0%, rgba(190,228,248,1) 25%, rgba(200,238,251,1) 46%, rgba(230,248,253,1) 70%, rgba(253,255,255,1) 86%, rgba(37,142,49,1) 86%, rgba(201,255,163,1) 94%, rgba(198,255,158,1) 100%);
-				background                  : -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(177,216,245,1)), color-stop(25%,rgba(190,228,248,1)), color-stop(46%,rgba(200,238,251,1)), color-stop(70%,rgba(230,248,253,1)), color-stop(86%,rgba(253,255,255,1)), color-stop(86%,rgba(37,142,49,1)), color-stop(94%,rgba(201,255,163,1)), color-stop(100%,rgba(198,255,158,1)));
-				background                  : -webkit-linear-gradient(-45deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
-				background                  : -o-linear-gradient(-45deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
-				background                  : -ms-linear-gradient(-45deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
-				background                  : linear-gradient(135deg,  rgba(177,216,245,1) 0%,rgba(190,228,248,1) 25%,rgba(200,238,251,1) 46%,rgba(230,248,253,1) 70%,rgba(253,255,255,1) 86%,rgba(37,142,49,1) 86%,rgba(201,255,163,1) 94%,rgba(198,255,158,1) 100%);
-				filter                      : progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1d8f5', endColorstr='#c6ff9e',GradientType=1 );
-				/*background: url(/bin/images/bgs/full/future.jpg) top center;*/
-				 /*background-size: 100%;*/
-
+				transition                  : all .4s ease-in-out; 
+				background: url(http://xengenie.github.io/SuperDom/images/header-bg.jpg); 
 				}
 
 			  .panel.flip > .back { 
@@ -177,13 +168,15 @@
 
 				/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 
+					-webkit-transition          : all .4s linear;
+					transition                  : all .4s linear;
 
 			  }
 
 			.panel > .back .navbar *{ 
 			 	/* -- transition is the magic sauce for animation -- */
-					-webkit-transition          : all .1s linear;
-					transition                  : all .1s linear;
+					-webkit-transition          : all .4s linear;
+					transition                  : all .4s linear;
 			}
 
 			  /* -- X axis rotation for click panel -- */
@@ -336,9 +329,7 @@ top: 35px;">
 	          <div class="btn-group" style="padding-top: 10px;">
 						<!-- <img src="{$thumb}src=/bin/images/logos/sdx.png&h=10" class=""> -->
 							<!-- <button class="btn btn-warning action btn-sm"><i class="fa fa-key"></i></button> -->
-							<button class="btn btn-primary  "> 
-							<strong><i class="fa fa-lock  " onclick="location.href = '/login/logout'"></i> </strong>
-							</button>	
+							
 							<button class="btn btn-info   {if $quest == ''}active{/if}  " onclick="location.href='/' "> 
 							<strong><i class="fa fa-globe "></i> {$SVR['SERVER_NAME']}</strong>
 							</button>	
@@ -461,80 +452,81 @@ top: 35px;">
 							</li> -->
 							
 							
-			                    {include file="~blox/godbar/sdx.btn.tpl"}
+			                
 							<div class="btn-group admin_menu">
-							<button class="btn btn-info " onclick="location.href = '/blox/qBlox/{$key}';"    > 
-							<i class="fa fa-cubes "></i>    
-							</button> 
-							<button class="btn btn-info " data-toggle="dropdown"   >  
-							<i class="fa fa-caret-down"></i>  
-							</button> 
-							<ul class="dropdown-menu " id="toy-blox-menu">
-								<!-- {foreach $admin_menu as $key => $item}
-									 
 
-									{if $key  }  
-										<li class="dropdown-rightsubmenu">
-											<a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}"><i class="fa fa-{$key} pull-left"></i> {$item.area|ucfirst}  </a>
-											<ul class="dropdown-menu">
-											{foreach $xtras as $x => $xtra} 
+
+
+								<button class="btn btn-info " data-toggle="dropdown"    > 
+									<i class="fa fa-cubes "></i>     
+									<i class="fa fa-caret-down"></i>  
+								</button> 
+								<ul class="dropdown-menu " id="toy-blox-menu">
+									<!-- {foreach $admin_menu as $key => $item}
+										 
+
+										{if $key  }  
+											<li class="dropdown-rightsubmenu">
+												<a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}"><i class="fa fa-{$key} pull-left"></i> {$item.area|ucfirst}  </a>
+												<ul class="dropdown-menu">
+												{foreach $xtras as $x => $xtra} 
+												{if $xtra.icon && $key == $xtra.see}
+													<li class="{if $xtra.alpha}text-danger{elseif $xtra.beta}text-warning{elseif $xtra.delta}text-success{elseif $xtra.omega}text-primary{else}text-default{/if}"><a data-filter="{$xtra.class}" href="/{$toBackDoor}/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="  " > 
+
+
+
+															<i class="fa fa-{$xtra.mini}  pull-left"></i> {$xtra.name} 
+															</a> 
+														</li>  
+												{/if}
+											{/foreach} 
+											</ul>
+											</li> 
+										{/if}
+									{/foreach}  -->
+
+									{foreach $admin_menu as $key => $item}
+										{assign var="hasBlox" value=false}
+										{foreach $xtras as $x => $xtra} 
 											{if $xtra.icon && $key == $xtra.see}
-												<li class="{if $xtra.alpha}text-danger{elseif $xtra.beta}text-warning{elseif $xtra.delta}text-success{elseif $xtra.omega}text-primary{else}text-default{/if}"><a data-filter="{$xtra.class}" href="/{$toBackDoor}/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="  " > 
-
-
-
-														<i class="fa fa-{$xtra.mini}  pull-left"></i> {$xtra.name} 
-														</a> 
-													</li>  
+												{if $qBlox[$xtra.class]}
+													{assign var="hasBlox" value=true}
+												{/if}
 											{/if}
 										{/foreach} 
-										</ul>
-										</li> 
-									{/if}
-								{/foreach}  -->
-
-								{foreach $admin_menu as $key => $item}
-									{assign var="hasBlox" value=false}
-									{foreach $xtras as $x => $xtra} 
-										{if $xtra.icon && $key == $xtra.see}
-											{if $qBlox[$xtra.class]}
-												{assign var="hasBlox" value=true}
-											{/if}
-										{/if}
-									{/foreach} 
-									
-									{if $key && $hasBlox == true}  
-										<li class=" dropdown-rightsubmenu "   > 
-											<a data-filter="{$key}" href="/blox/qBlox/{$key}"   title="{$item.desc|ucfirst}"  ><i class="fa fa-{$key} pull-left"></i> 
-											{$LANG.ADMIN.AREAS.{$key}|ucfirst}  </a>
-											<!-- <span class="dropdown-toggle" data-toggle="dropdown"  title="{$item.desc|ucfirst}"></span><i class="fa fa-{$key}"></i> --> 
-											<!-- <a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}" class="btn btn-success"><i class="fa fa-{$key}"></i>  <i class="fa fa-caret-right"></i></a> -->
-											<ul class="dropdown-menu">
-												{foreach $xtras as $x => $xtra} 
-													{if $xtra.icon && $key == $xtra.see}
-														{if $qBlox[$xtra.class]}
-															<li class="dropdown-submenu"><a data-filter="{$xtra.class}" href="/blox/qBlox/{$key}/{$xtra.class}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="{if $xtra.alpha}panel-danger{elseif $xtra.beta}panel-warning{elseif $xtra.delta}panel-success{elseif $xtra.omega}panel-primary{else}panel-default" disabled="disabled{/if}" > 
+										
+										{if $key && $hasBlox == true}  
+											<li class=" dropdown-rightsubmenu "   > 
+												<a data-filter="{$key}" href="/blox/qBlox/{$key}"   title="{$item.desc|ucfirst}"  ><i class="fa fa-{$key} pull-left"></i> 
+												{$LANG.ADMIN.AREAS.{$key}|ucfirst}  </a>
+												<!-- <span class="dropdown-toggle" data-toggle="dropdown"  title="{$item.desc|ucfirst}"></span><i class="fa fa-{$key}"></i> --> 
+												<!-- <a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}" class="btn btn-success"><i class="fa fa-{$key}"></i>  <i class="fa fa-caret-right"></i></a> -->
+												<ul class="dropdown-menu">
+													{foreach $xtras as $x => $xtra} 
+														{if $xtra.icon && $key == $xtra.see}
+															{if $qBlox[$xtra.class]}
+																<li class="dropdown-submenu"><a data-filter="{$xtra.class}" href="/blox/qBlox/{$key}/{$xtra.class}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="{if $xtra.alpha}panel-danger{elseif $xtra.beta}panel-warning{elseif $xtra.delta}panel-success{elseif $xtra.omega}panel-primary{else}panel-default" disabled="disabled{/if}" > 
 
 
 
-																<i class="fa fa-{$xtra.mini}  pull-left"></i> {$xtra.name} 
-																</a>
-																<ul class="dropdown-menu">
-																	{foreach $qBlox[$xtra.class] as $b => $y}
-																		<li ><a data-filter="{$y.name}" href="/blox/qBlox/{$key}/{$xtra.class}/{$y.name}" title=" "  data-placement="top" data-original-title=" " class=" " disabled=" " >
-																		<i class="fa fa-{$y.icon}  pull-left"></i> {$y.blox} 
-																		</a></li>
-																	{/foreach}
-																</ul>
-															</li>  
+																	<i class="fa fa-{$xtra.mini}  pull-left"></i> {$xtra.name} 
+																	</a>
+																	<ul class="dropdown-menu">
+																		{foreach $qBlox[$xtra.class] as $b => $y}
+																			<li ><a data-filter="{$y.name}" href="/blox/qBlox/{$key}/{$xtra.class}/{$y.name}" title=" "  data-placement="top" data-original-title=" " class=" " disabled=" " >
+																			<i class="fa fa-{$y.icon}  pull-left"></i> {$y.blox} 
+																			</a></li>
+																		{/foreach}
+																	</ul>
+																</li>  
+															{/if}
 														{/if}
-													{/if}
-												{/foreach} 
-											</ul>
-										</li>
-									{/if}
-								{/foreach} 	 
-							</ul>
+													{/foreach} 
+												</ul>
+											</li>
+										{/if}
+									{/foreach} 	 
+								</ul>
 							</div> 
 
 
@@ -542,12 +534,10 @@ top: 35px;">
 							<a   class="btn btn-default active disabled " >
 					          	{include file="~blox/clock.tpl"}
 					        </a>
-					        
+					            {include file="~blox/godbar/sdx.btn.tpl"}
 					       
 							
-							<button class="btn btn-warning  " onclick="location.href = '/x'"><i class="fa fa-key fa-flip-horizontal "></i></button>
 							
-
 				          	
 					          
 					         <!--  {foreach $admin_menu as $key => $item} 
@@ -575,12 +565,16 @@ top: 35px;">
 					       	
 							
 				          </div>
-				          <ul class="nav   navbar-nav navbar-right btn-group  "  style="padding-top: 10px;"  > 
+				          <ul class="nav   navbar-nav navbar-right btn-group;" style=" padding-top: 10px;  "     > 
 						        
 
-						    <div   class="btn-group" >
-				           
-					           <button  class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						    <div class="btn-group" >
+
+							    <a href="/login/logout" class="btn btn-primary  "> 
+								<strong><i class="fa fa-lock  " onclick="location.href = ''"></i> </strong>
+								</a>	
+
+				           		<button  class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 					           		<i class="fa fa-coffee"></i> 
 					           </button>
 					           <ul class="dropdown-menu">
@@ -592,14 +586,16 @@ top: 35px;">
 					           	
 					           	</li>
 					           </ul>
+					           
 					        </div>
+
 
 				          	
 
 
-						        <a href="/x/calendar" class="btn btn-success  " >
+						        <!-- <a href="/x/calendar" class="btn btn-success  " >
 						           <i class="fa fa-tasks "></i>
-						        </a>
+						        </a> -->
 
 						       <!-- <a href=" " class="btn btn-success  " >
 						          	<i class="fa fa-crosshairs"></i> <span class="count badge">{$page_landing.unique_hits}</span>
@@ -609,7 +605,7 @@ top: 35px;">
 						        </a>  -->
 						        
 
-						        <div class="btn-group">
+						        <!-- <div class="btn-group">
 			                        <a href="#" title="Messages" id="messages" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
 			                            <i class="fa fa-user-md "></i> <span class="count badge">80%</span>
 			                        </a>
@@ -670,16 +666,9 @@ top: 35px;">
 			                                </a>
 			                            </li>
 			                        </ul>
-			                    </div>
-								<!-- <li class="active">
-									<a>
-										
-									<i class="fa fa-globe"></i>
-
-									</a>
-								</li> -->
-							<!--SDX img drop down
-							 <li class="dropdown" ><a href="/x/" class="text text-danger dropdown-toggle" data-toggle="dropdown">
+			                    </div>  -->
+							<!-- SDX img drop down -->
+							<!--  <li class="dropdown" ><a href="/x/" class="text text-danger dropdown-toggle" data-toggle="dropdown">
 								<img src="{$thumb}src=/bin/images/logos/sdx.png&w=123">
 								<strong class=" text text-success">Super</strong><span class="text-primary">Dom</span> 
 								<i class="fa fa-caret-down text-info"></i> 
@@ -708,55 +697,8 @@ top: 35px;">
 										{/if}
 									{/foreach} 
 								</ul>
-							</li> -->
-
-							<!-- <li class="dropdown active" ><a   class="dropdown-toggle "  data-toggle="dropdown">
-								<i class="fa  fa-spin-reverse fa-cubes"></i> Toy Blox <b class="caret"></b>
-								</a>
-								<ul class="dropdown-menu" id="toy-blox-menu">
-									{foreach $admin_menu as $key => $item}
-										{assign var="hasBlox" value=false}
-										{foreach $xtras as $x => $xtra} 
-											{if $xtra.icon && $key == $xtra.see}
-												{if $blox[$xtra.class]}
-													{assign var="hasBlox" value=true}
-												{/if}
-											{/if}
-										{/foreach}
-
-										{if $key && $hasBlox == true}  
-											<li class="dropdown-submenu">
-												<a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}"><i class="fa fa-{$key} pull-right"></i> {$item.area|ucfirst}  </a>
-												<ul class="dropdown-menu">
-												{foreach $xtras as $x => $xtra}
-
-
-
-													{if $xtra.icon && $key == $xtra.see}
-														{if $blox[$xtra.class]}
-															<li class="dropdown-submenu"><a data-filter="{$xtra.class}" href="/blox/qBlox/{$key}/{$xtra.class}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="{if $xtra.alpha}panel-danger{elseif $xtra.beta}panel-warning{elseif $xtra.delta}panel-success{elseif $xtra.omega}panel-primary{else}panel-default" disabled="disabled{/if}" > 
-
-
-
-																<i class="fa fa-{$xtra.mini}  pull-right"></i> {$xtra.name} 
-																</a>
-																<ul class="dropdown-menu">
-																	{foreach $blox[$xtra.class] as $b => $y}
-																		<li><a data-filter="{$y.name}" href="/blox/qBlox/{$key}/{$xtra.class}/{$y.name}" title=" "  data-placement="top" data-original-title=" " class=" " disabled=" " >
-																		<i class="fa fa-{$y.icon}  pull-right"></i> {$y.blox} 
-																</a>
-																	{/foreach}
-																</ul>
-															</li>  
-														{/if}
-													{/if}
-												{/foreach} 
-											</ul>
-											</li> 
-										{/if}
-									{/foreach} 
-								</ul>
-							</li> -->
+							</li> 
+  -->
 
 							 
 						</ul>
@@ -998,17 +940,19 @@ function bloxSwitch(active,t,c) {
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
    
 
-<div id="windowTitleDialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true" style="  overflow: hidden; position: absolute;    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjYjNkY2VkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMiUiIHN0b3AtY29sb3I9IiNhZGRiZWQiIHN0b3Atb3BhY2l0eT0iMC44Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI5YjhlNSIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2JjZTBlZSIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-background: -moz-linear-gradient(-45deg,  rgba(179,220,237,1) 0%, rgba(173,219,237,0.8) 2%, rgba(41,184,229,0.8) 50%, rgba(188,224,238,0.8) 100%);
-background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(179,220,237,1)), color-stop(2%,rgba(173,219,237,0.8)), color-stop(50%,rgba(41,184,229,0.8)), color-stop(100%,rgba(188,224,238,0.8)));
-background: -webkit-linear-gradient(-45deg,  rgba(179,220,237,1) 0%,rgba(173,219,237,0.8) 2%,rgba(41,184,229,0.8) 50%,rgba(188,224,238,0.8) 100%);
-background: -o-linear-gradient(-45deg,  rgba(179,220,237,1) 0%,rgba(173,219,237,0.8) 2%,rgba(41,184,229,0.8) 50%,rgba(188,224,238,0.8) 100%);
-background: -ms-linear-gradient(-45deg,  rgba(179,220,237,1) 0%,rgba(173,219,237,0.8) 2%,rgba(41,184,229,0.8) 50%,rgba(188,224,238,0.8) 100%);
-background: linear-gradient(135deg,  rgba(179,220,237,1) 0%,rgba(173,219,237,0.8) 2%,rgba(41,184,229,0.8) 50%,rgba(188,224,238,0.8) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#ccbce0ee',GradientType=1 );
+<div id="windowTitleDialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true" style="  overflow: hidden; position: absolute;    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjN2Q3ZTdkIiBzdG9wLW9wYWNpdHk9IjAuODEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBlMGUwZSIgc3RvcC1vcGFjaXR5PSIwLjg2Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+background: -moz-linear-gradient(-45deg,  rgba(125,126,125,0.81) 0%, rgba(14,14,14,0.86) 100%);
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(125,126,125,0.81)), color-stop(100%,rgba(14,14,14,0.86)));
+background: -webkit-linear-gradient(-45deg,  rgba(125,126,125,0.81) 0%,rgba(14,14,14,0.86) 100%);
+background: -o-linear-gradient(-45deg,  rgba(125,126,125,0.81) 0%,rgba(14,14,14,0.86) 100%);
+background: -ms-linear-gradient(-45deg,  rgba(125,126,125,0.81) 0%,rgba(14,14,14,0.86) 100%);
+background: linear-gradient(135deg,  rgba(125,126,125,0.81) 0%,rgba(14,14,14,0.86) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cf7d7e7d', endColorstr='#db0e0e0e',GradientType=1 );
+
+
 ">
   <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -1028,24 +972,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', end
 	        </li>
             <li class="active">
             	<a class="action" style="cursor: pointer" >
-	            	<span class="label label-success"> <i class="blox-icon"></i> <!-- God Mode --></span>
+	            	<span class="label label-success"> <i class="fa fa-gear fa-spin-reverse  "></i> <i class="blox-icon"></i>  <i class="fa fa-gear fa-spin  "></i><!-- God Mode --></span>
 	            </a>
 	        </li>
              
           </ul>
           <div class="btn-group blox-bar-btns" style="margin-top: 5px;">
-
-
-          	
-
-        
-          <a class="btn btn-default btn-lg blox-delete" onclick="bloxDelete(this,event);"><i class="fa fa-trash-o"></i></a>  
-
-
-          <a class="btn btn-default active disabled btn-lg" onclick="closeDialog()"><i class="fa fa-gear fa-spin-reverse  "></i><i class="fa fa-gear fa-spin  "></i>
-
-          </a>
-          	
+          		<!-- <a class="btn btn-default active disabled btn-lg" onclick="closeDialog()">
+          			
+          		</a> -->
+           <a class="btn btn-info btn-lg blox-delete" onclick="bloxDelete(this,event);"><i class="fa fa-trash-o"></i></a>  
+	          
+        	 	
           	<!-- <a class="btn btn-default active btn-lg">
 
           		<i class="blox-icon"></i>
@@ -1054,18 +992,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', end
           	</a>
           	 -->
           	         
-          	<a class="btn btn-info btn-lg" onclick="bloxSwitch('star',this);"><i class="fa fa-recycle"></i></a>
           	
           </div>
           <div class="nav navbar-nav navbar-right btn-group blox-bar-btns" style="margin-top: 5px;">
              
-
-        	 	
-				<a class="btn btn-danger btn-lg"  onclick="bloxSwitch(false);"><i class="fa fa-eye-slash"></i></a>
+	        	<a class="btn btn-danger btn-lg"  onclick="bloxSwitch(false);"><i class="fa fa-eye-slash"></i></a>
 				
+             	<a class="btn btn-warning btn-lg" onclick="bloxSwitch('star',this);"><i class="fa fa-recycle"></i></a>
+          	
 				<a class="btn btn-success btn-lg" onclick="bloxSwitch(true);"><i class="fa fa-eye"></i></a>
           	
           	
+ 				
+				
           </div>
         </div><!--/.nav-collapse -->
       </div>
