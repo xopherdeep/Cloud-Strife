@@ -634,29 +634,29 @@
     <script src="/x/html/layout/watchtower/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
 
     
-    <script type="text/javascript" src="{$WT}lib/vendor/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/vendor/jquery.ui.widget.js"></script>
     <!-- The Templates plugin is included to render the upload/download listings -->
-    <script type="text/javascript" src="{$WT}lib/vendor/http_blueimp.github.io_JavaScript-Templates_js_tmpl.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/vendor/http_blueimp.github.io_JavaScript-Templates_js_tmpl.js"></script>
     <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-    <script type="text/javascript" src="{$WT}lib/vendor/http_blueimp.github.io_JavaScript-Load-Image_js_load-image.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/vendor/http_blueimp.github.io_JavaScript-Load-Image_js_load-image.js"></script>
     <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-    <script type="text/javascript" src="{$WT}lib/vendor/http_blueimp.github.io_JavaScript-Canvas-to-Blob_js_canvas-to-blob.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/vendor/http_blueimp.github.io_JavaScript-Canvas-to-Blob_js_canvas-to-blob.js"></script>
     <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-    <script type="text/javascript" src="{$WT}lib/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.iframe-transport.js"></script>
     <!-- The basic File Upload plugin -->
-    <script type="text/javascript" src="{$WT}lib/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.fileupload.js"></script>
     <!-- The File Upload file processing plugin -->
-    <script type="text/javascript" src="{$WT}lib/jquery.fileupload-fp.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.fileupload-fp.js"></script>
     <!-- The File Upload user interface plugin -->
-    <script type="text/javascript" src="{$WT}lib/jquery.fileupload-ui.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.fileupload-ui.js"></script>
 
      
 
     <!-- bootstrap custom plugins -->
-    <script type="text/javascript" src="{$WT}lib/bootstrap-datepicker.js"></script>
-    <script type="text/javascript" src="{$WT}lib/bootstrap-select/bootstrap-select.js"></script>
-    <script type="text/javascript" src="{$WT}lib/wysihtml5/wysihtml5-0.3.0_rc2.js"></script>
-    <script type="text/javascript" src="{$WT}lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap-select/bootstrap-select.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/wysihtml5/wysihtml5-0.3.0_rc2.js"></script>
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
 
     <!-- basic application js-->
     <script src="/x/html/layout/watchtower/js/app.js"></script>
