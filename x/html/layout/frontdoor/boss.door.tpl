@@ -457,76 +457,76 @@ top: 35px;">
 
 
 
-							<button class="btn btn-info " data-toggle="dropdown"    > 
-							<i class="fa fa-cubes "></i>     
-							<i class="fa fa-caret-down"></i>  
-							</button> 
-							<ul class="dropdown-menu " id="toy-blox-menu">
-								<!-- {foreach $admin_menu as $key => $item}
-									 
+								<button class="btn btn-info " data-toggle="dropdown"    > 
+									<i class="fa fa-cubes "></i>     
+									<i class="fa fa-caret-down"></i>  
+								</button> 
+								<ul class="dropdown-menu " id="toy-blox-menu">
+									<!-- {foreach $admin_menu as $key => $item}
+										 
 
-									{if $key  }  
-										<li class="dropdown-rightsubmenu">
-											<a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}"><i class="fa fa-{$key} pull-left"></i> {$item.area|ucfirst}  </a>
-											<ul class="dropdown-menu">
-											{foreach $xtras as $x => $xtra} 
+										{if $key  }  
+											<li class="dropdown-rightsubmenu">
+												<a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}"><i class="fa fa-{$key} pull-left"></i> {$item.area|ucfirst}  </a>
+												<ul class="dropdown-menu">
+												{foreach $xtras as $x => $xtra} 
+												{if $xtra.icon && $key == $xtra.see}
+													<li class="{if $xtra.alpha}text-danger{elseif $xtra.beta}text-warning{elseif $xtra.delta}text-success{elseif $xtra.omega}text-primary{else}text-default{/if}"><a data-filter="{$xtra.class}" href="/{$toBackDoor}/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="  " > 
+
+
+
+															<i class="fa fa-{$xtra.mini}  pull-left"></i> {$xtra.name} 
+															</a> 
+														</li>  
+												{/if}
+											{/foreach} 
+											</ul>
+											</li> 
+										{/if}
+									{/foreach}  -->
+
+									{foreach $admin_menu as $key => $item}
+										{assign var="hasBlox" value=false}
+										{foreach $xtras as $x => $xtra} 
 											{if $xtra.icon && $key == $xtra.see}
-												<li class="{if $xtra.alpha}text-danger{elseif $xtra.beta}text-warning{elseif $xtra.delta}text-success{elseif $xtra.omega}text-primary{else}text-default{/if}"><a data-filter="{$xtra.class}" href="/{$toBackDoor}/{$xtra.link}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="  " > 
-
-
-
-														<i class="fa fa-{$xtra.mini}  pull-left"></i> {$xtra.name} 
-														</a> 
-													</li>  
+												{if $qBlox[$xtra.class]}
+													{assign var="hasBlox" value=true}
+												{/if}
 											{/if}
 										{/foreach} 
-										</ul>
-										</li> 
-									{/if}
-								{/foreach}  -->
-
-								{foreach $admin_menu as $key => $item}
-									{assign var="hasBlox" value=false}
-									{foreach $xtras as $x => $xtra} 
-										{if $xtra.icon && $key == $xtra.see}
-											{if $qBlox[$xtra.class]}
-												{assign var="hasBlox" value=true}
-											{/if}
-										{/if}
-									{/foreach} 
-									
-									{if $key && $hasBlox == true}  
-										<li class=" dropdown-rightsubmenu "   > 
-											<a data-filter="{$key}" href="/blox/qBlox/{$key}"   title="{$item.desc|ucfirst}"  ><i class="fa fa-{$key} pull-left"></i> 
-											{$LANG.ADMIN.AREAS.{$key}|ucfirst}  </a>
-											<!-- <span class="dropdown-toggle" data-toggle="dropdown"  title="{$item.desc|ucfirst}"></span><i class="fa fa-{$key}"></i> --> 
-											<!-- <a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}" class="btn btn-success"><i class="fa fa-{$key}"></i>  <i class="fa fa-caret-right"></i></a> -->
-											<ul class="dropdown-menu">
-												{foreach $xtras as $x => $xtra} 
-													{if $xtra.icon && $key == $xtra.see}
-														{if $qBlox[$xtra.class]}
-															<li class="dropdown-submenu"><a data-filter="{$xtra.class}" href="/blox/qBlox/{$key}/{$xtra.class}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="{if $xtra.alpha}panel-danger{elseif $xtra.beta}panel-warning{elseif $xtra.delta}panel-success{elseif $xtra.omega}panel-primary{else}panel-default" disabled="disabled{/if}" > 
+										
+										{if $key && $hasBlox == true}  
+											<li class=" dropdown-rightsubmenu "   > 
+												<a data-filter="{$key}" href="/blox/qBlox/{$key}"   title="{$item.desc|ucfirst}"  ><i class="fa fa-{$key} pull-left"></i> 
+												{$LANG.ADMIN.AREAS.{$key}|ucfirst}  </a>
+												<!-- <span class="dropdown-toggle" data-toggle="dropdown"  title="{$item.desc|ucfirst}"></span><i class="fa fa-{$key}"></i> --> 
+												<!-- <a data-filter="{$key}" href="/blox/qBlox/{$key}" class="dropdown-toggle" data-toggle="dropdown" title="{$item.desc|ucfirst}" class="btn btn-success"><i class="fa fa-{$key}"></i>  <i class="fa fa-caret-right"></i></a> -->
+												<ul class="dropdown-menu">
+													{foreach $xtras as $x => $xtra} 
+														{if $xtra.icon && $key == $xtra.see}
+															{if $qBlox[$xtra.class]}
+																<li class="dropdown-submenu"><a data-filter="{$xtra.class}" href="/blox/qBlox/{$key}/{$xtra.class}" title="{$xtra.desc}"  data-placement="top" data-original-title="{$xtra.desc}" class="{if $xtra.alpha}panel-danger{elseif $xtra.beta}panel-warning{elseif $xtra.delta}panel-success{elseif $xtra.omega}panel-primary{else}panel-default" disabled="disabled{/if}" > 
 
 
 
-																<i class="fa fa-{$xtra.mini}  pull-left"></i> {$xtra.name} 
-																</a>
-																<ul class="dropdown-menu">
-																	{foreach $qBlox[$xtra.class] as $b => $y}
-																		<li ><a data-filter="{$y.name}" href="/blox/qBlox/{$key}/{$xtra.class}/{$y.name}" title=" "  data-placement="top" data-original-title=" " class=" " disabled=" " >
-																		<i class="fa fa-{$y.icon}  pull-left"></i> {$y.blox} 
-																		</a></li>
-																	{/foreach}
-																</ul>
-															</li>  
+																	<i class="fa fa-{$xtra.mini}  pull-left"></i> {$xtra.name} 
+																	</a>
+																	<ul class="dropdown-menu">
+																		{foreach $qBlox[$xtra.class] as $b => $y}
+																			<li ><a data-filter="{$y.name}" href="/blox/qBlox/{$key}/{$xtra.class}/{$y.name}" title=" "  data-placement="top" data-original-title=" " class=" " disabled=" " >
+																			<i class="fa fa-{$y.icon}  pull-left"></i> {$y.blox} 
+																			</a></li>
+																		{/foreach}
+																	</ul>
+																</li>  
+															{/if}
 														{/if}
-													{/if}
-												{/foreach} 
-											</ul>
-										</li>
-									{/if}
-								{/foreach} 	 
-							</ul>
+													{/foreach} 
+												</ul>
+											</li>
+										{/if}
+									{/foreach} 	 
+								</ul>
 							</div> 
 
 
@@ -565,12 +565,16 @@ top: 35px;">
 					       	
 							
 				          </div>
-				          <ul class="nav   navbar-nav navbar-right btn-group  "     > 
+				          <ul class="nav   navbar-nav navbar-right btn-group;" style=" padding-top: 10px;  "     > 
 						        
 
-						    <!-- <div   class="btn-group" >
-				           		
-					           <button  class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						    <div class="btn-group" >
+
+							    <a href="/login/logout" class="btn btn-primary  "> 
+								<strong><i class="fa fa-lock  " onclick="location.href = ''"></i> </strong>
+								</a>	
+
+				           		<button  class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 					           		<i class="fa fa-coffee"></i> 
 					           </button>
 					           <ul class="dropdown-menu">
@@ -582,7 +586,8 @@ top: 35px;">
 					           	
 					           	</li>
 					           </ul>
-					        </div> -->
+					           
+					        </div>
 
 
 				          	
@@ -663,9 +668,9 @@ top: 35px;">
 			                        </ul>
 			                    </div>  -->
 							<!-- SDX img drop down -->
-							 <li class="dropdown" ><a href="/x/" class="text text-danger dropdown-toggle" data-toggle="dropdown">
+							<!--  <li class="dropdown" ><a href="/x/" class="text text-danger dropdown-toggle" data-toggle="dropdown">
 								<img src="{$thumb}src=/bin/images/logos/sdx.png&w=123">
-								<!-- <strong class=" text text-success">Super</strong><span class="text-primary">Dom</span>  -->
+								<strong class=" text text-success">Super</strong><span class="text-primary">Dom</span> 
 								<i class="fa fa-caret-down text-info"></i> 
 								</a>
 								<ul class="dropdown-menu" id="toy-blox-menu">
@@ -693,7 +698,7 @@ top: 35px;">
 									{/foreach} 
 								</ul>
 							</li> 
- 
+  -->
 
 							 
 						</ul>

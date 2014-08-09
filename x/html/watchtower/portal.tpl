@@ -51,10 +51,10 @@
                             {/foreach} 
                         </div>
                         <a class="left carousel-control" href="#carousel-watchtower" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
+                            <i class="glyphicon glyphicon-chevron-left"></i>
                         </a>
                         <a class="right carousel-control" href="#carousel-watchtower" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
+                            <i class="glyphicon glyphicon-chevron-right"></i>
                         </a>
                     </div>
 
