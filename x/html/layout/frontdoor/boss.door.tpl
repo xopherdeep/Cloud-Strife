@@ -206,7 +206,7 @@
 			  /* -- cosmetics -- */
 			  .panel .pad { padding: 0 15px; }
 			  /*.panel.flip .action { display: none; }*/
-			  .block ol li { text-align: left; margin: 0 0 0 28px; }
+			  /*.block ol li { text-align: left; margin: 0 0 0 28px; }*/
 			  /*.block .action { display: block; padding: 3px; background: #333; text-align: right; font-size: .8em; opacity: 0; position: absolute; cursor: pointer; -webkit-transition: opacity .2s linear; }*/
 			  /*.block:hover .action { opacity: .7; }*/
 			  .circle div {  border-radius: 100px; width: 100px; }
