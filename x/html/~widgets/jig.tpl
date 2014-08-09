@@ -1,4 +1,4 @@
- <section class="widget {if $locked}locked{/if}" data-widgster-collapsed="{if $collapsed}true{/if}" id="default-widget" data-widgster-load="/{$toBackDoor}/{$toSideDoor}/{if $xPHP!=''}{$xPHP}{else}{$Xtra}{/if}/{$method}" data-widgster-autoload="false">
+ <section class="widget {if $locked}locked{/if}" data-widgster-collapsed="{if $collapsed}true{/if}" id="default-widget" data-widgster-load="/{$toBackDoor}/{$toSideDoor}/{if $xPHP!=''}{$xPHP}{else}{$Xtra}{/if}/{$method}" data-widgster-autoload="true">
  {if !$header}
     <header>
         {$path = "/"|explode:$xPHP} 
@@ -43,9 +43,9 @@
     <div class="body"> 
         {* include some javascript in your template *} 
         {if $xPHP!=''}
-            {fetch file="http://$HTTP_HOST/$toSideDoor/$xPHP/$method"} 
+            {* fetch file="http://$HTTP_HOST/$toSideDoor/$xPHP/$method" *} 
         {else}
-            {fetch file="http://$HTTP_HOST/$toSideDoor/$Xtra/$method"} 
+            {* fetch file="http://$HTTP_HOST/$toSideDoor/$Xtra/$method" *} 
         {/if}
     </div>
     <div class="footer text-align-center">
