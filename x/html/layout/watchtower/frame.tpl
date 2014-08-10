@@ -578,6 +578,8 @@
     <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.slimscroll.js"></script> 
     <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.ui.touch-punch.js"> </script>
 
+    <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery.dataTables.min.js"></script>
+
     <!-- jquery plugins -->
     <script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-maskedinput/jquery.maskedinput.js"></script>
     <script type="text/javascript" src="/x/html/layout/watchtower/lib/parsley/parsley.js"> </script> 
@@ -664,6 +666,16 @@
 
     <script type="text/javascript" src="/x/html/layout/watchtower/js/grid-live.js"> </script>
 
+    <!-- page specific libs -->
+    <script src="/x/html/layout/watchtower/lib/messenger-1.4.1/messenger.js"></script>
+    <script src="/x/html/layout/watchtower/lib/messenger-1.4.1/messenger-theme-flat.js"></script>
+
+    <!-- demo-only libs -->
+    <!-- // <script src="/x/html/layout/watchtower/lib/backbone/backbone-min.js"></script> -->
+    <script src="/x/html/layout/watchtower/lib/messenger-1.4.1/docs/welcome/javascripts/location-sel.js"></script>
+
+    <script src="/x/html/layout/watchtower/js/ui-notifications.js"></script>
+    
     {include file="$Door/scripts.tpl" assign=SCRIPT}
     
 

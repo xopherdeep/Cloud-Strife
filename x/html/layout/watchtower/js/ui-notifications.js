@@ -42,10 +42,9 @@ $(function(){
         $.globalMessenger({ theme: theme });
         Messenger.options = { theme: theme  };
 
-        Messenger().post("Thanks for checking out Messenger!");
+        // Messenger().post("SuperDom Successfully Loaded");
 
-
-        var loc = ['bottom', 'right'];
+        var loc = ['top', 'center'];
 
         var $lsel = $('.location-selector');
 
