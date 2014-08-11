@@ -621,6 +621,7 @@
     <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/modal.js"></script>
     <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/tab.js"> </script>
 
+    <script type="text/javascript" src="/x/html/layout/watchtower/js/jquery.magnific-popup.min.js"></script> 
 
     <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap/carousel.js"></script>
       

@@ -298,19 +298,27 @@ $(document).ready(function(){
 	
 	//Add to cart from product board 
 	$('.qadd').click(function(){
-		var $product = $(this).parent().parent();
+		$product = $(this).parent().parent();
 		var newItem = '';
-		newItem = '<li>'+
-						'<a href="'+$('.name a', $product).prop('href')+'">'+
-							'<img src="img/'+$('.media a img', $product).data('img')+'-small.jpg" alt="" />'+
-							'<p>'+$('.name a', $product).html()+'</p>'+
-							'<p class="price">'+$('.details-extra .quantity', $product).val()+' x <span class="cur">'+$('.price .cur', $product).html()+'</span><span class="total">'+$('.price .total', $product).html()+'</span></p>'+											
-						'</a>'+
-						'<a href="" class="remove-basket-item">remove</a>'+
-					'</li>';
-		$('#nav-basket .submenu-preview').prepend(newItem);		
-		$('.basket-count').html($('#nav-basket .submenu-preview li').length -1);
-		$('<div class="added-to-basket">Added to cart</div>').appendTo($product).delay(1500).fadeOut(1500);		
+		var count = $('.basket-count').html().toString();
+		count = parseFloat(count);
+		count++; 
+
+		$('.basket-count').html(
+			count
+		); 
+		$('<div class="added-to-basket"><i class="fa fa-check"></i> Added to cart</div>').appendTo($product).delay(1500).fadeOut(1500);		
+
+
+
+
+		$.ajax({
+			url : './cart/add/'+ $product.parent().attr('id').replace('product-',''),
+			success : function () {
+				//Messenger().post("SuperDom Successfully Loaded");
+			}
+		});
+
 	});
 	
 	//Remove from header basket
@@ -510,28 +518,7 @@ $(document).ready(function(){
 	});
 	
 	
-	// Load more on product boards via AJAX
-	$(document).on('click', '.load-more', function(){
-		curLabel = $(this).html();
-		$(this).html('loading...');
 	
-		$.ajax({
-			type: 'GET',
-			url: "ajax-content.html",
-			context: $(this)
-		}).done(function(response) {
-			$(this).html(curLabel);
-			var $container = $('#product-board');	
-			var $newElements = $(response).filter('div');
-			$newElements.css({opacity:0});
-			$container.append( $newElements );
-			
-			$newElements.imagesLoaded(function() { 
-				$newElements.css({opacity:1});			
-				$container.masonry('appended', $newElements);
-			});
-		});
-	});
 	
 }); //end doc ready
 

@@ -82,6 +82,7 @@
 		<script src="/x/html/layout/watchtower/lib/jquery/jquery-2.0.3.min.js"> </script>
 		<script type="text/javascript" src="/x/html/layout/watchtower/lib/jquery-ui-1.10.3.custom.js"> </script>
 		
+   	 	<script type="text/javascript" src="/x/html/layout/watchtower/js/jquery.magnific-popup.min.js"></script> 
 		<script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
 		{if $masterKey.is.admin}   
 		<script>
