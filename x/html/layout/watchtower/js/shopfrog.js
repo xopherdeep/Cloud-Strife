@@ -297,29 +297,29 @@ $(document).ready(function(){
 	*/
 	
 	//Add to cart from product board 
-	$('.qadd').click(function(){
-		$product = $(this).parent().parent();
-		var newItem = '';
-		var count = $('.basket-count').html().toString();
-		count = parseFloat(count);
-		count++; 
+	// $('.qadd').click(function(){
+	// 	$product = $(this).parent().parent();
+	// 	var newItem = '';
+	// 	var count = $('.basket-count').html().toString();
+	// 	count = parseFloat(count);
+	// 	count++; 
 
-		$('.basket-count').html(
-			count
-		); 
-		$('<div class="added-to-basket"><i class="fa fa-check"></i> Added to cart</div>').appendTo($product).delay(1500).fadeOut(1500);		
-
-
+	// 	$('.basket-count').html(
+	// 		count
+	// 	); 
+	// 	$('<div class="added-to-basket"><i class="fa fa-check"></i> Added to cart</div>').appendTo($product).delay(1500).fadeOut(1500);		
 
 
-		$.ajax({
-			url : './cart/add/'+ $product.parent().attr('id').replace('product-',''),
-			success : function () {
-				//Messenger().post("SuperDom Successfully Loaded");
-			}
-		});
 
-	});
+
+	// 	$.ajax({
+	// 		url : './cart/add/'+ $product.parent().attr('id').replace('product-',''),
+	// 		success : function () {
+	// 			//Messenger().post("SuperDom Successfully Loaded");
+	// 		}
+	// 	});
+
+	// });
 	
 	//Remove from header basket
 	$('#nav-basket').on('click', '.remove-basket-item', function(e){
