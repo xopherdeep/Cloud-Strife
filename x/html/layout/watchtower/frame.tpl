@@ -1032,9 +1032,7 @@
 
             {include file="../../../{$suite}/x{$Xtra|ucfirst}/$method.tpl" assign=XTRA_METHOD}    
             {$HTML.BODY.HTML = $XTRA_METHOD}
-
         {else if $HTML.BODY.HTML == ''}
-
             {include file="../../$Door/portal.tpl" assign=PORTAL}
             {$HTML.BODY.HTML = $PORTAL}
         {/if}
