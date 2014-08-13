@@ -62,7 +62,7 @@
 		
 		<!-- <link href="/x/html/layout/watchtower/css/white.application.min.css" rel="stylesheet"> -->
 		<link href="/x/html/layout/watchtower/css/shopfrog.css" rel="stylesheet" media="screen">   
-        <link href="/x/html/layout/watchtower/shopfrog-grey.css" rel="stylesheet" media="screen">
+        <!-- <link href="/x/html/layout/watchtower/css/shopfrog-grey.css" rel="stylesheet" media="screen"> -->
 
 		<link rel="stylesheet" href="/bin/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="{$HTML.HEAD.CSS}">
