@@ -91,7 +91,7 @@
       background-color: green;
     }
   .product .details-extra {
-    display: none;
+  /*  display: none;*/
     border-top: solid 1px #efefef;
     background-color: #f6f6f6;
     overflow: hidden;
