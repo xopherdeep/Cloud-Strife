@@ -499,7 +499,35 @@
     </header>
      
     <div class="loader-wrap hiding hide">
-        <i class="fa fa-spinner fa-spin fa-5x"></i>
+        <i class="loader"></i>
+        <style type="text/css"> 
+            @-webkit-keyframes loaderSprite {
+                from { background-position: 0px; }
+                to { background-position: -2500px; }
+            }
+
+            @-moz-keyframes loaderSprite {
+                from { background-position: 0px; }
+                to { background-position: -2500px; }
+            }
+
+            @keyframes loaderSprite {
+                from { background-position: 0px; }
+                to { background-position: -2500px; }
+            }
+
+            .loader {
+                position: absolute;
+                left: 45%;
+                top: 35%;
+                width             : 100px;
+                height            : 100px;
+                background-image  : url("/bin/images/loading/sdxis.png");
+                -webkit-animation : loaderSprite 1s steps(25, end) infinite;
+                -moz-animation    : loaderSprite 1s steps(25, end) infinite;
+                animation         : loaderSprite 1s steps(25, end) infinite;
+            }
+        </style>
     </div>
 
 <script type="text/template" id="message-template">
