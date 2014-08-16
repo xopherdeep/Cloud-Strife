@@ -517,9 +517,9 @@
             }
 
             .loader {
-                position: absolute;
-                left: 45%;
-                top: 35%;
+                position          : absolute;
+                left              : 45%;
+                top               : 35%;
                 width             : 100px;
                 height            : 100px;
                 background-image  : url("/bin/images/loading/sdxis.png");
@@ -1068,5 +1068,6 @@
         {$HTML.BODY.HTML}
 
     </div>
+    <link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet">
 </body>
 </html>
