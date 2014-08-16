@@ -517,9 +517,9 @@
             }
 
             .loader {
-                position: absolute;
-                left: 45%;
-                top: 35%;
+                position          : absolute;
+                left              : 45%;
+                top               : 35%;
                 width             : 100px;
                 height            : 100px;
                 background-image  : url("/bin/images/loading/sdxis.png");
@@ -530,58 +530,58 @@
         </style>
     </div>
 
-<script type="text/template" id="message-template">
-        <div class="sender pull-left">
-            <div class="icon">
-                <img src="img/2.jpg" class="img-circle" alt="">
+    <script type="text/template" id="message-template">
+            <div class="sender pull-left">
+                <div class="icon">
+                    <img src="img/2.jpg" class="img-circle" alt="">
+                </div>
+                <div class="time">
+                    just now
+                </div>
             </div>
-            <div class="time">
-                just now
+            <div class="chat-message-body">
+                <span class="arrow"></span>
+                <div class="sender">Tikhon Laninga</div>
+                <div class="text">
+                    <%- text %>
+                </div>
             </div>
-        </div>
-        <div class="chat-message-body">
-            <span class="arrow"></span>
-            <div class="sender">Tikhon Laninga</div>
-            <div class="text">
-                <%- text %>
-            </div>
-        </div>
-</script>
+    </script>
 
-<script type="text/template" id="settings-template"> 
-    <div class="setting clearfix text-align-center">
-        <div>Sidebar on the</div>
-        <div id="sidebar-toggle" class="btn-group" data-toggle="buttons-radio">
-            <% onRight = sidebar == 'right'%>
-            <button type="button" data-value="left" class="btn btn-sm btn-transparent <%= onRight? '' : 'active' %>">Left</button>
-            <button type="button" data-value="right" class="btn btn-sm btn-transparent <%= onRight? 'active' : '' %>">Right</button>
+    <script type="text/template" id="settings-template"> 
+        <div class="setting clearfix text-align-center">
+            <div>Sidebar on the</div>
+            <div id="sidebar-toggle" class="btn-group" data-toggle="buttons-radio">
+                <% onRight = sidebar == 'right'%>
+                <button type="button" data-value="left" class="btn btn-sm btn-transparent <%= onRight? '' : 'active' %>">Left</button>
+                <button type="button" data-value="right" class="btn btn-sm btn-transparent <%= onRight? 'active' : '' %>">Right</button>
+            </div>
         </div>
-    </div>
-    <div class="setting clearfix text-align-center">
-        <div>Sidebar</div>
-        <div id="display-sidebar-toggle" class=" btn-group" data-toggle="buttons-radio">
-            <% display = displaySidebar%>
-            <button type="button" data-value="true" class="btn btn-sm btn-transparent <%= display? 'active' : '' %>">Show</button>
-            <button type="button" data-value="false" class="btn btn-sm btn-transparent <%= display? '' : 'active' %>">Hide</button>
-        </div>
-    </div> 
-</script>
+        <div class="setting clearfix text-align-center">
+            <div>Sidebar</div>
+            <div id="display-sidebar-toggle" class=" btn-group" data-toggle="buttons-radio">
+                <% display = displaySidebar%>
+                <button type="button" data-value="true" class="btn btn-sm btn-transparent <%= display? 'active' : '' %>">Show</button>
+                <button type="button" data-value="false" class="btn btn-sm btn-transparent <%= display? '' : 'active' %>">Hide</button>
+            </div>
+        </div> 
+    </script>
 
-<script type="text/template" id="sidebar-settings-template">
-    <% auto = sidebarState == 'auto'%>
-    <% if (auto) { %>
-    <button type="button"
-            data-value="icons"
-            class="btn-icons btn btn-transparent btn-sm"><i class="fa fa-toggle-left fa-1x"></i></button>
-    <button type="button"
-            data-value="auto"
-            class="btn-auto btn btn-transparent btn-sm"><i class="fa fa-toggle-right fa-1x"></i></button>
-    <%} else { %>
-    <button type="button"
-            data-value="auto"
-            class="btn btn-transparent btn-sm"><i class="fa fa-toggle-right fa-1x"></i></button>
-    <% } %>
-</script>
+    <script type="text/template" id="sidebar-settings-template">
+        <% auto = sidebarState == 'auto'%>
+        <% if (auto) { %>
+        <button type="button"
+                data-value="icons"
+                class="btn-icons btn btn-transparent btn-sm"><i class="fa fa-toggle-left fa-1x"></i></button>
+        <button type="button"
+                data-value="auto"
+                class="btn-auto btn btn-transparent btn-sm"><i class="fa fa-toggle-right fa-1x"></i></button>
+        <%} else { %>
+        <button type="button"
+                data-value="auto"
+                class="btn btn-transparent btn-sm"><i class="fa fa-toggle-right fa-1x"></i></button>
+        <% } %>
+    </script>
 
 
 	{if $HTML.BODY.CSS != ''}
@@ -689,12 +689,21 @@
     <script type="text/javascript" src="/x/html/layout/watchtower/lib/wysihtml5/wysihtml5-0.3.0_rc2.js"></script>
     <script type="text/javascript" src="/x/html/layout/watchtower/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
 
+
+    <script src="/x/html/layout/watchtower/lib/gmap3.js"></script>
+    <script src="/x/html/layout/watchtower/lib/jquery.vmap.js"></script>
+    <script src="/x/html/layout/watchtower/lib/jquery.vmap.world.js"></script>
+    <script src="/x/html/layout/watchtower/lib/jquery.vmap.europe.js"></script>
+    <script src="/x/html/layout/watchtower/lib/jquery.vmap.usa.js"></script>
+    <script src="/x/html/layout/watchtower/lib/jquery.vmap.australia.js"></script>
+
     <!-- basic application js-->
     <script src="/x/html/layout/watchtower/js/app.js"></script>
     <script src="/x/html/layout/watchtower/js/settings.js"></script> 
 
     <script type="text/javascript" src="/x/html/layout/watchtower/js/grid-live.js"> </script>
-
+ <!-- page-specifig js-->
+    <script src="/x/html/layout/watchtower/js/maps.js"></script>
     <!-- page specific libs -->
     <script src="/x/html/layout/watchtower/lib/messenger-1.4.1/messenger.js"></script>
     <script src="/x/html/layout/watchtower/lib/messenger-1.4.1/messenger-theme-flat.js"></script>
@@ -707,8 +716,17 @@
     
     {include file="$Door/scripts.tpl" assign=SCRIPT}
     
-
     <script type="text/javascript"> 
+        $(function(){
+            function loadScript() {
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = 'http://maps.google.com/maps/api/js?sensor=false&language=en&' +
+                    'callback=mapsPageLoad';
+                document.body.appendChild(script); 
+            }
+            loadScript();
+        });
 
         window.addBloxToTower = function(t,p,c,i){
 
@@ -1068,5 +1086,6 @@
         {$HTML.BODY.HTML}
 
     </div>
+    <link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet">
 </body>
 </html>

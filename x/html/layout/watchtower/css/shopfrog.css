@@ -760,7 +760,8 @@ label {
     margin: 20px auto; }
 
   .product.large {
-    width: 340px; }
+    width: 335px; 
+  }
   .product.medium {
     width: 170px; }
 
@@ -775,6 +776,6 @@ label {
     width: 1200px; }
 
   .product.large {
-    width: 390px; }
+    width: 385px; }
   .product.medium {
     width: 190px; } }
