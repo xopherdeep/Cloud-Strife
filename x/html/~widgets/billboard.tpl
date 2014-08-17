@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-12"> 
+	<div class="col-md-{if $size}{$size}{else}12{/if}"> 
 		<section class="widget">
 			<div class="jumbotron">
 				<div class="container">
