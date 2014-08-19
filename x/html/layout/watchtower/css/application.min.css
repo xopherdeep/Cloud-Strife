@@ -4538,6 +4538,11 @@ table.table thead .sorting_desc_disabled {
     margin: 0 !important;
 }
 
+.no-padding {
+    padding: 0 !important;
+}
+
+
 .weight-normal {
     font-weight: normal;
 }
