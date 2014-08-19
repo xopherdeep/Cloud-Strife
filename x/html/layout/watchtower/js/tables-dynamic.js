@@ -203,9 +203,9 @@ $(function(){
         });
 
         $("#datatable-table").dataTable({
-            "sDom": "<'row table-top-control'<'col-md-6 hidden-xs per-page-selector'l><'col-md-6'f>r>t<'row table-bottom-control'<'col-md-6'i><'col-md-6'p>>",
-            "oLanguage": {
-                "sLengthMenu": "_MENU_ &nbsp; records per page"
+            "sDom"        : "<'row table-top-control'<'col-md-6 hidden-xs per-page-selector'l><'col-md-6'f>r>t<'row table-bottom-control'<'col-md-6'i><'col-md-6'p>>",
+            "oLanguage"   : {
+                "sLengthMenu" : "_MENU_ &nbsp; records per page"
             },
             "aoColumns": unsortableColumns
         });
