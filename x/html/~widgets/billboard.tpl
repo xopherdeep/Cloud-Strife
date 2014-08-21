@@ -14,17 +14,13 @@
 			        		{$LANG.$XTRA.$method.JUMBO.HEAD}
 			        	{/if} 
 			        </h1>
-			        <p class="lead"> 
-			            <p>  
-			                <blockquote>
-			                    {if $method == 'index'}
-					        		{$LANG.$XTRA.JUMBO.QUOTE}
-					        	{else}
-					        		{$LANG.$XTRA.$method.JUMBO.QUOTE}
-					        	{/if} 
-			                </blockquote>
-			            </p> 
-			        <p>
+			        <blockquote>
+	                    {if $method == 'index'}
+			        		{$LANG.$XTRA.JUMBO.QUOTE}
+			        	{else}
+			        		{$LANG.$XTRA.$method.JUMBO.QUOTE}
+			        	{/if} 
+	                </blockquote>
 			        {foreach $LANG.$XTRA.JUMBO.BTN as $b => $btn}
 			            <a class="btn btn-lg {$btn.class} {if $method == $b}active{/if}"   href="/{$toBackDoor}/{$Xtra}/{$b}">
 			                {$btn.a}
