@@ -34,7 +34,18 @@
 						icon.attr('class',c);
 						btn.toggleClass('btn-success');
 						btn.toggleClass('btn-info');
+						
+						m = (data.error) ? {
+							showCloseButton : true,
+							type            : 'danger',
+							message         : '<i class="fa fa-ban"></i> '+data.error
+						} : {
+							showCloseButton : true,
+							type            : 'success',
+							message         : '<i class="fa fa-check"></i> '+data.msg
+						};
 
+						Messenger().post(m);
 		        	}
 		        });
 			} 

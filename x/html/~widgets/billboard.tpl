@@ -35,15 +35,18 @@
 			</div>
 		</section>
 	</div>  
-	{if !$col}
-		{$col = 6}
-	{/if}
+	
 
 	{foreach $qBlox as $q => $blox} 
 		{if $q == "x{$Xtra|ucfirst}"}
-
 			{foreach $blox as $b => $x}
 				{if $x.backdoor}
+
+				{if !$x.col}
+					{$col = 6}
+				{else}
+					{$col = $x.col}
+				{/if}
 
 					{if $method != 'index' && $x.filter == $method}
 						{include file="~widgets/col.tpl"   method="$b" title=$x.blox}
