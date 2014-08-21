@@ -3,7 +3,6 @@
 	{include file="~blox/ajax/input.x.tpl"}
 {/foreach}
 <script type="text/javascript">
-	
 	$(".popover-test").popover();
 	window.config = {
 		requestSent : false,
@@ -23,10 +22,10 @@
 				icon.toggleClass('fa fa-spinner fa-spin');
 				 
 				$.ajax({ 
-					url : '/{$toBackDoor}/{$Xtra}/{$method}/.json',
+					url      : '/{$toBackDoor}/{$Xtra}/{$method}/.json',
 					dataType : 'json',
-					type : 'POST',
-					data : {
+					type     : 'POST',
+					data     : {
 						config : config
 					},
 					success : function(data){
@@ -34,7 +33,20 @@
 						icon.attr('class',c);
 						btn.toggleClass('btn-success');
 						btn.toggleClass('btn-info');
+						
+						var msg = (typeof(data.msg)) ? data.msg : 'else';	
 
+						m = (data.error) ? {
+							showCloseButton : true,
+							type            : 'danger',
+							message         : '<i class="fa fa-ban"></i> '+data.error
+						} : {
+							showCloseButton : true,
+							type            : 'success',
+							message         : '<i class="fa fa-check"></i> '+(data.msg)
+						};
+
+						Messenger().post(m);
 		        	}
 		        });
 			} 

@@ -7,11 +7,11 @@
 	{$txt = $i.txt}
 {/if} 
 -->
-<div class="input-group"> 
-     <span {if $i.desc}class="input-group-btn popover-test" data-content="{$i.desc}" data-original-title="{$txt}"{/if}
-      class="input-group-btn" title="{$txt}" >
-        <a class="btn btn-info" {if $i.href}href="{$i.href}" target="_blank" {/if} type="button">
-            {$txt}
+<div class="input-group col-sm-12">  
+    <span {if $i.desc}class="input-group-btn popover-test" data-content="{$i.desc}" data-original-title="{$txt}"{/if}
+      class="input-group-btn" title="{$txt}"  style="width: 35px;">
+        <a class="btn btn-default btn-transparent pull-left" {if $i.href}href="{$i.href}" target="_blank" {/if} type="button"  style="width: 100%">
+            <i class="fa fa-question"  ></i> 
         </a>
     </span>
     {if $i.type == 'radio'}
@@ -27,13 +27,13 @@
     {else}
     <input id="{$_id}" type="text"
            data-trigger="change" required="required"
-           class="form-control"
-           name="{$name}" value="{if ${$name}}{${$name}}{else}{/if}"
-           onblur="window.config.save(this,{ {$name} : this.value })"> 
+           class="form-control input-transparent"
+           name="{$name}" value="{if ${$name}}{${$name}}{else}{/if}" placeholder="{$txt}"
+           onblur="window.config.save(this,{ {$name} : this.value })" style="width: 100%"> 
     {/if}
-    <span class="input-group-btn" >
-        <button id="btn-{$_id}" class="btn btn-success" type="button" onclick="window.config.save(this,{ {$name} : $('#{$_id}').val() })">
+    <span class="input-group-btn" style="width: 35px">
+        <a id="btn-{$_id}" class="btn btn-success btn-block" type="button" onclick="window.config.save(this,{ {$name} : $('#{$_id}').val() })">
              <i class="{$i.icon}" id="i-{$_id}"></i>
-        </button>
+        </a>
     </span>
 </div>

@@ -14,17 +14,13 @@
 			        		{$LANG.$XTRA.$method.JUMBO.HEAD}
 			        	{/if} 
 			        </h1>
-			        <p class="lead"> 
-			            <p>  
-			                <blockquote>
-			                    {if $method == 'index'}
-					        		{$LANG.$XTRA.JUMBO.QUOTE}
-					        	{else}
-					        		{$LANG.$XTRA.$method.JUMBO.QUOTE}
-					        	{/if} 
-			                </blockquote>
-			            </p> 
-			        <p>
+			        <blockquote>
+	                    {if $method == 'index'}
+			        		{$LANG.$XTRA.JUMBO.QUOTE}
+			        	{else}
+			        		{$LANG.$XTRA.$method.JUMBO.QUOTE}
+			        	{/if} 
+	                </blockquote>
 			        {foreach $LANG.$XTRA.JUMBO.BTN as $b => $btn}
 			            <a class="btn btn-lg {$btn.class} {if $method == $b}active{/if}"   href="/{$toBackDoor}/{$Xtra}/{$b}">
 			                {$btn.a}
@@ -35,15 +31,18 @@
 			</div>
 		</section>
 	</div>  
-	{if !$col}
-		{$col = 6}
-	{/if}
+	
 
 	{foreach $qBlox as $q => $blox} 
 		{if $q == "x{$Xtra|ucfirst}"}
-
 			{foreach $blox as $b => $x}
 				{if $x.backdoor}
+
+				{if !$x.col}
+					{$col = 6}
+				{else}
+					{$col = $x.col}
+				{/if}
 
 					{if $method != 'index' && $x.filter == $method}
 						{include file="~widgets/col.tpl"   method="$b" title=$x.blox}

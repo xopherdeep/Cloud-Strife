@@ -12,8 +12,13 @@
                     {/if}
                 {/foreach} 
             {else}
-                <a data-widgster="watchtower" title="{if $portal}Stop Watching{else}Add to Watchtower{/if}" 
-                href="javascript:" onclick="window.addBloxToTower('{$title}','{if $xPHP!=''}{$xPHP}{else}{$Xtra}/{$method}{/if}',{$col}, this);"><i class="fa fa-eye{if $portal}-slash{/if}"></i></a>
+                {foreach $xtras as $xtra => $x}
+                    {if $path[0] == $x.class|strtolower|substr:1} 
+                        <i class="fa fa-{$x.mini}"></i> 
+                    {/if}
+                {/foreach} 
+
+                
             {/if}
         </span>
         <h5 class="text-align-center">  
@@ -27,6 +32,7 @@
                 <a data-widgster="fullscreen" title="Full Screen" href="#"><i class="glyphicon glyphicon-resize-full"></i></a> 
                 <a data-widgster="restore" title="Restore" href="#"><i class="glyphicon glyphicon-resize-small"></i></a> 
 
+
                 <a data-widgster="close" title="Close" href="#"
                 onclick="window.addBloxToTower('{$title}','{if $xPHP!=''}{$xPHP}{else}{$Xtra}/{$method}{/if}',{$col}, this);"
                 ><i class="glyphicon glyphicon-remove"></i></a> 
@@ -36,6 +42,9 @@
 
                 <a data-widgster="fullscreen" title="Full Screen" href="#"><i class="glyphicon glyphicon-resize-full"></i></a> 
                 <a data-widgster="restore" title="Restore" href="#"><i class="glyphicon glyphicon-resize-small"></i></a> 
+
+                <a data-widgster="watchtower" title="{if $portal}Stop Watching{else}Add to Watchtower{/if}" 
+                href="javascript:" onclick="window.addBloxToTower('{$title}','{if $xPHP!=''}{$xPHP}{else}{$Xtra}/{$method}{/if}',{$col}, this);"><i class="fa fa-eye{if $portal}-slash{/if}"></i></a>
             {/if}
         </div>
     </header>
