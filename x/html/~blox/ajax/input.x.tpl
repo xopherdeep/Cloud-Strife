@@ -6,6 +6,11 @@
 {else}
 	{$txt = $i.txt}
 {/if} 
+
+{if !${$Xtra}_{$name}}
+  {$name = {$name|replace:"{$Xtra}_":''} }
+{/if}
+
 -->
 <div class="input-group col-sm-12">  
     <span {if $i.desc}class="input-group-btn popover-test" data-content="{$i.desc}" data-original-title="{$txt}"{/if}
@@ -28,8 +33,8 @@
     <input id="{$_id}" type="text"
            data-trigger="change" required="required"
            class="form-control input-transparent"
-           name="{$name}" value="{if ${$name}}{${$name}}{else}{/if}" placeholder="{$txt}"
-           onblur="window.config.save(this,{ {$name} : this.value })" style="width: 100%"> 
+           name="{$name}" value="{if ${$Xtra}_{$name}}{${$Xtra}_{$name}}{else}{${$name}}{/if}" placeholder="{$txt}"
+           onblur="window.config.save(this,{ {$Xtra}_{$name} : this.value })" style="width: 100%"> 
     {/if}
     <span class="input-group-btn" style="width: 35px">
         <a id="btn-{$_id}" class="btn btn-success btn-block" type="button" onclick="window.config.save(this,{ {$name} : $('#{$_id}').val() })">
