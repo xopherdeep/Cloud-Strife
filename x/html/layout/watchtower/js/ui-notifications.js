@@ -39,12 +39,12 @@ $(function(){
 
         var theme = 'air';
 
-        $.globalMessenger({ theme: theme });
-        Messenger.options = { theme: theme  };
+        $.globalMessenger({ theme: theme, maxMessages: 3  });
+        Messenger.options = { theme: theme,  maxMessages: 3 };
 
         // Messenger().post("SuperDom Successfully Loaded");
 
-        var loc = ['top', 'center'];
+        var loc = ['bottom', 'left'];
 
         var $lsel = $('.location-selector');
 
@@ -55,7 +55,7 @@ $(function(){
                 classes += ' messenger-on-' + loc[i];
 
             $.globalMessenger({ extraClasses: classes, theme: theme  });
-            Messenger.options = { extraClasses: classes, theme: theme };
+            Messenger.options = { extraClasses: classes, theme: theme};
         };
 
         update();

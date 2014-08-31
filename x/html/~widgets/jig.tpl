@@ -36,6 +36,8 @@
                 <a data-widgster="close" title="Close" href="#"
                 onclick="window.addBloxToTower('{$title}','{if $xPHP!=''}{$xPHP}{else}{$Xtra}/{$method}{/if}',{$col}, this);"
                 ><i class="glyphicon glyphicon-remove"></i></a> 
+                <a data-widgster="watchtower" title="{if $portal}Stop Watching{else}Add to Watchtower{/if}" 
+                href="javascript:" onclick="window.addBloxToTower('{$title}','{if $xPHP!=''}{$xPHP}{else}{$Xtra}/{$method}{/if}',{$col}, this);"><i class="fa fa-eye{if $portal}-slash{/if}"></i></a>
             {else}
                 <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-minus"></i></a>
                 <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-plus"></i></a>
