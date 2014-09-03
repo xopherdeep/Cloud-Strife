@@ -1027,15 +1027,12 @@
         {assign var="WT" value="/x/html/layout/watchtower/"}
         {if $TPL_EXISTS && $Xtra != '' AND $method  != '' AND ($Xtra != 'index')}
             {include file="./x.nav.tpl"}
-            {include file="../../../{$suite}/x{$Xtra|ucfirst}/$method.tpl" assign=PORTAL}    
-            
-         
+            {include file="../../../{$suite}/x{$Xtra|ucfirst}/$method.tpl" assign=PORTAL}     
         {else if $HTML.BODY.HTML == ''}
             {include file="../../$Door/portal.tpl" assign=PORTAL}
         {/if}
         {$HTML.BODY.HTML = $PORTAL}
-        {$HTML.BODY.HTML}
-
+        {$HTML.BODY.HTML} 
     </div>
 </body>
 </html>

@@ -80,13 +80,13 @@ function resetContentMargin(){
 
 function initPjax(){
     var PjaxApp = function(){
-        this.pjaxEnabled = window.PJAX_ENABLED;
-        this.debug = window.DEBUG;
-        this.$sidebar = $('#sidebar');
-        this.$content = $('.content');
-        this.$loaderWrap = $('.loader-wrap');
+        this.pjaxEnabled       = window.PJAX_ENABLED;
+        this.debug             = window.DEBUG;
+        this.$sidebar          = $('#sidebar');
+        this.$content          = $('.content');
+        this.$loaderWrap       = $('.loader-wrap');
         this.pageLoadCallbacks = {};
-        this.loading = false;
+        this.loading           = false;
 
         this._resetResizeCallbacks();
         this._initOnResizeCallbacks();
