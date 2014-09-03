@@ -1,6 +1,9 @@
 <IfModule mod_rewrite.c>
 Options +FollowSymLinks
 
+AddType image/svg+xml svg
+AddType image/svg+xml svgz
+
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -16,5 +19,7 @@ RewriteCond $1 !^htdocs(.*).gif$
 RewriteCond $1 !^htdocs(.*).jpg$
 RewriteCond $1 !^htdocs(.*).png$ 
 RewriteRule ^(.*)$ index.php?/$1 [L]
+
+
 
 </IfModule>
