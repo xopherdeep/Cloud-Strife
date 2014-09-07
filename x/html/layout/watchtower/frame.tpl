@@ -32,143 +32,130 @@
         -->
         {/IF} 
 
-        <style type="text/css">
-        /*! 
-                 * CSS Media Queries Boilerplate by @brandonhimpfen
-                 * all.css
-                 * Copyright Brandon Himpfen
-                 * Licensed under http://www.gnu.org/licenses/gpl-2.0.html
-                 * Website: himpfen.com
-                 */
+        <style type="text/css"> 
 
-                /*
-                    General
-                */
-
-               
-
-                @media all {
-                    /* all devices */
-                     .background-clock {
-                        position: fixed; font-size: 555%; color: rgba(0,0,0,0.10); bottom: 55px; right: 25px;
-                        /* -- transition is the magic sauce for animation -- */
-                        -webkit-transition          : all .4s ease-in-out;
-                        transition                  : all .4s ease-in-out;
-                    }
-                    .bg-host{
-                        position           : fixed;
-                        font-size          : 500%;
-                        color              : rgba(0,0,0,0.15);
-                        top                : 30px; 
-                        left               : 45px;
-                        z-index            : -1;
-                        -webkit-transition : all .4s ease-in-out;
-                        transition         : all .4s ease-in-out;
-                    }
-                } 
-                @media screen {
-                    /* computer screens */
-                     
-                }
-                @media print {
-                    /* printers */
-                }
-                @media aural {
-                    /* speech and sound synthesizers */
-                }
-                @media braille {
-                    /* braille tactile feedback devices */
-                }
-                @media embossed {
-                    /* paged braille printers */
-                }
-                @media handheld {
-                    /* small or handheld devices */
-                }
-                @media projection {
-                    /* projected presentations */
-                }
-                @media tty {
-                    /* teletypes and terminals */
-                }
-                @media tv {
-                    /* television-type devices */
-                }
+        @media all {
+            /* all devices */
+             .background-clock {
+                position: fixed; font-size: 555%; color: rgba(0,0,0,0.10); bottom: 55px; right: 25px;
+                /* -- transition is the magic sauce for animation -- */
+                -webkit-transition          : all .4s ease-in-out;
+                transition                  : all .4s ease-in-out;
+            }
+            .bg-host{
+                position           : fixed;
+                font-size          : 500%;
+                color              : rgba(0,0,0,0.15);
+                top                : 30px; 
+                left               : 45px;
+                z-index            : -1;
+                -webkit-transition : all .4s ease-in-out;
+                transition         : all .4s ease-in-out;
+            }
+        } 
+        @media screen {
+            /* computer screens */
+             
+        }
+        @media print {
+            /* printers */
+        }
+        @media aural {
+            /* speech and sound synthesizers */
+        }
+        @media braille {
+            /* braille tactile feedback devices */
+        }
+        @media embossed {
+            /* paged braille printers */
+        }
+        @media handheld {
+            /* small or handheld devices */
+        }
+        @media projection {
+            /* projected presentations */
+        }
+        @media tty {
+            /* teletypes and terminals */
+        }
+        @media tv {
+            /* television-type devices */
+        }
 
 
-                @media screen and (max-width: 768px){ 
-                    /* all iPad models */
-                    
-                }
+        @media screen and (max-width: 768px){ 
+            /* all iPad models */
+            
+        }
 
-                /*
-                    iPad
-                */
+        /*
+            iPad
+        */
 
-                @media screen and (min-width : 768px) and (max-width : 1024px)  { 
-                    /* all iPad models */
-                    .background-clock {
-                         font-size: 400%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
-                    }
-                    .bg-host{
-                        font-size: 400%;
-                    }
-                }
-                @media screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) { 
-                    /* all iPad models, landscape */
-                   
-                }
-                @media screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) { 
-                    /* all iPad models, portrait */ 
-                }
+        @media screen and (min-width : 768px) and (max-width : 1024px)  { 
+            /* all iPad models */
+            .background-clock {
+                 font-size: 400%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+            }
+            .bg-host{
+                font-size: 400%;
+            }
+        }
+        @media screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) { 
+            /* all iPad models, landscape */
+           
+        }
+        @media screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) { 
+            /* all iPad models, portrait */ 
+        }
 
-                @media screen and (min-width : 568px) and (max-width : 768px) { 
-                    /* iPhone 5 */
-                    .background-clock {
-                         font-size: 300%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
-                    }
-                    .bg-host{
-                        font-size: 333%;
-                    }
-                }
+        @media screen and (min-width : 568px) and (max-width : 768px) { 
+            /* iPhone 5 */
+            .background-clock {
+                 font-size: 300%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+            }
+            .bg-host{
+                font-size: 333%;
+            }
+        }
 
-                /*
-                    Apple iPhone 5
-                */
+        /*
+            Apple iPhone 5
+        */
 
-                @media screen and (min-width : 320px) and (max-width : 568px) { 
-                    /* iPhone 5 */
-                    .background-clock {
-                         font-size: 222%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
-                    }
-                    .bg-host{
-                        font-size: 222%;
-                    }
-                }
-                @media screen and (min-width : 320px) and (max-width : 568px) and (orientation : landscape) { 
-                    /* iPhone 5, landscape */
-                     
-                }
-                @media screen and (min-width : 320px) and (max-width : 568px) and (orientation : portrait) { 
-                    /* iPhone 5, portrait */ 
-                     
-                }
+        @media screen and (min-width : 320px) and (max-width : 568px) { 
+            /* iPhone 5 */
+            .background-clock {
+                 font-size: 222%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+            }
+            .bg-host{
+                font-size: 222%;
+            }
+        }
+        @media screen and (min-width : 320px) and (max-width : 568px) and (orientation : landscape) { 
+            /* iPhone 5, landscape */
+             
+        }
+        @media screen and (min-width : 320px) and (max-width : 568px) and (orientation : portrait) { 
+            /* iPhone 5, portrait */ 
+             
+        }
 
-                /*
-                    iPhone 2 - 4 and iPod Touch
-                */
+        /*
+            iPhone 2 - 4 and iPod Touch
+        */
 
-                @media screen and (min-width : 320px) and (max-width : 480px) {     /* iPhone 2 - 4 and iPod Touch */ 
-                     
-                }
-                @media screen and (min-width : 320px) and (max-width : 480px) and (orientation : landscape) { 
-                    /* iPhone 2 - 4 and iPod Touch, landscape */ 
-                    
-                }
-                @media screen  and (min-width : 320px)  and (max-width : 480px)  and (orientation : portrait) { 
-                    /* iPhone 2 - 4 and iPod Touch, portrait */ 
-                     
-                }
+        @media screen and (min-width : 320px) and (max-width : 480px) {     /* iPhone 2 - 4 and iPod Touch */ 
+             
+        }
+        @media screen and (min-width : 320px) and (max-width : 480px) and (orientation : landscape) { 
+            /* iPhone 2 - 4 and iPod Touch, landscape */ 
+            
+        }
+        @media screen  and (min-width : 320px)  and (max-width : 480px)  and (orientation : portrait) { 
+            /* iPhone 2 - 4 and iPod Touch, portrait */ 
+             
+        }
         </style>
 </head>
 	    

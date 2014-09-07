@@ -12,19 +12,8 @@
 		<meta charset="utf-8">  
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
  
-	<!-- 			
-		<link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet"> 
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<link href="/x/html/layout/watchtower/css/shopfrog.css" rel="stylesheet" media="screen">   
-
-		<link rel="stylesheet" href="/bin/css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="{$HTML.HEAD.CSS}"> 
- 	-->
-
-		<!-- <link href="/x/html/layout/watchtower/css/white.application.min.css" rel="stylesheet"> -->
-    	<!-- <link href="/x/html/layout/watchtower/css/shopfrog-grey.css" rel="stylesheet" media="screen"> -->
+	 			
+		
 	</head>	
 	<body {$HTML.BODY.ATTR} >
 		{$HTML.BODY.HTML}

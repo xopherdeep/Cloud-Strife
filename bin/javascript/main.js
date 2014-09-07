@@ -154,14 +154,14 @@ function initializeGfi() {
 
 	//QUOTES
 	jQuery('.bxslider').bxSlider({
-		mode: 'fade',
-		touchEnabled: true,
-		oneToOneTouch: true,
-		pagerCustom: '#bx-pager',
-		nextSelector: '#bx-next',
-  		prevSelector: '#bx-prev',
-		nextText: 'next',
-		prevText: 'prev'
+		mode          : 'fade',
+		touchEnabled  : true,
+		oneToOneTouch : true,
+		pagerCustom   : '#bx-pager',
+		nextSelector  : '#bx-next',
+		prevSelector  : '#bx-prev',
+		nextText      : 'next',
+		prevText      : 'prev'
 	});
 
 	

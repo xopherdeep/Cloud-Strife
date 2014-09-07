@@ -63,12 +63,12 @@
         </section> 
     </div>  
 
-        {$portal = true}
-        {foreach $watchtower.data as $r => $t}  
-            {if $t.path} 
-                {include file="~widgets/col.tpl" col=$t.col xPHP=$t.path title=$t.title}
-            {/if}
-        {/foreach}
+    {$portal = true}
+    {foreach $watchtower.data as $r => $t}  
+        {if $t.path} 
+            {include file="~widgets/col.tpl" col=$t.col xPHP=$t.path title=$t.title}
+        {/if}
+    {/foreach}
 </div>
     
 <!-- page specific -->
