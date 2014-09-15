@@ -5,14 +5,13 @@
 				<div class="container">
 			        <h1>
 			        	{assign var=XTRA value="X{$Xtra|strtoupper}"}
-			        	
 			        	{if $method == 'index'}
 			        		<i class="fa {$LANG.$XTRA.ICON} fa-2x pull-right fa-border"></i> 
 			        		{$LANG.$XTRA.JUMBO.HEAD}
 			        	{else}
 			        		<i class="fa {$LANG.$XTRA.$method.ICON} fa-2x pull-right fa-border"></i> 
 			        		{$LANG.$XTRA.$method.JUMBO.HEAD}
-			        	{/if} 
+			        	{/if}
 			        </h1>
 			        <blockquote>
 	                    {if $method == 'index'}
