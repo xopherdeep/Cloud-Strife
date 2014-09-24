@@ -37,13 +37,13 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
   font-style: normal;
 }
 .fa {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	display                 : inline-block;
+	font-family             : FontAwesome;
+	font-style              : normal;
+	font-weight             : normal;
+	line-height             : 1;
+	-webkit-font-smoothing  : antialiased;
+	-moz-osx-font-smoothing : grayscale;
 }
 /* makes the font 33% larger relative to the icon container */
 .fa-lg {
@@ -736,7 +736,8 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-link:before {
   content: "\f0c1";
 }
-.fa-cloud:before {
+.fa-cloud:before,
+.fa-content:before {
   content: "\f0c2";
 }
 .fa-flask:before {
@@ -1091,8 +1092,7 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-chevron-circle-down:before {
   content: "\f13a";
 }
-.fa-html5:before,
-.fa-construct:before {
+.fa-html5:before{
   content: "\f13b";
 }
 .fa-css3:before {
@@ -1448,7 +1448,8 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-cube:before {
   content: "\f1b2";
 }
-.fa-cubes:before {
+.fa-cubes:before,
+.fa-construct:before  {
   content: "\f1b3";
 }
 .fa-behance:before {
