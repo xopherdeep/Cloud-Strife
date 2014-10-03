@@ -229,7 +229,8 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-star-o:before {
   content: "\f006";
 }
-.fa-user:before {
+.fa-user:before,
+.fa-community:before  {
   content: "\f007";
 }
 .fa-film:before {
@@ -728,8 +729,7 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
   content: "\f0b2";
 }
 .fa-group:before,
-.fa-users:before,
-.fa-community:before {
+.fa-users:before{
   content: "\f0c0";
 }
 .fa-chain:before,
@@ -781,7 +781,8 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-table:before {
   content: "\f0ce";
 }
-.fa-magic:before {
+.fa-magic:before,
+.fa-construct:before   {
   content: "\f0d0";
 }
 .fa-truck:before {
@@ -958,7 +959,7 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
   content: "\f10a";
 }
 .fa-mobile-phone:before,
-.fa-mobile:before {
+.fa-mobile:before, .fa-market:before   {
   content: "\f10b";
 }
 .fa-circle-o:before {
@@ -1383,7 +1384,7 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 }
 .fa-institution:before,
 .fa-bank:before,
-.fa-university:before, .fa-market:before  {
+.fa-university:before{
   content: "\f19c";
 }
 .fa-mortar-board:before,
@@ -1448,8 +1449,7 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-cube:before {
   content: "\f1b2";
 }
-.fa-cubes:before,
-.fa-construct:before  {
+.fa-cubes:before{
   content: "\f1b3";
 }
 .fa-behance:before {

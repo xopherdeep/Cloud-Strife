@@ -8,8 +8,8 @@
             <section class="widget locked">
              
                 <ol class="breadcrumb">
-                    <li><a href="/" target="_blank"><i class="fa fa-globe"></i> www</a></li>
-                    <li><a href="/{$toBackDoor}"><i class="fa fa-eye"></i> Watchtower</a></li>
+                    <!-- <li><a href="/x" onclick="return false;" target="_blank"><i class="fa fa-globe"></i> www</a></li> -->
+                    <li><a href="/{$toBackDoor}"><i class="fa fa-eye"></i> Master Tower</a></li>
                     
                     {foreach $xtras as $x => $xtra}
                         

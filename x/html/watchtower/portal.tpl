@@ -39,10 +39,10 @@
                         </ol>
                         <div class="carousel-inner text-align-center">
                             <div class="item {if $anchor == 'index'}active{/if}">
-                                <h1><i class="fa fa-4x fa-eye pull-left"></i><br/>Hello {$user.username|ucfirst}  </h1>
+                                <h1><i class="fa fa-4x fa-eye pull-left"></i><br/>Welcome {$user.username|ucfirst}  </h1>
                                 <p >
                                  <!-- Welcome to your Super <b>Spacylecious</b> Watchtower. -->
-                                 You are at the Master Watchtower. <br/>Multi-mange panels by clicking on their <i class="fa fa-eye"></i> icon.
+                                 The Master Tower can watch any part of the domain.<br/> Every panel that has an <i class="fa fa-eye"></i> icon can be sent here.
                                    <br/><br/>
                                    <small>
                                        <ul>
@@ -54,7 +54,7 @@
                                         <i class="fa fa-graduation-cap"></i> Learn More
                                     </a>
                                     <!-- <a class="btn btn-success btn-lg " data-widgster="fullscreen"> -->
-                                    <a class="btn btn-info btn-lg " href="/{$toBackDoor}/login/profile">
+                                    <a class="btn btn-info btn-lg " href="/{$toBackDoor}/login/profile" data-widgster="restore">
                                         <i class="fa fa-cog"></i> Settings
                                     </a>  
 
