@@ -1388,7 +1388,8 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
   content: "\f19c";
 }
 .fa-mortar-board:before,
-.fa-graduation-cap:before {
+.fa-graduation-cap:before,
+.fa-support:before {
   content: "\f19d";
 }
 .fa-yahoo:before {
@@ -1533,7 +1534,8 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 }
 .fa-life-bouy:before,
 .fa-life-saver:before,
-.fa-support:before,
+
+
 .fa-life-ring:before {
   content: "\f1cd";
 }

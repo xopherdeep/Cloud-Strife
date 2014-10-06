@@ -42,7 +42,7 @@
                                 <h1><i class="fa fa-4x fa-eye pull-left"></i><br/>Welcome {$user.username|ucfirst}  </h1>
                                 <p >
                                  <!-- Welcome to your Super <b>Spacylecious</b> Watchtower. -->
-                                 The Master Tower can watch any part of the domain.<br/> Every panel that has an <i class="fa fa-eye"></i> icon can be sent here.
+                                 The Master Tower can watch any part of the domain;<br/> Clicking the <i class="fa fa-eye"></i> icon in a panel views it here.
                                    <br/><br/>
                                    <small>
                                        <ul>
