@@ -3,10 +3,14 @@
     <h4 class="modal-title">{$title}</h4>
 </div>
 
-<div class="modal-body">
+<div class="modal-body" id='{$ajax|md5}'>
+
     {if $load}
-    {fetch file="http://$HTTP_HOST/$toSideDoor/$load"} 
+        {fetch file="http://$HTTP_HOST/$toSideDoor/$load"} 
     {else}
+    <script type="text/javascript">
+        $('#{$ajax|md5}').load('/html/{$ajax}');
+    </script>
     <style type="text/css">
         @-webkit-keyframes loaderSprite {
             from { background-position: 0px; }
@@ -51,6 +55,7 @@
             </p>  
         </div>
     </div>
+
     {/if}
 </div>
 <div class="modal-footer m-0">
