@@ -1,4 +1,3 @@
-
 {foreach $input as $name => $i}
 	{include file="~blox/ajax/input.x.tpl"}
 {/foreach}
