@@ -2,7 +2,7 @@
 <html>
 	<head>
 		
-		<title>SuperDom Watchtower</title>
+		<title>SuperDom: Master Watchtower</title>
 		
         <link href="/x/html/layout/watchtower/css/shopfrog.css" rel="stylesheet" media="screen">   
         <!-- <link href="/x/html/layout/watchtower/shopfrog-grey.css" rel="stylesheet" media="screen"> -->
@@ -219,7 +219,7 @@
 <nav id="sidebar" class="sidebar nav-collapse collapse">
     <ul id="side-nav" class="side-nav"> 
         <li class="active">
-            <a href="/{$toBackDoor}"><i class="fa fa-eye"></i> <span class="name">Watchtower</span>  </a>
+            <a href="/{$toBackDoor}"><i class="fa fa-eye"></i> <span class="name"><b>Master Tower</b></span>  </a>
         </li> 
 
         <!-- {counter start=0} -->

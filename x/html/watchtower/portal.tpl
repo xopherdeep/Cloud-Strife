@@ -1,6 +1,31 @@
 <div class="row widget-container "> 
     <div class="col-md-12 ">  
         <section class="widget locked"> 
+            <div class="widget-controls">
+                {if $portal} 
+                     
+                    <a data-widgster="fullscreen" title="Full Screen" href="#"><i class="glyphicon glyphicon-resize-full"></i></a> 
+                    <a data-widgster="restore" title="Restore" href="#"><i class="glyphicon glyphicon-resize-small"></i></a> 
+
+
+                    <a data-widgster="load" title="Reload" href="#" ><i class="glyphicon glyphicon-refresh"></i></a> 
+
+                    <a data-widgster="close" title="Close" href="#"
+                    onclick="window.addBloxToTower('{$title}','{if $xPHP!=''}{$xPHP}{else}{$Xtra}/{$method}{/if}',{$col}, this);"
+                    ><i class="glyphicon glyphicon-remove"></i></a> 
+                    <a data-widgster="watchtower" title="{if $portal}Stop Watching{else}Add to Watchtower{/if}" 
+                    href="javascript:" onclick="window.addBloxToTower('{$title}','{if $xPHP!=''}{$xPHP}{else}{$Xtra}/{$method}{/if}',{$col}, this);"><i class="fa fa-eye{if $portal}-slash{/if}"></i></a>
+                {else}
+                     
+                     
+                    <a data-widgster="fullscreen" title="Full Screen" href="#"><i class="glyphicon glyphicon-resize-full"></i></a> 
+                    <a data-widgster="restore" title="Restore" href="#"><i class="glyphicon glyphicon-resize-small"></i></a> 
+                    
+                    <a data-widgster="close" title="Close" href="#"
+                    onclick="window.addBloxToTower('{$title}','{if $xPHP!=''}{$xPHP}{else}{$Xtra}/{$method}{/if}',{$col}, this);"
+                    ><i class="glyphicon glyphicon-remove"></i></a> 
+                {/if}
+            </div>
             <div class="jumbotron handle">
                 <div class="container">   
                     <div id="carousel-watchtower" class="carousel slide">
@@ -14,15 +39,23 @@
                         </ol>
                         <div class="carousel-inner text-align-center">
                             <div class="item {if $anchor == 'index'}active{/if}">
-                                <h1><i class="fa fa-4x fa-space-shuttle "></i><br/>Hello {$user.username|ucfirst}  </h1>
+                                <h1><i class="fa fa-4x fa-eye pull-left"></i><br/>Welcome {$user.username|ucfirst}  </h1>
                                 <p >
-                                   
-                                 Welcome to your Super <b>Spacylecious</b> Watchtower
+                                 <!-- Welcome to your Super <b>Spacylecious</b> Watchtower. -->
+                                 The Master Tower can watch any part of the domain;<br/> Clicking the <i class="fa fa-eye"></i> icon in a panel views it here.
                                    <br/><br/>
-                                
+                                   <small>
+                                       <ul>
+                                           <li></li>
+                                       </ul>
+
+                                   </small>
+                                    <a class="btn btn-success btn-lg"  data-widgster="fullscreen" >
+                                        <i class="fa fa-graduation-cap"></i> Learn More
+                                    </a>
                                     <!-- <a class="btn btn-success btn-lg " data-widgster="fullscreen"> -->
-                                    <a class="btn btn-info btn-lg " href="/{$toBackDoor}/login/profile">
-                                        <i class="fa fa-user"></i> {$user.username}
+                                    <a class="btn btn-info btn-lg " href="/{$toBackDoor}/login/profile" data-widgster="restore">
+                                        <i class="fa fa-cog"></i> Settings
                                     </a>  
 
                                 </p>
@@ -30,7 +63,7 @@
                             {foreach $admin_menu as $key => $item}
                                 {if $key} 
                             <div class="item {if $anchor == $key}active{/if}">
-                                <h1><i class="fa fa-{$key} fa-4x"></i><br/>{$item.area|ucfirst}</h1>
+                                <h1><i class="fa fa-{$key} fa-4x pull-left"></i><br/>{$item.area|ucfirst}</h1>
                                 <p>
                                     {$item.desc|ucfirst}  
                                         <br/><br/>
