@@ -301,7 +301,7 @@
                         <a href="#" title="Messages" id="messages"
                            class="dropdown-toggle"
                            data-toggle="dropdown">
-                            <i class="fa fa-comments"></i>
+                            <i class="fa fa-comments-o"></i>
                         </a>
                         <ul id="messages-menu" class="dropdown-menu messages" role="menu">
                             <li role="presentation">
@@ -348,7 +348,7 @@
                         <a href="#" title="8 support tickets"
                            class="dropdown-toggle"
                            data-toggle="dropdown">
-                            <i class="fa fa-group"></i>
+                            <i class="fa fa-ticket"></i>
                             <span class="count">8</span>
                         </a>
                         <ul id="support-menu" class="dropdown-menu support" role="menu">
@@ -426,7 +426,7 @@
                         </a>
                         <ul id="account-menu" class="dropdown-menu account" role="menu">
                             <li role="presentation" class="account-picture">
-                                <img src="{$thumb}src=/users/avatar" alt="">
+                                <img src="/users/avatar" class="img-circle" alt="">
                                 {$user.username}
                             </li>
                             <li role="presentation">

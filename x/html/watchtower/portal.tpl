@@ -39,7 +39,7 @@
                         </ol>
                         <div class="carousel-inner text-align-center">
                             <div class="item {if $anchor == 'index'}active{/if}">
-                                <h1><i class="fa fa-4x fa-eye pull-left"></i><br/>Welcome {$user.username|ucfirst}  </h1>
+                                <h1><i class="fa fa-4x fa-eye pull-left"></i><br/>Castle on the Clouds</h1>
                                 <p >
                                  <!-- Welcome to your Super <b>Spacylecious</b> Watchtower. -->
                                  From the Master Tower, you can watch any part of your domain;<br/> Click the <i class="fa fa-eye"></i> icon in a panel to view it here.
