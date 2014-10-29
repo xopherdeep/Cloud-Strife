@@ -282,67 +282,18 @@
     </ul>
 </nav>
 <div class="wrap">
-    <header class="page-header" style="position: relative; z-index:10 ">
-        <div class="navbar" > 
-                
+    <header class="page-header">
+    <div class="navbar">
                 <ul class="nav navbar-nav navbar-right pull-right">
-                    <li class=" hidden-xs">
-                        <a href="/"  >
-                            <i class="fa fa-globe"></i>
+
+
+
+                    <li class="visible-phone-landscape">
+                        <a href="#" id="search-toggle">
+                            <i class="fa fa-search"></i>
                         </a>
                     </li>
-
-
-                    <li>
-                        <a href="#" id="settings" title="Settings" data-toggle="popover" data-placement="bottom"  ><i class="fa fa-cog"></i></a>
-                    </li>
-                    
-                    <li class="divider"></li>
-                    
-                    <li class="hidden  dropdown">
-                        <a href="#" title="Account" id="account"
-                           class="dropdown-toggle"
-                           data-toggle="dropdown">
-                            <i class="fa fa-user"></i>
-                        </a>
-                        <ul id="account-menu" class="dropdown-menu account" role="menu">
-                            <li role="presentation" class="account-picture">
-                                <!-- <img src="img/2.jpg" alt=""> -->
-                                Philip Daineka
-                            </li>
-                            <li role="presentation">
-                                <a href="form_account.html" class="link">
-                                    <i class="fa fa-user"></i>
-                                    Profile
-                                </a>
-                            </li>
-                            <li role="presentation">
-                                <a href="component_calendar.html" class="link">
-                                    <i class="fa fa-calendar"></i>
-                                    Calendar
-                                </a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#" class="link">
-                                    <i class="fa fa-inbox"></i>
-                                    Inbox
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="visible-xs">
-                        <a href="#"
-                           class="btn-navbar"
-                           data-toggle="collapse"
-                           data-target=".sidebar"
-                           title="">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </li>
-                    
-
-
-                    <li class="dropdown hidden">
+                    <li class="dropdown">
                         <a href="#" title="Messages" id="messages"
                            class="dropdown-toggle"
                            data-toggle="dropdown">
@@ -351,7 +302,7 @@
                         <ul id="messages-menu" class="dropdown-menu messages" role="menu">
                             <li role="presentation">
                                 <a href="#" class="message">
-                                    
+                                    <img src="img/1.jpg" alt="">
                                     <div class="details">
                                         <div class="sender">Jane Hew</div>
                                         <div class="text">
@@ -362,7 +313,7 @@
                             </li>
                             <li role="presentation">
                                 <a href="#" class="message">
-                                     
+                                    <img src="img/2.jpg" alt="">
                                     <div class="details">
                                         <div class="sender">Alies Rumiancaŭ</div>
                                         <div class="text">
@@ -373,7 +324,7 @@
                             </li>
                             <li role="presentation">
                                 <a href="#" class="message">
-                                     
+                                    <img src="img/3.jpg" alt="">
                                     <div class="details">
                                         <div class="sender">Michał Rumiancaŭ</div>
                                         <div class="text">
@@ -389,7 +340,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown hidden">
+                    <li class="dropdown">
                         <a href="#" title="8 support tickets"
                            class="dropdown-toggle"
                            data-toggle="dropdown">
@@ -454,38 +405,69 @@
                             </li>
                         </ul>
                     </li>
-                    <li class=" "><a href="/{$toBackDoor}/login/logout"><i class="fa fa-sign-out"></i></a></li>
+                    <li class="divider"></li>
+                    <li class="hidden-xs">
+                        <a href="#" id="settings"
+                           title="Settings"
+                           data-toggle="popover"
+                           data-placement="bottom">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                    </li>
+                    <li class="hidden-xs dropdown">
+                        <a href="#" title="Account" id="account"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+                        </a>
+                        <ul id="account-menu" class="dropdown-menu account" role="menu">
+                            <li role="presentation" class="account-picture">
+                                <img src="{$thumb}src=/users/avatar" alt="">
+                                {$user.username}
+                            </li>
+                            <li role="presentation">
+                                <a href="form_account.html" class="link">
+                                    <i class="fa fa-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="component_calendar.html" class="link">
+                                    <i class="fa fa-calendar"></i>
+                                    Calendar
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#" class="link">
+                                    <i class="fa fa-inbox"></i>
+                                    Inbox
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="visible-xs">
+                        <a href="#"
+                           class="btn-navbar"
+                           data-toggle="collapse"
+                           data-target=".sidebar"
+                           title="">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
 
+                    <li class="divider"></li>
+                     <li class=" hidden-xs">
+                        <a href="/"  >
+                            <i class="fa fa-globe"></i>
+                        </a>
+                    </li>
+                    <li class="hidden-xs"><a href="login.html"><i class="fa fa-sign-out"></i></a></li>
                 </ul>
-    
                 <form id="search-form" class="navbar-form pull-right" role="search">
                     <input type="search" class="search-query" placeholder="Search...">
                 </form>
-
-                <div class="notifications pull-right hidden">
-                     <div class="alert-warning alert pull-right hidden-xs">
-                        <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <i class='fa fa-users'></i>  <strong>11 Users Online</strong>  
-                    </div>
-                    <div class="alert-warning alert pull-right hidden-xs">
-                        <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <i class='fa fa-dashboard'></i>  <strong>{$total_used_space.left} - {$total_used_space.used} used of {$total_used_space.limit}</strong>  
-                    </div> 
-                    <div class="alert-warning alert pull-right hidden-xs">
-                        <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <i class='fa fa-exchange fa-rotate-90'></i>  <strong>{$HTTP_HOST_TOTAL_HITS}</strong>  
-                    </div> 
-                    <div class="alert-info alert pull-right hidden-xs">
-                        <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        Domain {$HTTP_HOST} is now SuperCharged! Launch it on any Device!
-                                    (<i class="fa fa-mobile "></i>
-                                    <a id="notification-link" href="#"><i class="fa fa-desktop "></i></a>
-                                    <i class="fa fa-tablet "></i>) 
-                    </div>
-                </div>
         </div>
-
-    </header>
+</header> 
      
     <div class="loader-wrap hiding hide">
         <i class="loader"></i>
