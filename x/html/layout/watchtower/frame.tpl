@@ -208,6 +208,9 @@
 			} 
 			</STYLE>
 <body class="background-dark">
+<iframe src="/x/html/layout/clouds/index.html" width="100%" height="100%" style="position: fixed; top: 0; border: 0; left: 0;"></iframe>
+
+
 <div class="logo text-center">
     <h4  class="bg-host ">
         {$HTTP_HOST} 
@@ -268,6 +271,11 @@
             {/if}
         {/foreach}
 
+        
+        <li class="visible-xs">
+            <a href="login.html"><i class="fa fa-sign-out"></i> <span class="name">Sign Out</span></a>
+        </li>
+    </ul>
     <div id="sidebar-settings" class="settings">
         <button type="button"
                 data-value="icons"
@@ -276,10 +284,6 @@
                 data-value="auto"
                 class="btn-auto btn btn-transparent btn-sm"><i class="fa fa-toggle-right fa-1x"></i></button>
     </div> 
-        <li class="visible-xs">
-            <a href="login.html"><i class="fa fa-sign-out"></i> <span class="name">Sign Out</span></a>
-        </li>
-    </ul>
 </nav>
 <div class="wrap">
     <header class="page-header">
@@ -950,6 +954,12 @@
             
             // $("body").append('<a href="#" id="settings" title="Settings" data-toggle="popover" data-placement="bottom" style="position: fixed;display: inline-block;top: 40px;left: 0px;width: 40px;line-height: 40px; padding: 0px; border-radius: 0 3px 3px 0;color: white;z-index: 1003;text-align: center;font-size: 1.5em;text-decoration: none!important;background-color: rgba(77, 77, 77, 0.23)"><i class="fa fa-cog"><\/i><\/a>');
 
+            var btn = $('<button/>').addClass('btn btn-primary active btn-block').css({ marginBottom : '5px' }).html('<i class="fa fa-cloud"></i> Toggle Clouds').on('click',function(){
+                $('iframe').toggleClass('hidden');
+                $(this).toggleClass('active');
+            });
+
+            $('.theme-changer-colors').prepend(btn);
             
 
             $("#theme-changer").click(function() {
