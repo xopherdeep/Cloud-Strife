@@ -210,8 +210,12 @@
 			} 
 			</STYLE>
 <body class="background-dark">
-<iframe src="/x/html/layout/clouds/index.html" width="100%" height="100%" style="position: fixed; top: 0; border: 0; left: 0;"></iframe>
 
+
+<iframe src="/x/html/layout/clouds/index.html" width="100%" height="100%" style="position: fixed; top: 0; border: 0; left: 0;"></iframe>
+<small class="label tile label-sm widget " style="position: absolute; bottom: 0; left: 0; margin: 0 50px 10px 0;">super powered by<br/>  
+    <a href="http://superdomx.com/" target="_blank"></a><img src="{$thumb}src=/bin/images/logos/sdx.png&h=16"/>
+</small>
 
 <div class="logo text-center">
     <h4  class="bg-host ">
