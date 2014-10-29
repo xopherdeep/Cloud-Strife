@@ -49,7 +49,7 @@
              class        ="form-control{if $i.tip}tooltips underline{/if}" 
               {if $i.tip}
                   data-toggle="tooltip" title="" data-original-title="{$i.tip}"
-                   data-placement="top"
+                   data-placement="bottom"
               {/if} 
              
              
@@ -69,7 +69,7 @@
              class="form-control {if $i.tip}tooltips underline{/if}" 
                     {if $i.tip}
                         data-toggle="tooltip" title="" data-original-title="{$i.tip}"
-                         data-placement="top"
+                         data-placement="bottom"
                     {/if} 
                    
              > 

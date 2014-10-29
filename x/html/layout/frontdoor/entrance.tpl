@@ -15,12 +15,15 @@
 	 			
 		
 	</head>	
-	<body {$HTML.BODY.ATTR} >
+	<body {* $HTML.BODY.ATTR *} >
 		{$HTML.BODY.HTML}
 
+		{*
 		{if $HTML.BODY.SCRIPT}
 			{$HTML.BODY.SCRIPT}
 		{/if} 
+		*}
+
 
 		{if $HTML.BODY.JS}
 			<script src="{$HTML.BODY.JS}"></script>

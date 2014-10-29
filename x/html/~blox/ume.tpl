@@ -1,7 +1,7 @@
-{$html="html"}
+{$t="html"}
 
 {if $tpl.type}
-	{$html=$tpl.type}
+	{$t=$tpl.type}
 {/if}
 
-{include file="~blox/ume.{$html}.tpl" tpl=$tpl}
+{include file="~blox/ume.{$t}.tpl" tpl=$tpl}

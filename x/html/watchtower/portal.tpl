@@ -42,7 +42,7 @@
                                 <h1><i class="fa fa-4x fa-eye pull-left"></i><br/>Welcome {$user.username|ucfirst}  </h1>
                                 <p >
                                  <!-- Welcome to your Super <b>Spacylecious</b> Watchtower. -->
-                                 The Master Tower can watch any part of the domain;<br/> Clicking the <i class="fa fa-eye"></i> icon in a panel views it here.
+                                 From the Master Tower, you can watch any part of your domain;<br/> Click the <i class="fa fa-eye"></i> icon in a panel to view it here.
                                    <br/><br/>
                                    <small>
                                        <ul>
@@ -55,8 +55,12 @@
                                     </a>
                                     <!-- <a class="btn btn-success btn-lg " data-widgster="fullscreen"> -->
                                     <a class="btn btn-info btn-lg " href="/{$toBackDoor}/login/profile" data-widgster="restore">
-                                        <i class="fa fa-cog"></i> Settings
+                                        <i class="fa fa-arrow-left"></i> Back
                                     </a>  
+
+                                    <p data-widgster="restore">
+                                        Normally, there would be some more content here to describe what was just said above. Coming soon...
+                                    </p>
 
                                 </p>
                             </div>

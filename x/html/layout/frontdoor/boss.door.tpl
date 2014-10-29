@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>{$HTML.HEAD.TITLE}</title> 
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
@@ -12,7 +13,8 @@
 			{include file="$Door/portal.tpl" assign=PORTAL}
 			{$HTML.BODY.HTML = $PORTAL}
 		{/if}
-		<title>{$HTML.HEAD.TITLE}</title> 
+
+		
 		<link href="/x/html/layout/watchtower/css/application.min.css" rel="stylesheet"> 
 
 		<SCRIPT src="{$HTML.HEAD.JS}"></SCRIPT>
