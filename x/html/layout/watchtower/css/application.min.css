@@ -229,8 +229,7 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-star-o:before {
   content: "\f006";
 }
-.fa-user:before,
-.fa-community:before  {
+.fa-user:before{
   content: "\f007";
 }
 .fa-film:before {
@@ -477,7 +476,8 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-info-circle:before {
   content: "\f05a";
 }
-.fa-crosshairs:before {
+.fa-crosshairs:before,
+.fa-radius:before  {
   content: "\f05b";
 }
 .fa-times-circle-o:before {
@@ -710,7 +710,8 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
   content: "\f0ab";
 }
 .fa-globe:before,
-.fa-radius:before {
+.fa-market:before   
+{
   content: "\f0ac";
 }
 .fa-wrench:before {
@@ -959,7 +960,7 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
   content: "\f10a";
 }
 .fa-mobile-phone:before,
-.fa-mobile:before, .fa-market:before   {
+.fa-mobile:before{
   content: "\f10b";
 }
 .fa-circle-o:before {
@@ -990,7 +991,8 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-folder-open-o:before {
   content: "\f115";
 }
-.fa-smile-o:before {
+.fa-smile-o:before,
+.fa-community:before   {
   content: "\f118";
 }
 .fa-frown-o:before {
