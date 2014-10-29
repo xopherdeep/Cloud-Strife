@@ -37,7 +37,10 @@
         @media all {
             /* all devices */
              .background-clock {
-                position: fixed; font-size: 555%; color: rgba(0,0,0,0.10); bottom: 55px; right: 25px;
+                position: fixed; font-size: 350%; color: rgba(0,0,0,0.444);
+
+                top                : 30px; 
+                left               : 45px;
                 /* -- transition is the magic sauce for animation -- */
                 -webkit-transition          : all .4s ease-in-out;
                 transition                  : all .4s ease-in-out;
@@ -46,9 +49,8 @@
                 position           : fixed;
                 font-size          : 500%;
                 color              : rgba(0,0,0,0.15);
-                top                : 30px; 
-                left               : 45px;
                 z-index            : -1;
+                bottom: 55px; right: 25px;
                 -webkit-transition : all .4s ease-in-out;
                 transition         : all .4s ease-in-out;
             }
@@ -92,10 +94,10 @@
             iPad
         */
 
-        @media screen and (min-width : 768px) and (max-width : 1024px)  { 
+        @media screen and (min-width : 768px) and (max-width : 1200px)  { 
             /* all iPad models */
             .background-clock {
-                 font-size: 400%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                 font-size: 200%;  
             }
             .bg-host{
                 font-size: 400%;
@@ -112,7 +114,7 @@
         @media screen and (min-width : 568px) and (max-width : 768px) { 
             /* iPhone 5 */
             .background-clock {
-                 font-size: 300%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                 font-size: 300%;  
             }
             .bg-host{
                 font-size: 333%;
@@ -126,7 +128,7 @@
         @media screen and (min-width : 320px) and (max-width : 568px) { 
             /* iPhone 5 */
             .background-clock {
-                 font-size: 222%; color: rgba(0,0,0,0.10); bottom: 15px; right: 15px;
+                 font-size: 222%;  
             }
             .bg-host{
                 font-size: 222%;
@@ -465,7 +467,7 @@
                             <i class="fa fa-globe"></i>
                         </a>
                     </li>
-                    <li class="hidden-xs"><a href="login.html"><i class="fa fa-sign-out"></i></a></li>
+                    <li class="hidden-xs"><a href="/{$toBackDoor}/login/logout"><i class="fa fa-sign-out"></i></a></li>
                 </ul>
                 <form id="search-form" class="navbar-form pull-right" role="search">
                     <input type="search" class="search-query" placeholder="Search...">

@@ -1,5 +1,9 @@
 <div class="row widget-container "> 
+    <div class="col-md-12">
+        
+    </div>
     <div class="col-md-12 ">  
+        <!-- <h2 class="page-title">{$user.username}, Welcome to SuperdomX <small>Oxygen</small></h2> -->
         <section class="widget locked"> 
             <div class="widget-controls">
                 {if $portal} 
@@ -39,7 +43,7 @@
                         </ol>
                         <div class="carousel-inner text-align-center">
                             <div class="item {if $anchor == 'index'}active{/if}">
-                                <h1><i class="fa fa-4x fa-eye pull-left"></i><br/>Castle on the Clouds</h1>
+                                <h1><i class="fa fa-4x fa-eye pull-left"></i><br/>Kingdom in the Clouds</h1>
                                 <p >
                                  <!-- Welcome to your Super <b>Spacylecious</b> Watchtower. -->
                                  From the Master Tower, you can watch any part of your domain;<br/> Click the <i class="fa fa-eye"></i> icon in a panel to view it here.
@@ -50,7 +54,7 @@
                                        </ul>
 
                                    </small>
-                                    <a class="btn btn-success btn-lg"  data-widgster="fullscreen" >
+                                    <a class="btn btn-primary btn-lg"  data-widgster="fullscreen" >
                                         <i class="fa fa-graduation-cap"></i> Learn More
                                     </a>
                                     <!-- <a class="btn btn-success btn-lg " data-widgster="fullscreen"> -->
