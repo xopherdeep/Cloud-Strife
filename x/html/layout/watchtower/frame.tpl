@@ -40,7 +40,7 @@
                 position: fixed; font-size: 350%; color: rgba(0,0,0,0.444);
 
                 top                : 30px; 
-                left               : 45px;
+                left               : 25px;
                 /* -- transition is the magic sauce for animation -- */
                 -webkit-transition          : all .4s ease-in-out;
                 transition                  : all .4s ease-in-out;
@@ -212,23 +212,33 @@
 <body class="background-dark">
 
 
-<iframe src="/x/html/layout/clouds/index.html" width="100%" height="100%" style="position: fixed; top: 0; border: 0; left: 0;"></iframe>
-<small class="label tile label-sm widget " style="position: absolute; bottom: 0; left: 0; margin: 0 50px 10px 0;">super powered by<br/>  
-    <a href="http://superdomx.com/" target="_blank"></a><img src="{$thumb}src=/bin/images/logos/sdx.png&h=16"/>
+<iframe src="/x/html/layout/clouds/index.html" width="100%" height="100%" style="position: fixed; top: 0; border: 0; left: 0;" class="hidden"></iframe>
+<small class="label tile label-sm widget " style="position: fixed; bottom: 0; right: 0; margin: 00px 0px 00px 0; padding:5px;">
+    super powered by<br/>  
+    <a href="http://superdomx.com/" target="_blank">
+        <img src="{$thumb}src=/bin/images/logos/sdx.png&h=16"/>
+    </a>
 </small>
 
 <div class="logo text-center">
     <h4  class="bg-host ">
-        {$HTTP_HOST} 
+        {include file="../../~blox/clock.tpl"}   
     </h4>   
 </div>
 <div class="background-clock" >
-    {include file="../../~blox/clock.tpl"}   
+        {$HTTP_HOST} 
 </div>
 <nav id="sidebar" class="sidebar nav-collapse collapse">
     <ul id="side-nav" class="side-nav"> 
         <li class="active">
-            <a href="/{$toBackDoor}"><i class="fa fa-eye"></i> <span class="name"><b>Master Tower</b></span>  </a>
+            <a href="/{$toBackDoor}">
+                <i class="fa fa-eye"></i>
+                <span class="name">
+                    <b>
+                        Watchtower 
+                    </b>
+                </span>
+            </a>
         </li> 
 
         <!-- {counter start=0} -->
@@ -956,16 +966,17 @@
                 style: "css/theme-1.min.css"
             }], i = "", n = 0; n < t.length; n++) i += '<a href="#" data-color="' + t[n].color + '"  data-theme-css="' + t[n].style + '" title="' + t[n].title + '" style="display: inline-block; height: 35px;  width: 35px; margin-right: 10px;text-decoration: none!important; border: 1px solid rgba(77, 77, 77, 0.95); background-color: ' + t[n].color + '"><\/a>';
 
-            $("body").append('<a title="Show/Hide Theme Changer" class="widget" href="#" id="theme-changer" style="position: fixed;display: inline-block;top: 0px;left: 0;width: 40px;line-height: 40px; padding: 0px; border-radius: 0 3px 3px 0;color: white;z-index: 1003;text-align: center;font-size: 1.5em;text-decoration: none!important"><i class="fa fa-cloud"><\/i><\/a><div class="theme-changer-colors theme-changer-hidden widget" style="border:0px solid rgb(238, 238, 238);visibility: hidden;opacity: 0;position: fixed;top: 40px;left: -170px;width: 150px;padding: 10px;text-align: center;z-index: 1002;border-radius: 0 3px 3px 0;background-color: rgba(77, 77, 77, 0.23);-moz-transition-duration: .4s;-o-transition-duration: .4s;-webkit-transition-duration: .4s;transition-duration: .4s;">' + i + "<\/div>");
+    // Theme changer
+            // $("body").append('<a title="Show/Hide Theme Changer" class="widget" href="#" id="theme-changer" style="position: fixed;display: inline-block;top: 0px;left: 0;width: 40px;line-height: 40px; padding: 0px; border-radius: 0 3px 3px 0;color: white;z-index: 1003;text-align: center;font-size: 1.5em;text-decoration: none!important"><i class="fa fa-cloud"><\/i><\/a><div class="theme-changer-colors theme-changer-hidden widget" style="border:0px solid rgb(238, 238, 238);visibility: hidden;opacity: 0;position: fixed;top: 40px;left: -170px;width: 150px;padding: 10px;text-align: center;z-index: 1002;border-radius: 0 3px 3px 0;background-color: rgba(77, 77, 77, 0.23);-moz-transition-duration: .4s;-o-transition-duration: .4s;-webkit-transition-duration: .4s;transition-duration: .4s;">' + i + "<\/div>");
             
             // $("body").append('<a href="#" id="settings" title="Settings" data-toggle="popover" data-placement="bottom" style="position: fixed;display: inline-block;top: 40px;left: 0px;width: 40px;line-height: 40px; padding: 0px; border-radius: 0 3px 3px 0;color: white;z-index: 1003;text-align: center;font-size: 1.5em;text-decoration: none!important;background-color: rgba(77, 77, 77, 0.23)"><i class="fa fa-cog"><\/i><\/a>');
 
-            var btn = $('<button/>').addClass('btn btn-primary active btn-block').css({ marginBottom : '5px' }).html('<i class="fa fa-cloud"></i> Toggle Clouds').on('click',function(){
-                $('iframe').toggleClass('hidden');
-                $(this).toggleClass('active');
-            });
+            // var btn = $('<button/>').addClass('btn btn-primary active btn-block').css({ marginBottom : '5px' }).html('<i class="fa fa-cloud"></i> Toggle Clouds').on('click',function(){
+            //     $('iframe').toggleClass('hidden');
+            //     $(this).toggleClass('active');
+            // });
 
-            $('.theme-changer-colors').prepend(btn);
+            // $('.theme-changer-colors').prepend(btn);
             
 
             $("#theme-changer").click(function() {

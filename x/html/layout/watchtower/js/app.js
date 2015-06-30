@@ -455,13 +455,13 @@ $(function(){
     // ======================
 
     var Widgster = function (el, options) {
-        this.$element = $(el);
-        this.$collapse = this.$element.find('[data-widgster=collapse]');
-        this.$expand = this.$element.find('[data-widgster=expand]');
-        this.$fullscreen = this.$element.find('[data-widgster=fullscreen]');
-        this.$restore = this.$element.find('[data-widgster=restore]');
-        this.options = options;
-        this.collapsed = options.collapsed;
+        this.$element     = $(el);
+        this.$collapse    = this.$element.find('[data-widgster=collapse]');
+        this.$expand      = this.$element.find('[data-widgster=expand]');
+        this.$fullscreen  = this.$element.find('[data-widgster=fullscreen]');
+        this.$restore     = this.$element.find('[data-widgster=restore]');
+        this.options      = options;
+        this.collapsed    = options.collapsed;
         this.fullscreened = options.fullscreened;
 
         this._initHandlers();
@@ -474,6 +474,7 @@ $(function(){
 
         if (this.fullscreened){
             this.fullscreen();
+
         } else {
             this.$restore.hide();
         }
@@ -489,13 +490,13 @@ $(function(){
     };
 
     Widgster.DEFAULTS = {
-        collapsed: false,
-        fullscreened: false,
-        transitionDuration: 150,
-        bodySelector: '.body',
-        showLoader: true,
-        autoload: false,
-        loaderTemplate: '<div style="text-align: center; margin-top: 10px;">Loading...</div>',
+        collapsed          : false,
+        fullscreened       : false,
+        transitionDuration : 150,
+        bodySelector       : '.body',
+        showLoader         : true,
+        autoload           : false,
+        loaderTemplate     : '<div style="text-align: center; margin-top: 10px;">Loading...</div>',
         /**
          * provide a way to insert a prompt before removing widget
          * @param callback
@@ -610,6 +611,9 @@ $(function(){
 
         this.$element.trigger($.Event('fullscreened.widgster'));
 
+
+        $('iframe').toggleClass('hidden');
+
         return false;
     };
 
@@ -621,13 +625,13 @@ $(function(){
         if (e.isDefaultPrevented()) return;
 
         this.$element.css({
-            position: '',
-            top: '',
-            right: '',
-            bottom: '',
-            left: '',
-            margin: '',
-            'z-index': ''
+            position  : '',
+            top       : '',
+            right     : '',
+            bottom    : '',
+            left      : '',
+            margin    : '',
+            'z-index' : ''
         });
         $('body').css('overflow', '');
 
@@ -645,6 +649,9 @@ $(function(){
         this.$element.removeClass('fullscreened');
 
         this.$element.trigger($.Event('restored.widgster'));
+
+
+        $('iframe').toggleClass('hidden');
 
         return false;
     };

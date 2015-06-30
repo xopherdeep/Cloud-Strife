@@ -476,13 +476,13 @@ $(function(){
     };
 
     Widgster.DEFAULTS = {
-        collapsed: false,
-        fullscreened: false,
-        transitionDuration: 150,
-        bodySelector: '.body',
-        showLoader: true,
-        autoload: false,
-        loaderTemplate: '<div style="text-align: center; margin-top: 10px;">Loading...</div>',
+        collapsed          : false,
+        fullscreened       : false,
+        transitionDuration : 25,
+        bodySelector       : '.body',
+        showLoader         : true,
+        autoload           : false,
+        loaderTemplate     : '<div style="text-align: center; margin-top: 10px;">Loading...</div>',
         /**
          * provide a way to insert a prompt before removing widget
          * @param callback

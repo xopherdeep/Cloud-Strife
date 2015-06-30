@@ -12,11 +12,11 @@
     {$name = {$name|replace:"{$Xtra}_":''} }
   {/if}
   -->
-  <div class="input-group col-sm-12" style="margin: 5px">  
+  <div class="input-group col-sm-12" style="margin: 5px">
       <span {if $i.desc}class="input-group-btn popover-test" data-content="{$i.desc}" data-original-title="{$txt}"{/if}
         class="input-group-btn" title="{$txt}"  style="width: 35px;">
           <a class="btn btn-alt btn-default btn-transparent pull-left" {if $i.href}href="{$i.href}" target="_blank" {/if} type="button"  style="width: 100%">
-              <i class="fa fa-question"  ></i> 
+               <i class="fa fa-question"  ></i> {$txt} 
           </a>
       </span>
       {if $i.type == 'radio'}

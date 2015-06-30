@@ -20,7 +20,11 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 
 .breadcrumb {
 
-	float: right;
+	/*float: right;*/
+}
+
+.modal {
+	background: rgba(0,0,0,.5);
 }
 
 /*!
@@ -269,8 +273,7 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-trash-o:before {
   content: "\f014";
 }
-.fa-home:before,
-.fa-domain:before {
+.fa-home:before {
   content: "\f015";
 }
 .fa-file-o:before {
@@ -782,8 +785,7 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-table:before {
   content: "\f0ce";
 }
-.fa-magic:before,
-.fa-construct:before   {
+.fa-magic:before {
   content: "\f0d0";
 }
 .fa-truck:before {
@@ -846,7 +848,10 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
   content: "\f0e3";
 }
 .fa-dashboard:before,
-.fa-tachometer:before {
+
+.fa-tachometer:before,
+
+.fa-construct:before   {
   content: "\f0e4";
 }
 .fa-comment-o:before {
@@ -1077,7 +1082,8 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-fire-extinguisher:before {
   content: "\f134";
 }
-.fa-rocket:before {
+.fa-rocket:before,
+.fa-domain:before {
   content: "\f135";
 }
 .fa-maxcdn:before {
@@ -1390,8 +1396,7 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
   content: "\f19c";
 }
 .fa-mortar-board:before,
-.fa-graduation-cap:before,
-.fa-support:before {
+.fa-graduation-cap:before{
   content: "\f19d";
 }
 .fa-yahoo:before {
@@ -1538,7 +1543,8 @@ small,.small{font-size:85%}cite{font-style:normal}.text-left{text-align:left}.te
 .fa-life-saver:before,
 
 
-.fa-life-ring:before {
+.fa-life-ring:before,
+.fa-support:before  {
   content: "\f1cd";
 }
 .fa-circle-o-notch:before {
@@ -2246,7 +2252,7 @@ input.parsley-error {
 
 .side-nav .panel-collapse li a {
     padding: 4px 10px;
-    padding-left: 40px;
+    padding-left: 30px;
 }
 
 .side-nav .panel-collapse li a:hover,.side-nav .panel-collapse li a:focus {
@@ -5480,4 +5486,8 @@ ol.text-list {
     .col-print-offset-11 {
         margin-left: 91.66667%;
     }
+}
+
+legend{
+	color: #555;
 }
